@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,150 +8,105 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="navbar">
-
-  <div class="logo">EZHIL</div>
+  <a href="index.html" class="logo">PORTFOLIO</a>
 
   <nav>
     <ul class="nav-links">
-
       <li><a href="index.html">Home</a></li>
-
       <li><a href="about.html">Resume</a></li>
-
       <li><a href="projects.html" class="active">Projects</a></li>
-
       <li><a href="certificates.html">Certifications</a></li>
-
       <li><a href="linkedin.html">LinkedIn</a></li>
-
     </ul>
   </nav>
 
-  <a href="contact.html" class="contact-btn">
-    Contact Me
-  </a>
-
+  <a href="contact.html" class="contact-btn">Contact Me</a>
 </header>
 
 
-<main class="projects-page">
+<main class="dark-page">
 
-  <div class="page-title">
-
+  <section class="page-heading">
     <h1>My Projects</h1>
 
     <p>
-      Practical projects combining electronics,
-      IoT, computer vision and intelligent systems.
+      Practical projects combining electronics, IoT,
+      computer vision and intelligent systems.
     </p>
-
-  </div>
-
-
-  <div class="project-grid">
+  </section>
 
 
-    <!-- SMART GLOVE -->
+  <section class="projects-grid">
 
     <article class="project-card">
 
-      <div class="project-header">
-
-        <span class="project-tag">
-          IoT / Wearable
-        </span>
-
-        <span class="project-year">
-          2026
-        </span>
-
+      <div class="project-top">
+        <span class="badge">IoT / Wearable</span>
+        <span>2026</span>
       </div>
 
-      <img src="smart-glove.png"
-           alt="Smart Glove"
-           style="width:100%; height:300px; object-fit:cover; border-radius:20px; margin-bottom:25px;">
+      <img src="smart-glove.png" alt="Smart Glove">
 
-      <h2>
-        Smart Glove with Integrated Sensors
-      </h2>
+      <div class="project-content">
+        <h2>Smart Glove with Integrated Sensors</h2>
 
-      <p>
-        A wearable smart glove system using flex sensors
-        to detect finger movements and gestures.
-        The system converts physical hand movements
-        into measurable sensor data for gesture-based
-        applications.
-      </p>
+        <p>
+          A wearable smart glove system using flex sensors
+          to detect finger movements and provide real-time
+          sensor-based interaction.
+        </p>
 
-      <div class="project-tech">
-
-        <span>Flex Sensor</span>
-        <span>Arduino</span>
-        <span>Embedded Systems</span>
-        <span>Wearable Technology</span>
-
+        <div class="skill-tags">
+          <span>ESP32</span>
+          <span>Flex Sensor</span>
+          <span>IoT</span>
+          <span>Embedded Systems</span>
+        </div>
       </div>
 
     </article>
 
 
-    <!-- GESTURE RECOGNITION -->
-
     <article class="project-card">
 
-      <div class="project-header">
-
-        <span class="project-tag">
-          Computer Vision
-        </span>
-
-        <span class="project-year">
-          2026
-        </span>
-
+      <div class="project-top">
+        <span class="badge">Computer Vision</span>
+        <span>2026</span>
       </div>
 
-      <img src="gesture-recognition.png"
-           alt="Gesture Recognition System"
-           style="width:100%; height:300px; object-fit:cover; border-radius:20px; margin-bottom:25px;">
+      <img src="gesture-recognition.png" alt="Gesture Recognition System">
 
-      <h2>
-        Gesture Recognition System
-      </h2>
+      <div class="project-content">
 
-      <p>
-        A computer-vision based hand gesture recognition
-        system that detects hand movements using a webcam.
+        <h2>Gesture Recognition System</h2>
 
-        The project uses real-time image processing for
-        touchless human-computer interaction.
-      </p>
+        <p>
+          A computer vision based hand gesture recognition
+          system that detects hand movements through a webcam
+          and performs computer actions.
+        </p>
 
-      <div class="project-tech">
-
-        <span>Python</span>
-        <span>OpenCV</span>
-        <span>MediaPipe</span>
-        <span>Computer Vision</span>
+        <div class="skill-tags">
+          <span>Python</span>
+          <span>OpenCV</span>
+          <span>MediaPipe</span>
+          <span>PyAutoGUI</span>
+        </div>
 
       </div>
 
     </article>
 
-  </div>
+  </section>
 
 </main>
 
