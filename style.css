@@ -1,1175 +1,489 @@
-/* =========================
-   GLOBAL
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* =====================================================
+   NEW CERTIFICATIONS PAGE
+===================================================== */
+
+.certifications-page{
+    background:#14351f;
+    min-height:100vh;
+    padding:80px 4% 100px;
 }
 
-html {
-  scroll-behavior: smooth;
+
+/* HEADER */
+
+.certifications-header{
+    max-width:850px;
+    margin:0 auto 65px;
+    text-align:center;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: #18311f;
-  color: #f5f0e6;
-  overflow-x: hidden;
+.section-label{
+    color:#f4b942;
+    font-size:0.85rem;
+    font-weight:700;
+    letter-spacing:3px;
+    margin-bottom:15px;
 }
 
-body.menu-open {
-  overflow: hidden;
+.certifications-header h1{
+    font-family:'Cormorant Garamond',serif;
+    color:#f5f0e6;
+    font-size:4.5rem;
+    line-height:0.95;
+    margin-bottom:25px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.certifications-header h1 span{
+    color:#f4b942;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+.certifications-intro{
+    color:#d9ccb4;
+    max-width:680px;
+    margin:0 auto;
+    font-size:1.05rem;
+    line-height:1.8;
 }
 
-.onepage-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  scroll-margin-top: 80px;
+
+/* STATS */
+
+.cert-stats{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:35px;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-.onepage-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  padding: 0 60px;
+.cert-stats div{
+    min-width:145px;
+    padding:18px 25px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    border-radius:15px;
 
-  background: rgba(24, 49, 31, 0.92);
-  backdrop-filter: blur(15px);
+    background:rgba(255,255,255,0.06);
 
-  border-bottom: 1px solid rgba(244, 185, 66, 0.15);
-  z-index: 1000;
+    border:1px solid rgba(244,185,66,0.22);
 }
 
-.onepage-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #f4b942;
+.cert-stats strong{
+    display:block;
+
+    color:#f4b942;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
 }
 
-/* =========================
-   HAMBURGER
-========================= */
-.hamburger {
-  width: 50px;
-  height: 50px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: #f4b942;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  gap: 5px;
-  cursor: pointer;
-
-  transition: 0.3s;
+.cert-stats span{
+    color:#e7dcc7;
+    font-size:0.85rem;
 }
 
-.hamburger:hover {
-  transform: scale(1.07);
+
+/* =====================================================
+   CERTIFICATE GRID
+===================================================== */
+
+.certificates-grid{
+    max-width:1450px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:30px;
 }
 
-.hamburger span {
-  width: 21px;
-  height: 2px;
-  background: #18311f;
-  border-radius: 5px;
-}
 
-/* =========================
-   MENU OVERLAY
-========================= */
-.menu-overlay {
-  position: fixed;
-  inset: 0;
+/* CARD */
 
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
+.certificate-item{
+    overflow:hidden;
 
-  opacity: 0;
-  visibility: hidden;
+    border-radius:22px;
 
-  transition: 0.35s;
-  z-index: 1998;
-}
+    background:#23452f;
 
-.menu-overlay.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* =========================
-   SIDE MENU
-========================= */
-.side-menu {
-  position: fixed;
-
-  top: 0;
-  right: -420px;
-
-  width: 390px;
-  max-width: 90%;
-  height: 100vh;
-
-  padding: 35px;
-
-  background: #102919;
-
-  border-left: 1px solid rgba(244, 185, 66, 0.25);
-
-  display: flex;
-  flex-direction: column;
-
-  transition: right 0.4s ease;
-
-  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.35);
-
-  z-index: 1999;
-}
-
-.side-menu.open {
-  right: 0;
-}
-
-.side-menu-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-bottom: 45px;
-}
-
-.side-menu-header h2 {
-  color: #f4b942;
-
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-}
-
-.close-menu {
-  width: 45px;
-  height: 45px;
-
-  border-radius: 50%;
-
-  border: 1px solid rgba(244, 185, 66, 0.3);
-
-  background: rgba(255, 255, 255, 0.05);
-
-  color: #f5f0e6;
-
-  font-size: 1.2rem;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.close-menu:hover {
-  background: #f4b942;
-  color: #18311f;
-}
-
-/* ==========================================
-   SIDE NAVIGATION - FINAL
-========================================== */
-
-.side-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-}
-
-/* HOME / RESUME / PROJECTS / ETC */
-.side-nav a {
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    gap: 18px;
-
-    padding: 18px 20px;
-
-    /* NEW FONT */
-    font-family: 'Inter', sans-serif !important;
-    font-size: 22px !important;
-    font-weight: 800 !important;
-
-    letter-spacing: 0.3px;
-
-    /* TEXT */
-    color: #f5f0e6 !important;
-
-    text-decoration: none;
-
-    /* CARD LOOK */
-    background: rgba(255, 255, 255, 0.035);
-
-    border: 1px solid rgba(244, 185, 66, 0.10);
-    border-radius: 14px;
+    border:1px solid
+        rgba(244,185,66,0.25);
 
     transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease,
-        border-color 0.3s ease;
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
 }
 
-/* 01 / 02 / 03 / 04 / 05 / 06 */
+.certificate-item:hover{
+    transform:translateY(-7px);
 
-.side-nav a span {
-    width: 30px;
+    border-color:#f4b942;
 
-    font-family: 'Inter', sans-serif !important;
-
-    font-size: 13px !important;
-    font-weight: 800 !important;
-
-    color: #f4b942 !important;
-
-    letter-spacing: 1px;
-}
-
-/* HOVER */
-
-.side-nav a:hover {
-    color: #18311f !important;
-
-    background: #f4b942;
-
-    border-color: #f4b942;
-
-    transform: translateX(7px);
-
-    padding-left: 20px;
-}
-
-/* NUMBER WHEN HOVER */
-
-.side-nav a:hover span {
-    color: #18311f !important;
-}
-
-
-/* ==========================================
-   MOBILE SIDE MENU
-========================================== */
-
-@media (max-width: 700px) {
-
-    .side-nav {
-        gap: 9px;
-    }
-
-    .side-nav a {
-        padding: 16px 17px;
-
-        font-size: 19px !important;
-        font-weight: 800 !important;
-    }
-
-    .side-nav a span {
-        font-size: 12px !important;
-    }
-}
-
-/* =========================
-   SIDE SOCIALS
-========================= */
-.side-socials {
-  display: flex;
-  gap: 12px;
-
-  margin-top: auto;
-}
-
-.side-socials a {
-  width: 45px;
-  height: 45px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.06);
-
-  border: 1px solid rgba(244, 185, 66, 0.2);
-
-  transition: 0.3s;
-}
-
-.side-socials a:hover {
-  background: #f4b942;
-  color: #18311f;
-
-  transform: translateY(-3px);
-}
-
-/* =========================
-   HOME
-========================= */
-.home-section {
-  padding: 130px 60px 80px;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
-
-  align-items: center;
-
-  gap: 70px;
-
-  overflow: hidden;
-}
-
-.home-left,
-.home-right {
-  position: relative;
-  z-index: 2;
-}
-
-/* =========================
-   PROFILE PHOTO
-========================= */
-.photo-card {
-  width: 100%;
-  max-width: 430px;
-  height: 520px;
-
-  margin: auto;
-
-  border-radius: 30px;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(244, 185, 66, 0.3);
-
-  background: rgba(255, 255, 255, 0.05);
-
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
-}
-
-.photo-card img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-/* =========================
-   HERO TEXT
-========================= */
-.eyebrow {
-  color: #f4b942;
-
-  font-size: 0.8rem;
-  font-weight: 700;
-
-  letter-spacing: 3px;
-
-  margin-bottom: 15px;
-}
-
-.title {
-  font-family: 'Cormorant Garamond', serif;
-
-  font-size: clamp(3.5rem, 6vw, 6rem);
-
-  line-height: 0.95;
-
-  margin-bottom: 20px;
-}
-
-.title span {
-  color: #f4b942;
-}
-
-.subtitle {
-  color: #d9ccb4;
-
-  font-size: 1.1rem;
-
-  line-height: 1.7;
-
-  max-width: 650px;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 15px;
-
-  margin-top: 30px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 10px;
-
-  padding: 14px 25px;
-
-  border-radius: 50px;
-
-  font-weight: 700;
-
-  transition: 0.3s;
-}
-
-.btn-primary {
-  background: #f4b942;
-  color: #18311f;
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.25);
 }
 
-.btn-outline {
-  border: 1px solid #f4b942;
-  color: #f4b942;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-/* =========================
-   SOCIAL ICONS
-========================= */
-.socials {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 12px;
-
-  margin-top: 30px;
-}
-
-.socials a {
-  width: 45px;
-  height: 45px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.06);
-
-  border: 1px solid rgba(244, 185, 66, 0.2);
-
-  transition: 0.3s;
-}
-
-.socials a:hover {
-  background: #f4b942;
-  color: #18311f;
-
-  transform: translateY(-3px);
-}
-
-/* =========================
-   COMMON SECTION
-========================= */
-.resume-onepage,
-.projects-onepage,
-.certifications-onepage,
-.linkedin-onepage,
-.contact-onepage {
-  padding: 120px 60px 90px;
-}
-
-.resume-onepage,
-.certifications-onepage,
-.contact-onepage {
-  background: #102919;
-}
 
-.projects-onepage,
-.linkedin-onepage {
-  background: #18311f;
-}
-
-/* =========================
-   SECTION HEADING
-========================= */
-.section-heading {
-  max-width: 850px;
-
-  margin: 0 auto 55px;
-
-  text-align: center;
-}
-
-.section-heading > p:first-child {
-  color: #f4b942;
-
-  font-size: 0.8rem;
-  font-weight: 700;
-
-  letter-spacing: 3px;
-
-  margin-bottom: 10px;
-}
+/* IMAGE */
 
-.section-heading h2 {
-  color: #f5f0e6;
+.certificate-image{
+    height:330px;
 
-  font-family: 'Cormorant Garamond', serif;
+    position:relative;
 
-  font-size: 4rem;
+    display:flex;
 
-  line-height: 1;
+    align-items:center;
+    justify-content:center;
 
-  margin-bottom: 18px;
-}
+    background:#fff;
 
-.section-heading h2 span {
-  color: #f4b942;
+    overflow:hidden;
 }
 
-.heading-line {
-  width: 60px;
-  height: 2px;
+.certificate-image img{
+    width:100%;
+    height:100%;
 
-  margin: auto;
+    object-fit:contain;
 
-  background: #f4b942;
+    transition:transform .4s ease;
 }
-
-.section-description {
-  color: #d9ccb4;
 
-  margin-top: 20px;
-
-  line-height: 1.7;
+.certificate-item:hover
+.certificate-image img{
+    transform:scale(1.025);
 }
-
-/* =========================
-   RESUME
-========================= */
-.resume-onepage-top {
-  max-width: 1200px;
-
-  margin: auto;
 
-  display: grid;
 
-  grid-template-columns: 1fr 300px;
+/* CATEGORY */
 
-  align-items: center;
+.cert-category{
+    position:absolute;
 
-  gap: 50px;
-}
+    left:18px;
+    top:18px;
 
-.resume-about h3 {
-  font-family: 'Cormorant Garamond', serif;
+    padding:8px 15px;
 
-  font-size: 3rem;
+    border-radius:30px;
 
-  color: #f4b942;
+    background:#f4b942;
 
-  margin-bottom: 20px;
-}
+    color:#14351f;
 
-.resume-about p {
-  color: #d9ccb4;
+    font-size:.78rem;
 
-  line-height: 1.8;
+    font-weight:700;
 
-  margin-bottom: 15px;
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.15);
 }
-
-.resume-small-photo img {
-  width: 280px;
-  height: 320px;
 
-  object-fit: cover;
 
-  border-radius: 25px;
+/* INFORMATION */
 
-  border: 1px solid rgba(244, 185, 66, 0.3);
+.certificate-info{
+    padding:28px;
 }
 
-/* =========================
-   CARDS
-========================= */
-.onepage-card-grid,
-.onepage-project-grid {
-  max-width: 1300px;
+.certificate-top{
+    display:flex;
 
-  margin: 50px auto 0;
+    align-items:flex-start;
 
-  display: grid;
+    justify-content:space-between;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 25px;
+    gap:20px;
 }
-
-.onepage-card,
-.onepage-project-card {
-  background: rgba(255, 255, 255, 0.05);
-
-  border: 1px solid rgba(244, 185, 66, 0.18);
 
-  border-radius: 22px;
+.certificate-company{
+    color:#f4b942;
 
-  overflow: hidden;
+    font-size:.85rem;
 
-  transition: 0.3s;
-}
+    font-weight:600;
 
-.onepage-card {
-  padding: 30px;
+    margin-bottom:7px;
 }
 
-.onepage-card:hover,
-.onepage-project-card:hover {
-  transform: translateY(-5px);
+.certificate-info h2{
+    font-family:
+        'Cormorant Garamond',
+        serif;
 
-  border-color: #f4b942;
-}
+    color:#f5f0e6;
 
-/* =========================
-   PROJECT
-========================= */
-.project-image-wrap {
-  width: 100%;
-  height: 300px;
+    font-size:1.75rem;
 
-  overflow: hidden;
+    line-height:1.1;
 
-  background: #fff;
+    margin:0;
 }
 
-.project-image-wrap img {
-  width: 100%;
-  height: 100%;
+.certificate-date{
+    flex-shrink:0;
 
-  object-fit: cover;
-}
+    padding:7px 11px;
 
-.onepage-project-content {
-  padding: 28px;
-}
+    border-radius:20px;
 
-.onepage-project-content h3 {
-  font-family: 'Cormorant Garamond', serif;
+    background:
+        rgba(244,185,66,.12);
 
-  font-size: 2rem;
+    border:
+        1px solid
+        rgba(244,185,66,.3);
 
-  color: #f5f0e6;
+    color:#f4b942;
 
-  margin-bottom: 15px;
+    font-size:.78rem;
 }
-
-.onepage-project-content p {
-  color: #d9ccb4;
 
-  line-height: 1.7;
-}
 
-/* =========================
-   CERTIFICATIONS
-========================= */
-.onepage-cert-grid {
-  max-width: 1400px;
+/* DESCRIPTION */
 
-  margin: auto;
+.certificate-description{
+    color:#d9ccb4;
 
-  display: grid;
+    line-height:1.7;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    font-size:.93rem;
 
-  gap: 25px;
+    margin:20px 0;
 }
-
-.onepage-cert-card {
-  display: grid;
-
-  grid-template-columns: 220px 1fr;
-
-  overflow: hidden;
-
-  border-radius: 20px;
 
-  background: rgba(255, 255, 255, 0.05);
 
-  border: 1px solid rgba(244, 185, 66, 0.18);
+/* TAGS */
 
-  transition: 0.3s;
-}
+.certificate-tags{
+    display:flex;
 
-.onepage-cert-card:hover {
-  transform: translateY(-5px);
+    flex-wrap:wrap;
 
-  border-color: #f4b942;
+    gap:8px;
 }
 
-.onepage-cert-image {
-  height: 190px;
+.certificate-tags span{
+    padding:7px 13px;
 
-  background: #fff;
+    border-radius:20px;
 
-  overflow: hidden;
-}
+    background:
+        rgba(255,255,255,.05);
 
-.onepage-cert-image img {
-  width: 100%;
-  height: 100%;
+    border:
+        1px solid
+        rgba(244,185,66,.2);
 
-  object-fit: contain;
-}
+    color:#e7dcc7;
 
-.onepage-cert-content {
-  padding: 22px;
+    font-size:.76rem;
 }
 
-.onepage-cert-content span {
-  color: #f4b942;
 
-  font-size: 0.78rem;
-
-  font-weight: 700;
-}
+/* FEATURED CERT */
 
-.onepage-cert-content h3 {
-  font-family: 'Cormorant Garamond', serif;
+.featured-cert{
+    grid-column:span 2;
 
-  font-size: 1.5rem;
+    display:grid;
 
-  margin: 8px 0 12px;
+    grid-template-columns:1.2fr 1fr;
 }
 
-.onepage-cert-content p {
-  color: #d9ccb4;
-
-  line-height: 1.6;
-
-  font-size: 0.9rem;
+.featured-cert .certificate-image{
+    height:100%;
+    min-height:400px;
 }
-
-/* =========================
-   LINKEDIN
-========================= */
-.linkedin-post-grid {
-  max-width: 1300px;
 
-  margin: auto;
+.featured-cert .certificate-info{
+    display:flex;
 
-  display: grid;
+    flex-direction:column;
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    justify-content:center;
 
-  gap: 25px;
+    padding:45px;
 }
-
-.linkedin-post-card {
-  overflow: hidden;
-
-  border-radius: 22px;
-
-  background: rgba(255, 255, 255, 0.05);
 
-  border: 1px solid rgba(244, 185, 66, 0.18);
-
-  transition: 0.3s;
+.featured-cert
+.certificate-info h2{
+    font-size:2.4rem;
 }
 
-.linkedin-post-card:hover {
-  transform: translateY(-5px);
 
-  border-color: #f4b942;
-}
+/* =====================================================
+   CTA
+===================================================== */
 
-.linkedin-post-card > img {
-  width: 100%;
-  height: 260px;
+.certificate-cta{
+    padding:90px 20px;
 
-  object-fit: contain;
+    text-align:center;
 
-  background: #fff;
-}
+    background:#18311f;
 
-.linkedin-post-card > div {
-  padding: 25px;
+    border-top:
+        1px solid
+        rgba(244,185,66,.18);
 }
 
-/* =========================
-   CONTACT
-========================= */
-.onepage-contact-grid {
-  max-width: 1200px;
+.certificate-cta > p:first-child{
+    color:#f4b942;
 
-  margin: auto;
+    letter-spacing:3px;
 
-  display: grid;
+    font-size:.8rem;
 
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
-
-  gap: 50px;
+    font-weight:700;
 }
 
-.onepage-contact-form {
-  padding: 35px;
+.certificate-cta h2{
+    font-family:
+        'Cormorant Garamond',
+        serif;
 
-  border-radius: 25px;
+    font-size:3.5rem;
 
-  background: rgba(255, 255, 255, 0.05);
+    color:#f5f0e6;
 
-  border: 1px solid rgba(244, 185, 66, 0.18);
+    margin:12px 0;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.certificate-cta h2 span{
+    color:#f4b942;
 }
-
-.form-group label {
-  display: block;
 
-  margin-bottom: 8px;
+.cta-text{
+    color:#d9ccb4;
 
-  font-weight: 600;
+    margin-bottom:30px;
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
+.certificate-cta-btn{
+    display:inline-flex;
 
-  padding: 15px 17px;
+    align-items:center;
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
+    gap:10px;
 
-  border-radius: 15px;
+    padding:15px 28px;
 
-  background: rgba(255, 255, 255, 0.05);
+    border-radius:30px;
 
-  color: #fff;
+    background:#f4b942;
 
-  outline: none;
-}
+    color:#14351f;
 
-.form-group textarea {
-  min-height: 150px;
+    text-decoration:none;
 
-  resize: vertical;
-}
+    font-weight:700;
 
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #f4b942;
+    transition:.3s;
 }
-
-.send-btn {
-  width: 100%;
-
-  padding: 16px;
-
-  border: none;
 
-  border-radius: 15px;
+.certificate-cta-btn:hover{
+    transform:translateY(-3px);
 
-  background: #f4b942;
-
-  color: #18311f;
-
-  font-weight: 800;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.send-btn:hover {
-  transform: translateY(-3px);
+    box-shadow:
+        0 10px 25px
+        rgba(244,185,66,.2);
 }
-
-/* =========================
-   FOOTER
-========================= */
-.onepage-footer {
-  padding: 30px 20px;
-
-  text-align: center;
 
-  background: #0c2113;
-
-  border-top: 1px solid rgba(244, 185, 66, 0.15);
-
-  color: #d9ccb4;
-}
 
-/* =========================
+/* =====================================================
    TABLET
-========================= */
-@media (max-width: 1000px) {
+===================================================== */
 
-  .home-section {
-    grid-template-columns: 1fr;
+@media(max-width:1000px){
 
-    text-align: center;
-  }
+    .certificates-grid{
+        grid-template-columns:1fr;
+    }
 
-  .home-left {
-    order: 1;
-  }
+    .featured-cert{
+        grid-column:auto;
 
-  .home-right {
-    order: 2;
-  }
+        display:block;
+    }
 
-  .hero-buttons,
-  .socials {
-    justify-content: center;
-  }
+    .featured-cert
+    .certificate-image{
+        height:330px;
 
-  .resume-onepage-top {
-    grid-template-columns: 1fr;
+        min-height:0;
+    }
 
-    text-align: center;
-  }
+    .featured-cert
+    .certificate-info{
+        padding:28px;
+    }
 
-  .resume-small-photo {
-    justify-self: center;
-  }
+    .featured-cert
+    .certificate-info h2{
+        font-size:1.75rem;
+    }
 
-  .onepage-project-grid,
-  .onepage-card-grid,
-  .onepage-cert-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .linkedin-post-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-  .onepage-contact-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
-/* =========================
+
+/* =====================================================
    MOBILE
-========================= */
-@media (max-width: 700px) {
+===================================================== */
 
-  .onepage-navbar {
-    height: 70px;
+@media(max-width:600px){
 
-    padding: 0 20px;
-  }
-
-  .onepage-logo {
-    font-size: 1.6rem;
-  }
-
-  .hamburger {
-    width: 44px;
-    height: 44px;
-  }
-
-  .onepage-section {
-    scroll-margin-top: 70px;
-  }
-
-  .home-section,
-  .resume-onepage,
-  .projects-onepage,
-  .certifications-onepage,
-  .linkedin-onepage,
-  .contact-onepage {
-    padding: 100px 20px 70px;
-  }
-
-  .home-section {
-    gap: 40px;
-  }
-
-  .photo-card {
-    max-width: 340px;
-    height: 420px;
-  }
-
-  .title {
-    font-size: 3rem;
-  }
-
-  .section-heading h2 {
-    font-size: 3rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-
-    align-items: center;
-  }
-
-  .btn {
-    width: 100%;
-
-    max-width: 280px;
-  }
-
-  .onepage-cert-card {
-    display: block;
-  }
-
-  .onepage-cert-image {
-    height: 230px;
-  }
-
-  .project-image-wrap {
-    height: 250px;
-  }
-
-  .linkedin-post-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .linkedin-post-card > img {
-    height: 230px;
-  }
-
-  .onepage-contact-form {
-    padding: 22px;
-  }
-
-  .side-menu {
-    width: 100%;
-    max-width: 320px;
-
-    padding: 25px;
-  }
-
-  .side-nav a {
-    font-size: 1.6rem;
-  }
-}
-
-/* =========================
-   SMALL MOBILE
-========================= */
-@media (max-width: 480px) {
-
-  .title {
-    font-size: 2.6rem;
-  }
-
-  .section-heading h2 {
-    font-size: 2.5rem;
-  }
-
-  .resume-about h3 {
-    font-size: 2.3rem;
-  }
-
-  .photo-card {
-    height: 390px;
-  }
-}
-/* =========================================
-   FINAL SIDE MENU DESIGN
-   Home / Resume / Projects / Certifications
-   LinkedIn / Contact
-========================================= */
-
-.side-nav{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.side-nav a{
-    display: flex;
-    align-items: center;
-    gap: 18px;
-
-    padding: 17px 18px;
-
-    font-family: 'Inter', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-
-    color: #d9ccb4;
-
-    border-bottom: 1px solid rgba(244,185,66,0.15);
-    border-radius: 10px;
-
-    transition: all 0.3s ease;
-}
-
-/* 01 02 03 04 05 06 */
-.side-nav a span{
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 800;
-
-    color: #f4b942;
-
-    min-width: 25px;
-}
-
-/* HOVER */
-.side-nav a:hover{
-    color: #f4b942;
-    background: rgba(244,185,66,0.08);
-
-    padding-left: 25px;
-}
-
-/* MOBILE */
-@media (max-width:700px){
-
-    .side-nav a{
-        font-size: 1.2rem;
-        font-weight: 700;
-        padding: 15px;
+    .certifications-page{
+        padding:
+            55px 15px
+            70px;
     }
 
-    .side-nav a span{
-        font-size: 0.8rem;
+    .certifications-header h1{
+        font-size:3rem;
     }
+
+    .cert-stats{
+        flex-direction:column;
+    }
+
+    .cert-stats div{
+        width:100%;
+    }
+
+    .certificate-image{
+        height:220px;
+    }
+
+    .featured-cert
+    .certificate-image{
+        height:220px;
+    }
+
+    .certificate-info{
+        padding:20px;
+    }
+
+    .certificate-top{
+        flex-direction:column;
+    }
+
+    .certificate-info h2{
+        font-size:1.5rem;
+    }
+
+    .certificate-cta{
+        padding:65px 20px;
+    }
+
+    .certificate-cta h2{
+        font-size:2.6rem;
+    }
+
 }
