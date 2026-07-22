@@ -7,93 +7,156 @@
 
   <title>Ezhilarasan P | Portfolio</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+  <!-- Font Awesome -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-<header class="navbar">
 
-  <div class="logo">EZHIL</div>
+<!-- =====================================================
+     TOP NAVBAR
+===================================================== -->
 
-  <nav>
-    <ul class="nav-links">
+<header class="onepage-navbar">
 
-      <li>
-        <a href="index.html" class="active">Home</a>
-      </li>
-
-      <li>
-        <a href="about.html">Resume</a>
-      </li>
-
-      <li>
-        <a href="projects.html">Projects</a>
-      </li>
-
-      <li>
-        <a href="certificates.html">Certifications</a>
-      </li>
-
-      <li>
-        <a href="linkedin.html">LinkedIn</a>
-      </li>
-
-    </ul>
-  </nav>
-
-  <a href="contact.html" class="contact-btn">
-    Contact Me
+  <a href="#home" class="onepage-logo">
+    PORTFOLIO
   </a>
+
+  <!-- HAMBURGER -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
 </header>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
 
-<main class="hero">
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="side-menu" id="sideMenu">
+
+  <div class="side-menu-header">
+
+    <h2>PORTFOLIO</h2>
+
+    <button class="close-menu" id="closeMenu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+  </div>
+
+
+  <nav class="side-nav">
+
+    <a href="#home">
+      <span>01</span>
+      Home
+    </a>
+
+    <a href="#resume">
+      <span>02</span>
+      Resume
+    </a>
+
+    <a href="#projects">
+      <span>03</span>
+      Projects
+    </a>
+
+    <a href="#certifications">
+      <span>04</span>
+      Certifications
+    </a>
+
+    <a href="#linkedin">
+      <span>05</span>
+      LinkedIn
+    </a>
+
+    <a href="#contact">
+      <span>06</span>
+      Contact
+    </a>
+
+  </nav>
+
+
+  <div class="side-socials">
+
+    <a href="https://www.linkedin.com/in/ezhilarasan-prabakaran-ezhil0369/"
+       target="_blank">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://github.com/Ezhilarasan0369"
+       target="_blank">
+      <i class="fa-brands fa-github"></i>
+    </a>
+
+    <a href="https://www.instagram.com/mr_criminal__rb"
+       target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://x.com/Ezhilarasan0369"
+       target="_blank">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+  </div>
+
+</aside>
+
+
+<!-- =====================================================
+     01 HOME
+===================================================== -->
+
+<section id="home" class="onepage-section home-section">
 
   <div class="bg-text">
     CLOUD<br>WORK
   </div>
 
 
-  <!-- LEFT -->
-
-  <section class="hero-left">
+  <div class="home-left">
 
     <div class="star">✦</div>
 
     <div class="photo-card">
-      <img src="ezhil.jpg"
-           alt="Ezhilarasan P">
+      <img src="ezhil.jpg" alt="Ezhilarasan P">
     </div>
 
     <p class="hero-desc">
-
       Passionate about networking, cloud computing,
       IT infrastructure and emerging technologies.
-
       Building my technical knowledge through projects,
       certifications and continuous learning.
-
     </p>
 
-  </section>
+  </div>
 
 
-  <!-- RIGHT -->
-
-  <section class="hero-right">
+  <div class="home-right">
 
     <p class="intro">
       Hello, I'm
@@ -104,13 +167,8 @@
     </h1>
 
     <h2 class="title">
-
       IT Infrastructure
-
-      <span>
-        Enthusiast
-      </span>
-
+      <span>Enthusiast</span>
     </h2>
 
 
@@ -127,80 +185,57 @@
       </p>
 
       <p>
-        <strong>Learning:</strong>
+        <strong>Skills:</strong>
         CCNA · Azure · Oracle Cloud · Linux
       </p>
 
     </div>
 
 
-    <!-- SOCIAL -->
-
     <div class="socials">
 
       <a href="https://www.linkedin.com/in/ezhilarasan-prabakaran-ezhil0369/"
-         target="_blank"
-         title="LinkedIn">
-
+         target="_blank">
         <i class="fa-brands fa-linkedin-in"></i>
-
       </a>
-
 
       <a href="https://github.com/Ezhilarasan0369"
-         target="_blank"
-         title="GitHub">
-
+         target="_blank">
         <i class="fa-brands fa-github"></i>
-
       </a>
 
-
-      <a href="contact.html"
-         title="Contact">
-
+      <a href="mailto:ezhilarasan0369@gmail.com">
         <i class="fa-solid fa-envelope"></i>
-
       </a>
 
     </div>
 
 
-    <!-- BUTTONS -->
-
     <div class="hero-buttons">
 
-      <a href="projects.html"
-         class="btn primary">
-
+      <a href="#projects" class="btn primary">
         View Projects
-
       </a>
-
 
       <a href="resume.docx"
          class="btn secondary"
          download>
-
         <i class="fa-solid fa-download"></i>
         Download Resume
-
       </a>
 
     </div>
 
-
-    <!-- STATS -->
 
     <div class="stats">
 
       <div class="stat">
         <h3>3+</h3>
-        <p>Major Projects</p>
+        <p>Projects</p>
       </div>
 
       <div class="stat">
-        <h3>5+</h3>
+        <h3>8+</h3>
         <p>Certifications</p>
       </div>
 
@@ -211,9 +246,1070 @@
 
     </div>
 
-  </section>
+  </div>
 
-</main>
+
+  <a href="#resume" class="next-section">
+    <span>Scroll</span>
+    <i class="fa-solid fa-arrow-down"></i>
+  </a>
+
+</section>
+
+
+<!-- =====================================================
+     02 RESUME
+===================================================== -->
+
+<section id="resume" class="onepage-section resume-onepage">
+
+  <div class="section-heading">
+
+    <p>ABOUT ME</p>
+
+    <h2>
+      My <span>Resume</span>
+    </h2>
+
+    <div class="heading-line"></div>
+
+  </div>
+
+
+  <div class="resume-onepage-top">
+
+    <div class="resume-about">
+
+      <h3>
+        Ezhilarasan P
+      </h3>
+
+      <p>
+        I am a final-year B.E. Electronics and Communication
+        Engineering student with a strong interest in
+        IT Infrastructure, Networking, Cloud Computing
+        and emerging technologies.
+      </p>
+
+      <p>
+        I continuously develop my technical knowledge
+        through certifications, practical projects and
+        hands-on learning.
+      </p>
+
+      <a href="resume.docx"
+         class="btn primary"
+         download>
+        <i class="fa-solid fa-download"></i>
+        Download Resume
+      </a>
+
+    </div>
+
+
+    <div class="resume-small-photo">
+
+      <img src="ezhil.jpg" alt="Ezhilarasan P">
+
+    </div>
+
+  </div>
+
+
+  <div class="onepage-card-grid">
+
+
+    <!-- EDUCATION -->
+
+    <article class="onepage-card">
+
+      <div class="card-icon">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+
+      <h3>Education</h3>
+
+      <span class="card-highlight">
+        2023 – 2027
+      </span>
+
+      <h4>
+        B.E. Electronics and Communication Engineering
+      </h4>
+
+      <p>
+        Karpagam Institute of Technology,
+        Coimbatore.
+      </p>
+
+    </article>
+
+
+    <!-- CAREER -->
+
+    <article class="onepage-card">
+
+      <div class="card-icon">
+        <i class="fa-solid fa-bullseye"></i>
+      </div>
+
+      <h3>Career Focus</h3>
+
+      <h4>
+        IT Infrastructure
+      </h4>
+
+      <p>
+        Interested in Networking, Cloud Computing,
+        System Administration and IT Infrastructure.
+      </p>
+
+    </article>
+
+
+    <!-- SKILLS -->
+
+    <article class="onepage-card">
+
+      <div class="card-icon">
+        <i class="fa-solid fa-laptop-code"></i>
+      </div>
+
+      <h3>Technical Skills</h3>
+
+      <div class="onepage-tags">
+
+        <span>Networking</span>
+        <span>CCNA</span>
+        <span>Azure</span>
+        <span>Oracle Cloud</span>
+        <span>Linux</span>
+        <span>Python</span>
+        <span>Java</span>
+        <span>IoT</span>
+
+      </div>
+
+    </article>
+
+
+    <!-- LEARNING -->
+
+    <article class="onepage-card">
+
+      <div class="card-icon">
+        <i class="fa-solid fa-book-open"></i>
+      </div>
+
+      <h3>Currently Learning</h3>
+
+      <div class="onepage-tags">
+
+        <span>Networking</span>
+        <span>Linux</span>
+        <span>Cloud</span>
+        <span>IT Infrastructure</span>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <a href="#projects" class="section-down">
+    Projects
+    <i class="fa-solid fa-arrow-down"></i>
+  </a>
+
+</section>
+
+
+<!-- =====================================================
+     03 PROJECTS
+===================================================== -->
+
+<section id="projects" class="onepage-section projects-onepage">
+
+  <div class="section-heading">
+
+    <p>MY WORK</p>
+
+    <h2>
+      Featured <span>Projects</span>
+    </h2>
+
+    <div class="heading-line"></div>
+
+  </div>
+
+
+  <div class="onepage-project-grid">
+
+
+    <!-- PROJECT 1 -->
+
+    <article class="onepage-project-card">
+
+      <div class="project-image-wrap">
+
+        <img src="smart-glove.png"
+             alt="Smart Glove Project">
+
+        <span>IoT / Wearable</span>
+
+      </div>
+
+
+      <div class="onepage-project-content">
+
+        <p class="project-number">
+          PROJECT 01
+        </p>
+
+        <h3>
+          Smart Glove with Integrated Sensors
+        </h3>
+
+        <p>
+          Wearable smart glove using flex sensors
+          to detect finger movements and gestures
+          for gesture-based applications.
+        </p>
+
+        <div class="onepage-tags">
+
+          <span>Arduino</span>
+          <span>Flex Sensor</span>
+          <span>IoT</span>
+          <span>Embedded Systems</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- PROJECT 2 -->
+
+    <article class="onepage-project-card">
+
+      <div class="project-image-wrap">
+
+        <img src="gesture-recognition.png"
+             alt="Gesture Recognition Project">
+
+        <span>Computer Vision</span>
+
+      </div>
+
+
+      <div class="onepage-project-content">
+
+        <p class="project-number">
+          PROJECT 02
+        </p>
+
+        <h3>
+          Gesture Recognition System
+        </h3>
+
+        <p>
+          Real-time hand gesture recognition using
+          webcam-based computer vision for touchless
+          human-computer interaction.
+        </p>
+
+        <div class="onepage-tags">
+
+          <span>Python</span>
+          <span>OpenCV</span>
+          <span>MediaPipe</span>
+          <span>Computer Vision</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <a href="#certifications" class="section-down">
+    Certifications
+    <i class="fa-solid fa-arrow-down"></i>
+  </a>
+
+</section>
+
+
+<!-- =====================================================
+     04 CERTIFICATIONS
+===================================================== -->
+
+<section id="certifications"
+         class="onepage-section certifications-onepage">
+
+  <div class="section-heading">
+
+    <p>MY CREDENTIALS</p>
+
+    <h2>
+      Professional <span>Certifications</span>
+    </h2>
+
+    <div class="heading-line"></div>
+
+    <p class="section-description">
+      Certifications in networking, cloud computing,
+      DevOps, AI and emerging technologies.
+    </p>
+
+  </div>
+
+
+  <div class="onepage-cert-grid">
+
+
+    <!-- AZURE -->
+
+    <article class="onepage-cert-card">
+
+      <div class="onepage-cert-image">
+
+        <img src="azure-certificate.png"
+             alt="Azure Fundamentals">
+
+      </div>
+
+      <div class="onepage-cert-content">
+
+        <span>Microsoft</span>
+
+        <h3>
+          Azure Fundamentals (AZ-900)
+        </h3>
+
+        <p>
+          Cloud concepts, Azure services,
+          security and governance.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- CCNA INTRO -->
+
+    <article class="onepage-cert-card">
+
+      <div class="onepage-cert-image">
+
+        <img src="ccna-introduction.png"
+             alt="CCNA Introduction to Networks">
+
+      </div>
+
+      <div class="onepage-cert-content">
+
+        <span>Cisco Networking Academy</span>
+
+        <h3>
+          CCNA: Introduction to Networks
+        </h3>
+
+        <p>
+          Networking fundamentals and foundational
+          Cisco networking concepts.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- CCNA SRWE -->
+
+    <article class="onepage-cert-card">
+
+      <div class="onepage-cert-image">
+
+        <img src="ccna-switching-routing.png"
+             alt="CCNA Switching Routing Wireless">
+
+      </div>
+
+      <div class="onepage-cert-content">
+
+        <span>Cisco Networking Academy</span>
+
+        <h3>
+          CCNA: Switching, Routing & Wireless
+        </h3>
+
+        <p>
+          Switching, routing, VLAN and
+          wireless networking concepts.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- CCNA ENTERPRISE -->
+
+    <article class="onepage-cert-card">
+
+      <div class="onepage-cert-image">
+
+        <img src="ccna-enterprise.png"
+             alt="CCNA Enterprise Networking">
+
+      </div>
+
+      <div class="onepage-cert-content">
+
+        <span>Cisco Networking Academy</span>
+
+        <h3>
+          Enterprise Networking, Security & Automation
+        </h3>
+
+        <p>
+          Enterprise networking, network security
+          and automation concepts.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- NETWORKING BASICS -->
+
+    <article class="onepage-cert-card">
+
+      <div class="onepage-cert-image">
+
+        <img src="networking-basics.png"
+             alt="Networking Basics">
+
+      </div>
+
+      <div class="onepage-cert-content">
+
+        <span>Cisco Networking Academy</span>
+
+        <h3>
+          Networking Basics
+        </h3>
+
+        <p>
+          Fundamental networking concepts
+          and infrastructure basics.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- ORACLE -->
+
+    <article class="onepage-cert-card">
+
+      <div class="onepage-cert-image">
+
+        <img src="oracle-certificate.png"
+             alt="Oracle DevOps">
+
+      </div>
+
+      <div class="onepage-cert-content">
+
+        <span>Oracle University</span>
+
+        <h3>
+          OCI 2025 DevOps Professional
+        </h3>
+
+        <p>
+          Oracle Cloud Infrastructure and
+          cloud-native DevOps practices.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- GOOGLE -->
+
+    <article class="onepage-cert-card">
+
+      <div class="onepage-cert-image">
+
+        <img src="google-ai-certificate.png"
+             alt="Google Introduction to AI">
+
+      </div>
+
+      <div class="onepage-cert-content">
+
+        <span>Google / Coursera</span>
+
+        <h3>
+          Introduction to AI
+        </h3>
+
+        <p>
+          Artificial Intelligence fundamentals
+          and practical AI concepts.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- NOVITECH -->
+
+    <article class="onepage-cert-card">
+
+      <div class="onepage-cert-image">
+
+        <img src="novitech-data-mastery.png"
+             alt="Data Mastery">
+
+      </div>
+
+      <div class="onepage-cert-content">
+
+        <span>NoviTech</span>
+
+        <h3>
+          Bootcamp on Data Mastery
+        </h3>
+
+        <p>
+          Skill development program focused
+          on data and technology.
+        </p>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <a href="#linkedin" class="section-down">
+    LinkedIn
+    <i class="fa-solid fa-arrow-down"></i>
+  </a>
+
+</section>
+
+
+<!-- =====================================================
+     05 LINKEDIN
+===================================================== -->
+
+<section id="linkedin"
+         class="onepage-section linkedin-onepage">
+
+  <div class="section-heading">
+
+    <p>PROFESSIONAL UPDATES</p>
+
+    <h2>
+      Recent <span>LinkedIn Posts</span>
+    </h2>
+
+    <div class="heading-line"></div>
+
+  </div>
+
+
+  <div class="linkedin-profile-button">
+
+    <a href="https://www.linkedin.com/in/ezhilarasan-prabakaran-ezhil0369/"
+       target="_blank"
+       class="btn primary">
+
+      <i class="fa-brands fa-linkedin"></i>
+      View LinkedIn Profile
+
+    </a>
+
+  </div>
+
+
+  <div class="linkedin-post-grid">
+
+
+    <!-- POST 1 -->
+
+    <article class="linkedin-post-card">
+
+      <img src="azure-certificate.png"
+           alt="Azure LinkedIn Post">
+
+      <div>
+
+        <span>
+          <i class="fa-brands fa-linkedin"></i>
+          Certification
+        </span>
+
+        <h3>
+          Microsoft Azure Fundamentals
+        </h3>
+
+        <p>
+          Sharing my Microsoft Azure Fundamentals
+          certification achievement.
+        </p>
+
+        <a href="https://www.linkedin.com/posts/ezhilarasan-prabakaran-ezhil0369_certificate-activity-7439891215870984192-npHC"
+           target="_blank">
+          View Post
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- POST 2 -->
+
+    <article class="linkedin-post-card">
+
+      <img src="oracle-certificate.png"
+           alt="Oracle LinkedIn Post">
+
+      <div>
+
+        <span>
+          <i class="fa-brands fa-linkedin"></i>
+          Certification
+        </span>
+
+        <h3>
+          Oracle Cloud DevOps Professional
+        </h3>
+
+        <p>
+          Sharing my Oracle Cloud Infrastructure
+          DevOps Professional achievement.
+        </p>
+
+        <a href="https://www.linkedin.com/posts/ezhilarasan-prabakaran-ezhil0369_oracle-cloud-certificate-activity-7392563174409101312-w4ws"
+           target="_blank">
+          View Post
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- POST 3 -->
+
+    <article class="linkedin-post-card">
+
+      <img src="google-ai-certificate.png"
+           alt="Google AI LinkedIn Post">
+
+      <div>
+
+        <span>
+          <i class="fa-brands fa-linkedin"></i>
+          Certification
+        </span>
+
+        <h3>
+          Google Introduction to AI
+        </h3>
+
+        <p>
+          Sharing my Google Introduction to AI
+          learning achievement.
+        </p>
+
+        <a href="https://www.linkedin.com/posts/ezhilarasan-prabakaran-ezhil0369_coursera-certificate-activity-7391464523372826624-i1_Z"
+           target="_blank">
+          View Post
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <a href="#contact" class="section-down">
+    Contact
+    <i class="fa-solid fa-arrow-down"></i>
+  </a>
+
+</section>
+
+
+<!-- =====================================================
+     06 CONTACT
+===================================================== -->
+
+<section id="contact"
+         class="onepage-section contact-onepage">
+
+  <div class="section-heading">
+
+    <p>GET IN TOUCH</p>
+
+    <h2>
+      Let's <span>Connect</span>
+    </h2>
+
+    <div class="heading-line"></div>
+
+  </div>
+
+
+  <div class="onepage-contact-grid">
+
+
+    <!-- CONTACT INFO -->
+
+    <div class="contact-onepage-left">
+
+      <h3>
+        Let's Build Something Together
+      </h3>
+
+      <p>
+        I'm interested in opportunities related to
+        IT Infrastructure, Networking, Cloud Computing
+        and emerging technologies.
+      </p>
+
+
+      <div class="onepage-contact-links">
+
+
+        <!-- EMAIL -->
+
+        <a href="mailto:ezhilarasan0369@gmail.com">
+
+          <i class="fa-solid fa-envelope"></i>
+
+          <div>
+            <span>Email</span>
+            <strong>
+              ezhilarasan0369@gmail.com
+            </strong>
+          </div>
+
+        </a>
+
+
+        <!-- LINKEDIN -->
+
+        <a href="https://www.linkedin.com/in/ezhilarasan-prabakaran-ezhil0369/"
+           target="_blank">
+
+          <i class="fa-brands fa-linkedin-in"></i>
+
+          <div>
+            <span>LinkedIn</span>
+            <strong>
+              Ezhilarasan P
+            </strong>
+          </div>
+
+        </a>
+
+
+        <!-- GITHUB -->
+
+        <a href="https://github.com/Ezhilarasan0369"
+           target="_blank">
+
+          <i class="fa-brands fa-github"></i>
+
+          <div>
+            <span>GitHub</span>
+            <strong>
+              Ezhilarasan0369
+            </strong>
+          </div>
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a href="https://www.instagram.com/mr_criminal__rb"
+           target="_blank">
+
+          <i class="fa-brands fa-instagram"></i>
+
+          <div>
+            <span>Instagram</span>
+            <strong>
+              @mr_criminal__rb
+            </strong>
+          </div>
+
+        </a>
+
+
+        <!-- X -->
+
+        <a href="https://x.com/Ezhilarasan0369"
+           target="_blank">
+
+          <i class="fa-brands fa-x-twitter"></i>
+
+          <div>
+            <span>X</span>
+            <strong>
+              @Ezhilarasan0369
+            </strong>
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- CONTACT FORM -->
+
+    <form class="onepage-contact-form"
+          action="mailto:ezhilarasan0369@gmail.com"
+          method="post"
+          enctype="text/plain">
+
+      <div>
+
+        <label for="name">
+          Name
+        </label>
+
+        <input id="name"
+               type="text"
+               name="Name"
+               placeholder="Your name"
+               required>
+
+      </div>
+
+
+      <div>
+
+        <label for="email">
+          Email
+        </label>
+
+        <input id="email"
+               type="email"
+               name="Email"
+               placeholder="Your email"
+               required>
+
+      </div>
+
+
+      <div>
+
+        <label for="subject">
+          Subject
+        </label>
+
+        <input id="subject"
+               type="text"
+               name="Subject"
+               placeholder="Subject"
+               required>
+
+      </div>
+
+
+      <div>
+
+        <label for="message">
+          Message
+        </label>
+
+        <textarea id="message"
+                  name="Message"
+                  rows="6"
+                  placeholder="Write your message..."
+                  required></textarea>
+
+      </div>
+
+
+      <button type="submit">
+
+        <i class="fa-solid fa-paper-plane"></i>
+        Send Message
+
+      </button>
+
+    </form>
+
+  </div>
+
+
+  <!-- SOCIAL ICONS -->
+
+  <div class="contact-bottom-socials">
+
+    <a href="https://www.linkedin.com/in/ezhilarasan-prabakaran-ezhil0369/"
+       target="_blank">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://github.com/Ezhilarasan0369"
+       target="_blank">
+      <i class="fa-brands fa-github"></i>
+    </a>
+
+    <a href="https://www.instagram.com/mr_criminal__rb"
+       target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://x.com/Ezhilarasan0369"
+       target="_blank">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <a href="mailto:ezhilarasan0369@gmail.com">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+
+  </div>
+
+
+  <a href="#home" class="back-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to Top
+
+  </a>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="onepage-footer">
+
+  <p>
+    © 2026 Ezhilarasan P. Built with HTML & CSS.
+  </p>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+  const hamburger =
+    document.getElementById("hamburger");
+
+  const sideMenu =
+    document.getElementById("sideMenu");
+
+  const menuOverlay =
+    document.getElementById("menuOverlay");
+
+  const closeMenu =
+    document.getElementById("closeMenu");
+
+
+  function openMenu(){
+
+    sideMenu.classList.add("open");
+
+    menuOverlay.classList.add("show");
+
+    document.body.classList.add("menu-open");
+
+  }
+
+
+  function closeNavigation(){
+
+    sideMenu.classList.remove("open");
+
+    menuOverlay.classList.remove("show");
+
+    document.body.classList.remove("menu-open");
+
+  }
+
+
+  hamburger.addEventListener(
+    "click",
+    openMenu
+  );
+
+
+  closeMenu.addEventListener(
+    "click",
+    closeNavigation
+  );
+
+
+  menuOverlay.addEventListener(
+    "click",
+    closeNavigation
+  );
+
+
+  document
+    .querySelectorAll(".side-nav a")
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        closeNavigation
+      );
+
+    });
+
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if(event.key === "Escape"){
+        closeNavigation();
+      }
+
+    }
+  );
+
+</script>
+
 
 </body>
 </html>
