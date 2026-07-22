@@ -1044,3 +1044,67 @@ img {
     height: 390px;
   }
 }
+/* =========================================
+   FINAL SIDE MENU DESIGN
+   Home / Resume / Projects / Certifications
+   LinkedIn / Contact
+========================================= */
+
+.side-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.side-nav a{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 17px 18px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+    color: #d9ccb4;
+
+    border-bottom: 1px solid rgba(244,185,66,0.15);
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+}
+
+/* 01 02 03 04 05 06 */
+.side-nav a span{
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    color: #f4b942;
+
+    min-width: 25px;
+}
+
+/* HOVER */
+.side-nav a:hover{
+    color: #f4b942;
+    background: rgba(244,185,66,0.08);
+
+    padding-left: 25px;
+}
+
+/* MOBILE */
+@media (max-width:700px){
+
+    .side-nav a{
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding: 15px;
+    }
+
+    .side-nav a span{
+        font-size: 0.8rem;
+    }
+}
