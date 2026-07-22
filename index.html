@@ -1,212 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Ezhilarasan P | Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="navbar">
-
-  <div class="logo">EZHIL</div>
+  <a href="index.html" class="logo">PORTFOLIO</a>
 
   <nav>
     <ul class="nav-links">
-
-      <li>
-        <a href="index.html" class="active">Home</a>
-      </li>
-
-      <li>
-        <a href="about.html">Resume</a>
-      </li>
-
-      <li>
-        <a href="projects.html">Projects</a>
-      </li>
-
-      <li>
-        <a href="certificates.html">Certifications</a>
-      </li>
-
-      <li>
-        <a href="linkedin.html">LinkedIn</a>
-      </li>
-
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certificates.html">Certifications</a></li>
+      <li><a href="linkedin.html">LinkedIn</a></li>
     </ul>
   </nav>
 
-  <a href="contact.html" class="contact-btn">
-    Contact Me
-  </a>
-
+  <a href="contact.html" class="contact-btn">Contact Me</a>
 </header>
 
 
-<!-- HERO -->
+<main class="home-page">
 
-<main class="hero">
+  <section class="home-hero">
 
-  <div class="bg-text">
-    CLOUD<br>WORK
-  </div>
+    <div class="home-left">
 
+      <div class="cloud-word">CLOUD</div>
+      <div class="spark">✦</div>
 
-  <!-- LEFT -->
+      <img src="ezhil.jpg" alt="Ezhilarasan P" class="home-photo">
 
-  <section class="hero-left">
-
-    <div class="star">✦</div>
-
-    <div class="photo-card">
-      <img src="ezhil.jpg"
-           alt="Ezhilarasan P">
-    </div>
-
-    <p class="hero-desc">
-
-      Passionate about networking, cloud computing,
-      IT infrastructure and emerging technologies.
-
-      Building my technical knowledge through projects,
-      certifications and continuous learning.
-
-    </p>
-
-  </section>
-
-
-  <!-- RIGHT -->
-
-  <section class="hero-right">
-
-    <p class="intro">
-      Hello, I'm
-    </p>
-
-    <h1 class="name">
-      Ezhilarasan P
-    </h1>
-
-    <h2 class="title">
-
-      IT Infrastructure
-
-      <span>
-        Enthusiast
-      </span>
-
-    </h2>
-
-
-    <div class="info">
-
-      <p>
-        <strong>Degree:</strong>
-        B.E. Electronics and Communication Engineering
-      </p>
-
-      <p>
-        <strong>Focus:</strong>
-        Networking · Cloud · IT Infrastructure
-      </p>
-
-      <p>
-        <strong>Learning:</strong>
-        CCNA · Azure · Oracle Cloud · Linux
+      <p class="home-description">
+        Passionate about networking, cloud computing, IT infrastructure
+        and emerging technologies. Building my technical knowledge through
+        projects, certifications and continuous learning.
       </p>
 
     </div>
 
 
-    <!-- SOCIAL -->
+    <div class="home-content">
 
-    <div class="socials">
+      <p class="hello">Hello, I'm</p>
 
-      <a href="https://www.linkedin.com/in/ezhilarasan-prabakaran-ezhil0369/"
-         target="_blank"
-         title="LinkedIn">
+      <h2>Ezhilarasan P</h2>
 
-        <i class="fa-brands fa-linkedin-in"></i>
+      <h1>
+        IT Infrastructure
+        <span>Enthusiast</span>
+      </h1>
 
-      </a>
-
-
-      <a href="https://github.com/Ezhilarasan0369"
-         target="_blank"
-         title="GitHub">
-
-        <i class="fa-brands fa-github"></i>
-
-      </a>
-
-
-      <a href="contact.html"
-         title="Contact">
-
-        <i class="fa-solid fa-envelope"></i>
-
-      </a>
-
-    </div>
-
-
-    <!-- BUTTONS -->
-
-    <div class="hero-buttons">
-
-      <a href="projects.html"
-         class="btn primary">
-
-        View Projects
-
-      </a>
-
-
-      <a href="resume.docx"
-         class="btn secondary"
-         download>
-
-        <i class="fa-solid fa-download"></i>
-        Download Resume
-
-      </a>
-
-    </div>
-
-
-    <!-- STATS -->
-
-    <div class="stats">
-
-      <div class="stat">
-        <h3>3+</h3>
-        <p>Major Projects</p>
+      <div class="home-info">
+        <p><strong>Degree:</strong> B.E. Electronics and Communication Engineering</p>
+        <p><strong>Focus:</strong> Networking · Cloud · IT Infrastructure</p>
+        <p><strong>Learning:</strong> CCNA · Azure · Oracle Cloud · Linux</p>
       </div>
 
-      <div class="stat">
-        <h3>5+</h3>
-        <p>Certifications</p>
+
+      <div class="social-icons">
+
+        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://github.com/Ezhilarasan0369" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="mailto:ezhilarasan0369@gmail.com" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
       </div>
 
-      <div class="stat">
-        <h3>4+</h3>
-        <p>Cloud & Network Skills</p>
+
+      <div class="home-buttons">
+
+        <a href="projects.html" class="btn primary">
+          View Projects
+        </a>
+
+        <a href="resume.docx" class="btn outline" download>
+          <i class="fa-solid fa-download"></i>
+          Download Resume
+        </a>
+
+      </div>
+
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong>3+</strong>
+          <span>Major Projects</span>
+        </div>
+
+        <div class="stat">
+          <strong>8+</strong>
+          <span>Certifications</span>
+        </div>
+
+        <div class="stat">
+          <strong>4+</strong>
+          <span>Cloud & Network Skills</span>
+        </div>
+
       </div>
 
     </div>
