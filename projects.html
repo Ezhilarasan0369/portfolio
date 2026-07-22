@@ -1,118 +1,158 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Ezhilarasan</title>
+
+  <title>Projects | Ezhilarasan P</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="navbar">
+
   <div class="logo">EZHIL</div>
 
   <nav>
     <ul class="nav-links">
+
       <li><a href="index.html">Home</a></li>
+
       <li><a href="about.html">Resume</a></li>
-      <li><a href="projects.html" class="active">Work</a></li>
-      <li><a href="contact.html">Contact</a></li>
+
+      <li><a href="projects.html" class="active">Projects</a></li>
+
+      <li><a href="certificates.html">Certifications</a></li>
+
+      <li><a href="linkedin.html">LinkedIn</a></li>
+
     </ul>
   </nav>
 
-<a href="contact.html" class="contact-btn">Get in touch!</a>
+  <a href="contact.html" class="contact-btn">
+    Contact Me
+  </a>
 
 </header>
 
+
 <main class="projects-page">
 
-  <section class="page-title">
-    <h1>Featured Work</h1>
-    <p>Projects, achievements, and technical contributions</p>
-  </section>
+  <div class="page-title">
 
-  <section class="project-grid">
+    <h1>My Projects</h1>
 
-```
-<article class="project-card">
-  <div class="project-header">
-    <span class="project-tag">Computer Vision</span>
-    <span class="project-year">2026</span>
+    <p>
+      Practical projects combining electronics,
+      IoT, computer vision and intelligent systems.
+    </p>
+
   </div>
 
-  <h2>Gesture Recognition System</h2>
 
-  <p>
-    Developed a gesture recognition system that identifies and interprets
-    human hand gestures using computer vision techniques, enabling
-    intuitive human-computer interaction without physical input devices.
-  </p>
+  <div class="project-grid">
 
-  <div class="project-tech">
-    <span>Python</span>
-    <span>OpenCV</span>
-    <span>MediaPipe</span>
-    <span>Machine Learning</span>
+
+    <!-- SMART GLOVE -->
+
+    <article class="project-card">
+
+      <div class="project-header">
+
+        <span class="project-tag">
+          IoT / Wearable
+        </span>
+
+        <span class="project-year">
+          2026
+        </span>
+
+      </div>
+
+      <img src="smart-glove.png"
+           alt="Smart Glove"
+           style="width:100%; height:300px; object-fit:cover; border-radius:20px; margin-bottom:25px;">
+
+      <h2>
+        Smart Glove with Integrated Sensors
+      </h2>
+
+      <p>
+        A wearable smart glove system using flex sensors
+        to detect finger movements and gestures.
+        The system converts physical hand movements
+        into measurable sensor data for gesture-based
+        applications.
+      </p>
+
+      <div class="project-tech">
+
+        <span>Flex Sensor</span>
+        <span>Arduino</span>
+        <span>Embedded Systems</span>
+        <span>Wearable Technology</span>
+
+      </div>
+
+    </article>
+
+
+    <!-- GESTURE RECOGNITION -->
+
+    <article class="project-card">
+
+      <div class="project-header">
+
+        <span class="project-tag">
+          Computer Vision
+        </span>
+
+        <span class="project-year">
+          2026
+        </span>
+
+      </div>
+
+      <img src="gesture-recognition.png"
+           alt="Gesture Recognition System"
+           style="width:100%; height:300px; object-fit:cover; border-radius:20px; margin-bottom:25px;">
+
+      <h2>
+        Gesture Recognition System
+      </h2>
+
+      <p>
+        A computer-vision based hand gesture recognition
+        system that detects hand movements using a webcam.
+
+        The project uses real-time image processing for
+        touchless human-computer interaction.
+      </p>
+
+      <div class="project-tech">
+
+        <span>Python</span>
+        <span>OpenCV</span>
+        <span>MediaPipe</span>
+        <span>Computer Vision</span>
+
+      </div>
+
+    </article>
+
   </div>
-</article>
-
-<article class="project-card">
-  <div class="project-header">
-    <span class="project-tag">Embedded IoT</span>
-    <span class="project-year">2026</span>
-  </div>
-
-  <h2>Hand Movement Counter Glove</h2>
-
-  <p>
-    Designed and developed a smart glove system to track and count
-    hand and finger movements using embedded sensors, with real-time
-    monitoring and movement analysis.
-  </p>
-
-  <div class="project-tech">
-    <span>Arduino</span>
-    <span>Sensors</span>
-    <span>IoT</span>
-    <span>Embedded Systems</span>
-  </div>
-</article>
-```
-
-  </section>
-
-  <section class="achievement-section">
-    <h2>Achievements</h2>
-
-```
-<div class="achievement-grid">
-  <div class="achievement-card">
-    <div class="achievement-icon">🏆</div>
-    <h3>Smart India Hackathon 2026</h3>
-    <p>Semi Finalist</p>
-  </div>
-
-  <div class="achievement-card">
-    <div class="achievement-icon">⭐</div>
-    <h3>Best Contributor Award</h3>
-    <p>Project contribution recognition</p>
-  </div>
-
-  <div class="achievement-card">
-    <div class="achievement-icon">🎯</div>
-    <h3>Varnam Event</h3>
-    <p>Intranational event participant</p>
-  </div>
-</div>
-```
-
-  </section>
 
 </main>
 
