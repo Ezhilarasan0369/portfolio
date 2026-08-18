@@ -1,130 +1,1686 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ezhilarasan P | Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Ezhilarasan P | Portfolio</title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
 <header class="navbar">
-  <a href="index.html" class="logo">PORTFOLIO</a>
 
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="certificates.html">Certifications</a></li>
-      <li><a href="linkedin.html">LinkedIn</a></li>
-    </ul>
-  </nav>
 
-  <a href="contact.html" class="contact-btn">Contact Me</a>
+    <div class="navbar-brand">
+
+
+        <button
+            type="button"
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Open menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <a
+            href="index.html"
+            class="logo">
+
+            PORTFOLIO
+
+        </a>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <ul class="nav-links">
+
+
+            <!-- HOME -->
+
+            <li>
+
+                <a
+                    href="index.html"
+                    class="active">
+
+                    Home
+
+                </a>
+
+            </li>
+
+
+
+            <!-- RESUME -->
+
+            <li>
+
+                <a href="about.html">
+
+                    Resume
+
+                </a>
+
+            </li>
+
+
+
+            <!-- PROJECTS -->
+
+            <li>
+
+                <a href="projects.html">
+
+                    Projects
+
+                </a>
+
+            </li>
+
+
+
+            <!-- VYNTRA AI -->
+
+            <li>
+
+                <a href="vyntra-ai.html">
+
+                    Vyntra AI
+
+                </a>
+
+            </li>
+
+
+
+            <!-- CERTIFICATIONS -->
+
+            <li>
+
+                <a href="certificates.html">
+
+                    Certifications & Awards
+
+                </a>
+
+            </li>
+
+
+
+            <!-- LINKEDIN -->
+
+            <li>
+
+                <a href="linkedin.html">
+
+                    LinkedIn
+
+                </a>
+
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- CONTACT -->
+
+    <a
+        href="contact.html"
+        class="contact-btn">
+
+        Contact Me
+
+    </a>
+
+
 </header>
 
 
+
+<!-- =====================================================
+     MENU OVERLAY
+===================================================== -->
+
+<div
+    class="menu-overlay"
+    id="menuOverlay">
+</div>
+
+
+
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
+
+<aside
+    class="side-menu"
+    id="sideMenu">
+
+
+    <button
+        type="button"
+        class="close-menu"
+        id="closeMenu"
+        aria-label="Close menu">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+
+    <div class="side-menu-title">
+
+        <span>
+            EZHILARASAN'S
+        </span>
+
+        <h2>
+            PORTFOLIO
+        </h2>
+
+    </div>
+
+
+
+    <div class="side-menu-links">
+
+
+        <!-- HOME -->
+
+        <a
+            href="index.html"
+            class="active">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+
+
+        <!-- RESUME -->
+
+        <a href="about.html">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>
+                Resume
+            </span>
+
+        </a>
+
+
+
+        <!-- PROJECTS -->
+
+        <a href="projects.html">
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+            <span>
+                Projects
+            </span>
+
+        </a>
+
+
+
+        <!-- VYNTRA AI -->
+
+        <a href="vyntra-ai.html">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <span>
+                Vyntra AI
+            </span>
+
+        </a>
+
+
+
+        <!-- CERTIFICATIONS -->
+
+        <a href="certificates.html">
+
+            <i class="fa-solid fa-certificate"></i>
+
+            <span>
+                Certifications & Awards
+            </span>
+
+        </a>
+
+
+
+        <!-- LINKEDIN -->
+
+        <a href="linkedin.html">
+
+            <i class="fa-brands fa-linkedin-in"></i>
+
+            <span>
+                LinkedIn
+            </span>
+
+        </a>
+
+
+
+        <!-- CONTACT -->
+
+        <a href="contact.html">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>
+                Contact Me
+            </span>
+
+        </a>
+
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     HOME PAGE
+===================================================== -->
+
 <main class="home-page">
 
-  <section class="home-hero">
 
-    <div class="home-left">
-
-      <div class="cloud-word">CLOUD</div>
-      <div class="spark">✦</div>
-
-      <img src="ezhil.jpg" alt="Ezhilarasan P" class="home-photo">
-
-      <p class="home-description">
-        Passionate about networking, cloud computing, IT infrastructure
-        and emerging technologies. Building my technical knowledge through
-        projects, certifications and continuous learning.
-      </p>
-
-    </div>
+    <section class="home-hero">
 
 
-    <div class="home-content">
+        <!-- =================================================
+             LEFT SIDE
+        ================================================= -->
 
-      <p class="hello">Hello, I'm</p>
-
-      <h2>Ezhilarasan P</h2>
-
-      <h1>
-        IT Infrastructure
-        <span>Enthusiast</span>
-      </h1>
-
-      <div class="home-info">
-        <p><strong>Degree:</strong> B.E. Electronics and Communication Engineering</p>
-        <p><strong>Focus:</strong> Networking · Cloud · IT Infrastructure</p>
-        <p><strong>Learning:</strong> CCNA · Azure · Oracle Cloud · Linux</p>
-      </div>
+        <div class="home-left">
 
 
-      <div class="social-icons">
+            <div class="cloud-word">
 
-        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
+                CLOUD
 
-        <a href="https://github.com/Ezhilarasan0369" target="_blank" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-
-        <a href="mailto:ezhilarasan0369@gmail.com" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-
-      </div>
+            </div>
 
 
-      <div class="home-buttons">
+            <div class="spark">
 
-        <a href="projects.html" class="btn primary">
-          View Projects
-        </a>
+                ✦
 
-        <a href="resume.docx" class="btn outline" download>
-          <i class="fa-solid fa-download"></i>
-          Download Resume
-        </a>
-
-      </div>
+            </div>
 
 
-      <div class="stats">
 
-        <div class="stat">
-          <strong>3+</strong>
-          <span>Major Projects</span>
+            <img
+                src="ezhilarasan.jpg"
+                alt="Ezhilarasan P"
+                class="home-photo">
+
+
+
+            <p class="home-description">
+
+                Passionate about networking, cloud computing,
+                IT infrastructure and emerging technologies.
+                Building my technical knowledge through
+                projects, certifications and continuous learning.
+
+            </p>
+
+
         </div>
 
-        <div class="stat">
-          <strong>8+</strong>
-          <span>Certifications</span>
+
+
+        <!-- =================================================
+             RIGHT SIDE
+        ================================================= -->
+
+        <div class="home-content">
+
+
+            <p class="hello">
+
+                Hello, I'm
+
+            </p>
+
+
+
+            <h2>
+
+                Ezhilarasan P
+
+            </h2>
+
+
+
+            <h1>
+
+                IT Infrastructure & Networking
+
+                <span>
+
+                    Enthusiast
+
+                </span>
+
+            </h1>
+
+
+
+            <!-- INFO -->
+
+            <div class="home-info">
+
+
+                <p>
+
+                    <strong>
+                        Degree:
+                    </strong>
+
+                    B.E. Electronics and Communication Engineering
+
+                </p>
+
+
+
+                <p>
+
+                    <strong>
+                        Focus:
+                    </strong>
+
+                    Networking · Cloud · IT Infrastructure
+
+                </p>
+
+
+
+                <p>
+
+                    <strong>
+                        Learning:
+                    </strong>
+
+                    CCNA · Azure · Networking · Linux
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SOCIAL ICONS
+            ================================================= -->
+
+            <div class="social-icons">
+
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+
+
+                <a
+                    href="https://github.com/Ezhilarasan0369"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+
+
+                <a
+                    href="mailto:ezhilarasan0369@gmail.com"
+                    aria-label="Email">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STATS
+            ================================================= -->
+
+            <div class="stats">
+
+
+                <div class="stat">
+
+                    <strong>
+                        3+
+                    </strong>
+
+                    <span>
+                        Major Projects
+                    </span>
+
+                </div>
+
+
+
+                <div class="stat">
+
+                    <strong>
+                        8+
+                    </strong>
+
+                    <span>
+                        Certifications
+                    </span>
+
+                </div>
+
+
+
+                <div class="stat">
+
+                    <strong>
+                        4+
+                    </strong>
+
+                    <span>
+                        Cloud & Network Skills
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
         </div>
 
-        <div class="stat">
-          <strong>4+</strong>
-          <span>Cloud & Network Skills</span>
-        </div>
 
-      </div>
+    </section>
 
-    </div>
-
-  </section>
 
 </main>
 
+
+
+<!-- =====================================================
+     VYNTRA AI FLOATING ASSISTANT
+===================================================== -->
+
+<div class="vyntra-ai">
+
+
+    <!-- =================================================
+         CHAT WINDOW
+    ================================================= -->
+
+    <div
+        class="vyntra-chat"
+        id="vyntraChat">
+
+
+        <!-- HEADER -->
+
+        <div class="vyntra-chat-header">
+
+
+            <div class="vyntra-ai-profile">
+
+
+                <div class="vyntra-ai-avatar">
+
+                    <img
+                        src="vyntra-ai.png"
+                        alt="Vyntra AI">
+
+                </div>
+
+
+
+                <div>
+
+
+                    <div class="vyntra-ai-name">
+
+                        Vyntra AI
+
+                    </div>
+
+
+
+                    <div class="vyntra-ai-status">
+
+                        <span></span>
+
+                        AI Portfolio Assistant
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CLOSE -->
+
+            <button
+                type="button"
+                class="vyntra-close"
+                id="vyntraClose"
+                aria-label="Close Vyntra AI">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MESSAGES
+        ================================================= -->
+
+        <div
+            class="vyntra-messages"
+            id="vyntraMessages">
+
+
+            <!-- WELCOME -->
+
+            <div class="vyntra-message bot">
+
+                👋 Hi! I'm
+
+                <strong>
+                    Vyntra AI
+                </strong>.
+
+                <br><br>
+
+                I'm Ezhilarasan's AI Portfolio Assistant.
+
+                <br><br>
+
+                I can help you explore his
+
+                <strong>
+                    projects, skills,
+                    certifications and experience.
+                </strong>
+
+            </div>
+
+
+
+            <!-- QUICK QUESTIONS -->
+
+            <div class="vyntra-suggestions">
+
+
+                <button
+                    type="button"
+                    class="vyntra-suggestion"
+                    data-question="Tell me about Ezhilarasan">
+
+                    👤 Tell me about Ezhilarasan
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="vyntra-suggestion"
+                    data-question="Show me his projects">
+
+                    🚀 Show his projects
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="vyntra-suggestion"
+                    data-question="What certifications does he have?">
+
+                    🏆 Certifications
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="vyntra-suggestion"
+                    data-question="What are his technical skills?">
+
+                    💻 Technical Skills
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             INPUT
+        ================================================= -->
+
+        <div class="vyntra-input-area">
+
+
+            <input
+                type="text"
+                id="vyntraInput"
+                class="vyntra-input"
+                placeholder="Ask about Ezhilarasan..."
+                autocomplete="off">
+
+
+
+            <button
+                type="button"
+                id="vyntraSend"
+                class="vyntra-send"
+                aria-label="Send message">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         FLOATING AI BUTTON
+    ================================================= -->
+
+    <button
+        type="button"
+        class="vyntra-ai-button"
+        id="vyntraOpen"
+        aria-label="Open Vyntra AI">
+
+
+        <img
+            src="vyntra-ai.png"
+            alt="Vyntra AI">
+
+
+        <span
+            class="vyntra-online-dot">
+        </span>
+
+
+    </button>
+
+
+
+    <!-- LABEL -->
+
+    <div class="vyntra-ai-label">
+
+        Ask Vyntra AI
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   DOM READY
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+
+        /* =================================================
+           SIDE MENU
+        ================================================= */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const sideMenu =
+            document.getElementById("sideMenu");
+
+        const closeMenu =
+            document.getElementById("closeMenu");
+
+        const menuOverlay =
+            document.getElementById("menuOverlay");
+
+
+
+        function openMenu() {
+
+            if (!sideMenu || !menuOverlay) {
+                return;
+            }
+
+            sideMenu.classList.add("open");
+
+            menuOverlay.classList.add("show");
+
+            document.body.classList.add("menu-open");
+
+        }
+
+
+
+        function hideMenu() {
+
+            if (!sideMenu || !menuOverlay) {
+                return;
+            }
+
+            sideMenu.classList.remove("open");
+
+            menuOverlay.classList.remove("show");
+
+            document.body.classList.remove("menu-open");
+
+        }
+
+
+
+        if (menuBtn) {
+
+            menuBtn.addEventListener(
+                "click",
+                openMenu
+            );
+
+        }
+
+
+
+        if (closeMenu) {
+
+            closeMenu.addEventListener(
+                "click",
+                hideMenu
+            );
+
+        }
+
+
+
+        if (menuOverlay) {
+
+            menuOverlay.addEventListener(
+                "click",
+                hideMenu
+            );
+
+        }
+
+
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    hideMenu();
+
+                }
+
+            }
+        );
+
+
+
+        /* =================================================
+           VYNTRA AI
+        ================================================= */
+
+        const openButton =
+            document.getElementById("vyntraOpen");
+
+        const closeButton =
+            document.getElementById("vyntraClose");
+
+        const chat =
+            document.getElementById("vyntraChat");
+
+        const input =
+            document.getElementById("vyntraInput");
+
+        const sendButton =
+            document.getElementById("vyntraSend");
+
+        const messages =
+            document.getElementById("vyntraMessages");
+
+
+
+        /* =================================================
+           OPEN VYNTRA
+        ================================================= */
+
+        if (openButton && chat) {
+
+            openButton.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+                    chat.classList.add("active");
+
+                    openButton.style.display =
+                        "none";
+
+
+                    setTimeout(
+                        function () {
+
+                            if (input) {
+
+                                input.focus();
+
+                            }
+
+                        },
+                        200
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================================
+           CLOSE VYNTRA
+        ================================================= */
+
+        if (closeButton && chat) {
+
+            closeButton.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+                    chat.classList.remove("active");
+
+
+                    if (openButton) {
+
+                        openButton.style.display =
+                            "flex";
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================================
+           ADD MESSAGE
+        ================================================= */
+
+        function addMessage(
+            text,
+            type
+        ) {
+
+            if (!messages) {
+                return;
+            }
+
+
+            const message =
+                document.createElement("div");
+
+
+            message.className =
+                "vyntra-message " + type;
+
+
+            message.innerHTML =
+                text;
+
+
+            messages.appendChild(
+                message
+            );
+
+
+            messages.scrollTop =
+                messages.scrollHeight;
+
+        }
+
+
+
+        /* =================================================
+           TYPING INDICATOR
+        ================================================= */
+
+        function showTyping() {
+
+            if (!messages) {
+                return;
+            }
+
+
+            const typing =
+                document.createElement("div");
+
+
+            typing.className =
+                "vyntra-typing";
+
+
+            typing.id =
+                "vyntraTyping";
+
+
+            typing.innerHTML = `
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            `;
+
+
+            messages.appendChild(
+                typing
+            );
+
+
+            messages.scrollTop =
+                messages.scrollHeight;
+
+        }
+
+
+
+        function hideTyping() {
+
+            const typing =
+                document.getElementById(
+                    "vyntraTyping"
+                );
+
+
+            if (typing) {
+
+                typing.remove();
+
+            }
+
+        }
+
+
+
+        /* =================================================
+           RESPONSE ENGINE
+        ================================================= */
+
+        function getVyntraResponse(
+            question
+        ) {
+
+
+            const q =
+                question.toLowerCase();
+
+
+
+            /* ABOUT */
+
+            if (
+
+                q.includes("about") ||
+                q.includes("who is") ||
+                q.includes("ezhilarasan")
+
+            ) {
+
+                return `
+
+                    <strong>
+                        Ezhilarasan P
+                    </strong>
+
+                    is a B.E. Electronics and
+                    Communication Engineering
+                    student with a strong interest in
+
+                    <strong>
+                        IT Infrastructure,
+                        Networking,
+                        Cloud Computing
+                        and Linux.
+                    </strong>
+
+                    <br><br>
+
+                    He is continuously developing
+                    his technical knowledge through
+                    projects, certifications and
+                    hands-on learning.
+
+                `;
+
+            }
+
+
+
+            /* PROJECTS */
+
+            if (
+
+                q.includes("project") ||
+                q.includes("projects")
+
+            ) {
+
+                return `
+
+                    🚀 Ezhilarasan's project interests
+                    and work include:
+
+                    <br><br>
+
+                    • IT Infrastructure<br>
+                    • Networking<br>
+                    • Cloud Computing<br>
+                    • AI & Automation<br>
+                    • IoT / Embedded Systems
+
+                    <br><br>
+
+                    You can explore the complete
+                    projects in the
+                    <strong>
+                        Projects
+                    </strong>
+                    section.
+
+                `;
+
+            }
+
+
+
+            /* CERTIFICATIONS */
+
+            if (
+
+                q.includes("certification") ||
+                q.includes("certificate")
+
+            ) {
+
+                return `
+
+                    🏆 Ezhilarasan's certifications
+                    and learning areas include:
+
+                    <br><br>
+
+                    • Microsoft Azure Fundamentals<br>
+                    • AWS Academy<br>
+                    • Oracle Cloud / DevOps<br>
+                    • CCNA Networking<br>
+                    • Google AI<br>
+                    • Infosys certifications
+
+                    <br><br>
+
+                    Visit the
+                    <strong>
+                        Certifications & Awards
+                    </strong>
+                    section for more details.
+
+                `;
+
+            }
+
+
+
+            /* SKILLS */
+
+            if (
+
+                q.includes("skill") ||
+                q.includes("technical") ||
+                q.includes("technology") ||
+                q.includes("technologies")
+
+            ) {
+
+                return `
+
+                    💻 Ezhilarasan's main technical
+                    focus areas are:
+
+                    <br><br>
+
+                    <strong>
+                        Networking
+                    </strong>
+
+                    <br>
+
+                    CCNA, TCP/IP,
+                    Routing & Switching
+
+                    <br><br>
+
+                    <strong>
+                        Cloud
+                    </strong>
+
+                    <br>
+
+                    Azure and AWS
+
+                    <br><br>
+
+                    <strong>
+                        Infrastructure
+                    </strong>
+
+                    <br>
+
+                    Linux and IT Infrastructure
+
+                    <br><br>
+
+                    <strong>
+                        Programming
+                    </strong>
+
+                    <br>
+
+                    Python and Java
+
+                `;
+
+            }
+
+
+
+            /* CLOUD */
+
+            if (
+
+                q.includes("cloud") ||
+                q.includes("azure") ||
+                q.includes("aws")
+
+            ) {
+
+                return `
+
+                    ☁️ Ezhilarasan is interested in
+
+                    <strong>
+                        Cloud Infrastructure
+                    </strong>
+
+                    and is learning technologies
+                    such as
+                    <strong>
+                        Microsoft Azure and AWS.
+                    </strong>
+
+                    <br><br>
+
+                    His focus is on understanding
+                    how networking, Linux and cloud
+                    infrastructure work together.
+
+                `;
+
+            }
+
+
+
+            /* LINUX */
+
+            if (
+                q.includes("linux")
+            ) {
+
+                return `
+
+                    🐧 Linux is one of
+                    Ezhilarasan's infrastructure
+                    learning areas.
+
+                    <br><br>
+
+                    His learning focus includes
+                    Linux commands, administration,
+                    networking and server-side
+                    concepts.
+
+                `;
+
+            }
+
+
+
+            /* NETWORKING */
+
+            if (
+
+                q.includes("network") ||
+                q.includes("networking") ||
+                q.includes("ccna")
+
+            ) {
+
+                return `
+
+                    🌐 Networking is one of
+                    Ezhilarasan's primary areas
+                    of interest.
+
+                    <br><br>
+
+                    His learning focus includes:
+
+                    <br><br>
+
+                    • CCNA<br>
+                    • TCP/IP<br>
+                    • Routing & Switching<br>
+                    • Network fundamentals<br>
+                    • IT Infrastructure
+
+                `;
+
+            }
+
+
+
+            /* CONTACT */
+
+            if (
+
+                q.includes("contact") ||
+                q.includes("email") ||
+                q.includes("github") ||
+                q.includes("linkedin")
+
+            ) {
+
+                return `
+
+                    📩 You can connect with
+                    Ezhilarasan through the
+                    social links available
+                    on this portfolio.
+
+                    <br><br>
+
+                    You can also use the
+                    <strong>
+                        Contact Me
+                    </strong>
+                    section to get in touch.
+
+                `;
+
+            }
+
+
+
+            /* RESUME */
+
+            if (
+
+                q.includes("resume") ||
+                q.includes("cv")
+
+            ) {
+
+                return `
+
+                    📄 Ezhilarasan's resume is
+                    available through the
+                    Resume section of this portfolio.
+
+                `;
+
+            }
+
+
+
+            /* DEFAULT */
+
+            return `
+
+                🤖 I can help you explore
+                <strong>
+                    Ezhilarasan's portfolio.
+                </strong>
+
+                <br><br>
+
+                Try asking:
+
+                <br><br>
+
+                • Tell me about Ezhilarasan<br>
+                • Show his projects<br>
+                • What certifications does he have?<br>
+                • What are his technical skills?<br>
+                • What cloud technologies does he know?<br>
+                • Tell me about his Linux skills<br>
+                • What networking skills does he have?
+
+            `;
+
+        }
+
+
+
+        /* =================================================
+           SEND MESSAGE
+        ================================================= */
+
+        function sendMessage() {
+
+            if (!input) {
+                return;
+            }
+
+
+            const question =
+                input.value.trim();
+
+
+            if (!question) {
+                return;
+            }
+
+
+            addMessage(
+                question,
+                "user"
+            );
+
+
+            input.value =
+                "";
+
+
+            showTyping();
+
+
+            setTimeout(
+                function () {
+
+                    hideTyping();
+
+
+                    const response =
+                        getVyntraResponse(
+                            question
+                        );
+
+
+                    addMessage(
+                        response,
+                        "bot"
+                    );
+
+                },
+                650
+            );
+
+        }
+
+
+
+        /* SEND BUTTON */
+
+        if (sendButton) {
+
+            sendButton.addEventListener(
+                "click",
+                function () {
+
+                    sendMessage();
+
+                }
+            );
+
+        }
+
+
+
+        /* ENTER */
+
+        if (input) {
+
+            input.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Enter"
+                    ) {
+
+                        event.preventDefault();
+
+                        sendMessage();
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================================
+           QUICK QUESTIONS
+        ================================================= */
+
+        const quickQuestions =
+            document.querySelectorAll(
+                ".vyntra-suggestion"
+            );
+
+
+        quickQuestions.forEach(
+            function (button) {
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+
+                        const question =
+                            button.getAttribute(
+                                "data-question"
+                            );
+
+
+                        if (!question) {
+                            return;
+                        }
+
+
+                        addMessage(
+                            question,
+                            "user"
+                        );
+
+
+                        showTyping();
+
+
+                        setTimeout(
+                            function () {
+
+
+                                hideTyping();
+
+
+                                const response =
+                                    getVyntraResponse(
+                                        question
+                                    );
+
+
+                                addMessage(
+                                    response,
+                                    "bot"
+                                );
+
+
+                            },
+                            650
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+    }
+
+);
+
+</script>
+
+
 </body>
+
 </html>
