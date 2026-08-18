@@ -1,167 +1,1919 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Certifications | Ezhilarasan P</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Certifications & Awards | Ezhilarasan P</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.cert-page {
+
+    width:100%;
+    min-height:calc(100vh - 88px);
+
+    padding:
+        70px 5%
+        110px;
+
+    background:#ffffff;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.cert-header {
+
+    width:100%;
+    max-width:1250px;
+
+    margin:
+        0 auto 55px;
+
+}
+
+
+.cert-eyebrow {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+    color:#d99b00;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+
+.cert-eyebrow::before {
+
+    content:"";
+
+    width:34px;
+
+    height:2px;
+
+    background:#f5b82e;
+
+}
+
+
+.cert-header h1 {
+
+    margin:
+        0 0 16px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(55px,7vw,88px);
+
+    line-height:.92;
+
+    font-weight:600;
+
+    letter-spacing:-1px;
+
+    color:#173b26;
+
+}
+
+
+.cert-header h1 em {
+
+    color:#f5b82e;
+
+    font-style:normal;
+
+}
+
+
+.cert-header > p {
+
+    max-width:800px;
+
+    margin:
+        0 0 38px;
+
+    color:#5f7065;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.cert-stats {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:16px;
+
+    max-width:850px;
+
+}
+
+
+.cert-stat {
+
+    min-height:105px;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:#fffdf8;
+
+    border:
+        1px solid
+        rgba(245,184,46,.40);
+
+    box-shadow:
+        0 10px 30px
+        rgba(23,59,38,.045);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.cert-stat:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(23,59,38,.09);
+
+}
+
+
+.cert-stat strong {
+
+    color:#d99b00;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:36px;
+
+    line-height:1;
+
+}
+
+
+.cert-stat span {
+
+    margin-top:7px;
+
+    color:#637269;
+
+    font-size:11px;
+
+    line-height:1.4;
+
+}
+
+
+/* =====================================================
+   CERTIFICATE GRID
+===================================================== */
+
+.certificate-list {
+
+    width:100%;
+
+    max-width:1250px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:28px;
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.certificate-card {
+
+    min-width:0;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        rgba(245,184,46,.35);
+
+    box-shadow:
+        0 12px 40px
+        rgba(23,59,38,.07);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.certificate-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(245,184,46,.75);
+
+    box-shadow:
+        0 25px 60px
+        rgba(23,59,38,.13);
+
+}
+
+
+/* =====================================================
+   CERTIFICATE IMAGE
+===================================================== */
+
+.certificate-image {
+
+    height:330px;
+
+    padding:18px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #173b26,
+            #0d2c1c
+        );
+
+}
+
+
+.certificate-image img {
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    border-radius:15px;
+
+    background:#f7f7f7;
+
+    border:
+        1px solid
+        rgba(245,184,46,.25);
+
+    transition:
+        transform .5s ease;
+
+}
+
+
+.certificate-card:hover
+.certificate-image img {
+
+    transform:
+        scale(1.035);
+
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.certificate-badge {
+
+    position:absolute;
+
+    top:30px;
+
+    left:30px;
+
+    z-index:5;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:
+        7px 12px;
+
+    border-radius:20px;
+
+    background:
+        rgba(23,59,38,.94);
+
+    border:
+        1px solid
+        rgba(245,184,46,.55);
+
+    color:#f5b82e;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    max-width:
+        calc(100% - 60px);
+
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.certificate-content {
+
+    padding:
+        26px 26px 30px;
+
+}
+
+
+.provider {
+
+    display:inline-block;
+
+    margin-bottom:8px;
+
+    color:#d99b00;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+
+.certificate-content h2 {
+
+    margin:
+        0 0 13px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:32px;
+
+    line-height:1.05;
+
+    font-weight:700;
+
+    color:#173b26;
+
+}
+
+
+.certificate-content p {
+
+    margin:
+        0 0 20px;
+
+    color:#64746a;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+   TAGS
+===================================================== */
+
+.certificate-tags {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+
+.certificate-tags span {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:
+        7px 11px;
+
+    border-radius:18px;
+
+    border:
+        1px solid
+        rgba(245,184,46,.42);
+
+    background:
+        rgba(245,184,46,.07);
+
+    color:#d79500;
+
+    font-size:10px;
+
+    font-weight:600;
+
+}
+
+
+/* =====================================================
+   AWARDS
+===================================================== */
+
+.awards-header {
+
+    width:100%;
+
+    max-width:1250px;
+
+    margin:
+        90px auto 38px;
+
+}
+
+
+.awards-header h2 {
+
+    margin:
+        0 0 13px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(45px,5vw,62px);
+
+    line-height:.95;
+
+    font-weight:600;
+
+    color:#173b26;
+
+}
+
+
+.awards-header h2 em {
+
+    color:#f5b82e;
+
+    font-style:normal;
+
+}
+
+
+.awards-header p {
+
+    max-width:720px;
+
+    margin:0;
+
+    color:#64746a;
+
+    font-size:13px;
+
+    line-height:1.75;
+
+}
+
+
+.award-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf7,
+            #ffffff
+        );
+
+}
+
+
+/* =====================================================
+   NAVBAR WHITE THEME
+===================================================== */
+
+.navbar {
+
+    background:#ffffff !important;
+
+    border-bottom:
+        1px solid
+        rgba(23,59,38,.08);
+
+}
+
+
+.navbar .logo {
+
+    color:#173b26 !important;
+
+}
+
+
+.nav-links a {
+
+    color:#173b26 !important;
+
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+
+    color:#d99b00 !important;
+
+}
+
+
+.contact-btn {
+
+    background:#f5b82e !important;
+
+    color:#173b26 !important;
+
+}
+
+
+.menu-btn {
+
+    color:#d99b00 !important;
+
+    border-color:
+        rgba(245,184,46,.40) !important;
+
+}
+
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+.reveal {
+
+    opacity:0;
+
+    transform:
+        translateY(45px);
+
+    transition:
+        opacity .75s ease,
+        transform .75s ease;
+
+}
+
+
+.reveal.show {
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1000px) {
+
+    .cert-page {
+
+        padding:
+            60px 4%
+            90px;
+
+    }
+
+
+    .certificate-list {
+
+        grid-template-columns:1fr;
+
+        max-width:820px;
+
+    }
+
+
+    .cert-header {
+
+        max-width:820px;
+
+    }
+
+
+    .awards-header {
+
+        max-width:820px;
+
+    }
+
+
+    .certificate-image {
+
+        height:400px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px) {
+
+    .cert-page {
+
+        padding:
+            45px 18px
+            75px;
+
+    }
+
+
+    .cert-header {
+
+        margin-bottom:40px;
+
+    }
+
+
+    .cert-header h1 {
+
+        font-size:55px;
+
+    }
+
+
+    .cert-header > p {
+
+        font-size:13px;
+
+    }
+
+
+    .cert-stats {
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+
+    }
+
+
+    .cert-stat {
+
+        min-height:82px;
+
+    }
+
+
+    .certificate-card {
+
+        border-radius:20px;
+
+    }
+
+
+    .certificate-image {
+
+        height:300px;
+
+        padding:13px;
+
+    }
+
+
+    .certificate-badge {
+
+        top:23px;
+
+        left:23px;
+
+    }
+
+
+    .certificate-content {
+
+        padding:
+            22px 20px 25px;
+
+    }
+
+
+    .certificate-content h2 {
+
+        font-size:28px;
+
+    }
+
+
+    .awards-header {
+
+        margin-top:65px;
+
+    }
+
+
+    .awards-header h2 {
+
+        font-size:43px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:430px) {
+
+    .cert-page {
+
+        padding-left:14px;
+
+        padding-right:14px;
+
+    }
+
+
+    .cert-header h1 {
+
+        font-size:48px;
+
+    }
+
+
+    .certificate-image {
+
+        height:250px;
+
+    }
+
+
+    .certificate-content h2 {
+
+        font-size:25px;
+
+    }
+
+
+    .awards-header h2 {
+
+        font-size:38px;
+
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
 <header class="navbar">
-  <a href="index.html" class="logo">PORTFOLIO</a>
-
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="certificates.html" class="active">Certifications</a></li>
-      <li><a href="linkedin.html">LinkedIn</a></li>
-    </ul>
-  </nav>
-
-  <a href="contact.html" class="contact-btn">Contact Me</a>
-</header>
 
 
-<main class="dark-page">
-
-  <section class="page-heading certification-heading">
-
-    <span class="eyebrow">MY CREDENTIALS</span>
-
-    <h1>
-      Professional <em>Certifications</em>
-    </h1>
-
-    <p>
-      Certifications and technical learning achievements in
-      cloud computing, networking, DevOps and emerging technologies.
-    </p>
+    <div class="navbar-brand">
 
 
-    <div class="cert-stats">
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            type="button">
 
-      <div>
-        <strong>8+</strong>
-        <span>Certifications</span>
-      </div>
+            <i class="fa-solid fa-bars"></i>
 
-      <div>
-        <strong>3</strong>
-        <span>CCNA Courses</span>
-      </div>
+        </button>
 
-      <div>
-        <strong>3+</strong>
-        <span>Cloud & Tech</span>
-      </div>
+
+        <a
+            href="./index.html"
+            class="logo">
+
+            PORTFOLIO
+
+        </a>
+
 
     </div>
 
-  </section>
+
+    <nav>
+
+        <ul class="nav-links">
 
 
-  <section class="certificate-list">
+            <li>
+                <a href="./index.html">
+                    Home
+                </a>
+            </li>
 
-    <article class="certificate-card">
 
-      <div class="certificate-image">
-        <span class="badge certificate-badge">Cloud</span>
-        <img src="azure-certificate.png" alt="Azure Fundamentals Certificate">
-      </div>
+            <li>
+                <a href="./about.html">
+                    Resume
+                </a>
+            </li>
 
-      <div class="certificate-content">
-        <span class="provider">Microsoft</span>
 
-        <h2>Microsoft Azure Fundamentals</h2>
+            <li>
+                <a href="./projects.html">
+                    Projects
+                </a>
+            </li>
+
+
+            <li>
+                <a href="./vyntra-ai.html">
+                    Vyntra AI
+                </a>
+            </li>
+
+
+            <li>
+                <a
+                    href="./certificates.html"
+                    class="active">
+
+                    Certifications &amp; Awards
+
+                </a>
+            </li>
+
+
+            <li>
+                <a href="./linkedin.html">
+                    LinkedIn
+                </a>
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+    <a
+        href="./contact.html"
+        class="contact-btn">
+
+        Contact Me
+
+    </a>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     MENU OVERLAY
+===================================================== -->
+
+<div
+    class="menu-overlay"
+    id="menuOverlay">
+</div>
+
+
+
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
+
+<aside
+    class="side-menu"
+    id="sideMenu">
+
+
+    <button
+        class="close-menu"
+        id="closeMenu"
+        type="button">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <div class="side-menu-title">
+
+        <span>
+            EZHILARASAN'S
+        </span>
+
+        <h2>
+            PORTFOLIO
+        </h2>
+
+    </div>
+
+
+    <div class="side-menu-links">
+
+
+        <a href="./index.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Home</span>
+
+        </a>
+
+
+        <a href="./about.html">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>Resume</span>
+
+        </a>
+
+
+        <a href="./projects.html">
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+            <span>Projects</span>
+
+        </a>
+
+
+        <a href="./vyntra-ai.html">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <span>Vyntra AI</span>
+
+        </a>
+
+
+        <a
+            href="./certificates.html"
+            class="active">
+
+            <i class="fa-solid fa-award"></i>
+
+            <span>
+                Certifications &amp; Awards
+            </span>
+
+        </a>
+
+
+        <a href="./linkedin.html">
+
+            <i class="fa-brands fa-linkedin-in"></i>
+
+            <span>LinkedIn</span>
+
+        </a>
+
+
+        <a href="./contact.html">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>Contact Me</span>
+
+        </a>
+
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     CERTIFICATIONS PAGE
+===================================================== -->
+
+<main class="cert-page">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <section class="cert-header reveal">
+
+
+        <div class="cert-eyebrow">
+
+            My Credentials &amp; Achievements
+
+        </div>
+
+
+        <h1>
+
+            Certifications
+
+            <em>
+                &amp; Awards
+            </em>
+
+        </h1>
+
 
         <p>
-          Microsoft Certified: Azure Fundamentals demonstrating
-          foundational knowledge of cloud concepts, Azure services,
-          security, governance and pricing.
+
+            Professional certifications, technical learning
+            achievements and recognitions that reflect my
+            continuous growth in Cloud Computing, Networking,
+            DevOps, Artificial Intelligence and IT Infrastructure.
+
         </p>
 
-        <div class="skill-tags">
-          <span>Azure</span>
-          <span>Cloud</span>
-          <span>AZ-900</span>
+
+        <div class="cert-stats">
+
+
+            <div class="cert-stat">
+
+                <strong>8+</strong>
+
+                <span>
+                    Certifications &amp; Technical Courses
+                </span>
+
+            </div>
+
+
+            <div class="cert-stat">
+
+                <strong>4</strong>
+
+                <span>
+                    Networking Courses
+                </span>
+
+            </div>
+
+
+            <div class="cert-stat">
+
+                <strong>2</strong>
+
+                <span>
+                    Awards &amp; Recognition
+                </span>
+
+            </div>
+
+
         </div>
-      </div>
-
-    </article>
 
 
-    <article class="certificate-card">
+    </section>
 
-      <div class="certificate-image">
-        <span class="badge certificate-badge">DevOps</span>
-        <img src="oracle-certificate.png" alt="Oracle Cloud Certificate">
-      </div>
 
-      <div class="certificate-content">
 
-        <span class="provider">Oracle</span>
+    <!-- =================================================
+         CERTIFICATES
+    ================================================== -->
 
-        <h2>Oracle Cloud Infrastructure DevOps Professional</h2>
+    <section class="certificate-list">
+
+
+        <!-- 01 -->
+
+        <article class="certificate-card reveal">
+
+            <div class="certificate-image">
+
+                <span class="certificate-badge">
+                    Cloud
+                </span>
+
+                <img
+                    src="./azure-certificate.png"
+                    alt="Microsoft Azure Fundamentals Certificate">
+
+            </div>
+
+
+            <div class="certificate-content">
+
+                <span class="provider">
+                    Microsoft
+                </span>
+
+                <h2>
+                    Microsoft Azure Fundamentals
+                </h2>
+
+                <p>
+                    Microsoft Certified: Azure Fundamentals
+                    demonstrating foundational knowledge of
+                    cloud concepts, Azure services, security,
+                    governance and pricing.
+                </p>
+
+                <div class="certificate-tags">
+
+                    <span>Azure</span>
+                    <span>Cloud</span>
+                    <span>AZ-900</span>
+                    <span>Microsoft</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 02 -->
+
+        <article class="certificate-card reveal">
+
+            <div class="certificate-image">
+
+                <span class="certificate-badge">
+                    DevOps
+                </span>
+
+                <img
+                    src="./oracle-certificate.png"
+                    alt="Oracle Cloud Infrastructure DevOps Professional Certificate">
+
+            </div>
+
+
+            <div class="certificate-content">
+
+                <span class="provider">
+                    Oracle
+                </span>
+
+                <h2>
+                    Oracle Cloud Infrastructure DevOps Professional
+                </h2>
+
+                <p>
+                    Professional certification covering
+                    Oracle Cloud Infrastructure and DevOps
+                    concepts, practices, cloud services
+                    and automation.
+                </p>
+
+                <div class="certificate-tags">
+
+                    <span>OCI</span>
+                    <span>DevOps</span>
+                    <span>Cloud</span>
+                    <span>Oracle</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 03 -->
+
+        <article class="certificate-card reveal">
+
+            <div class="certificate-image">
+
+                <span class="certificate-badge">
+                    Artificial Intelligence
+                </span>
+
+                <img
+                    src="./google-ai-certificate.png"
+                    alt="Google Introduction to AI Certificate">
+
+            </div>
+
+
+            <div class="certificate-content">
+
+                <span class="provider">
+                    Google / Coursera
+                </span>
+
+                <h2>
+                    Introduction to AI
+                </h2>
+
+                <p>
+                    Introduction to Artificial Intelligence
+                    covering foundational AI concepts,
+                    technologies and real-world applications.
+                </p>
+
+                <div class="certificate-tags">
+
+                    <span>Artificial Intelligence</span>
+                    <span>AI</span>
+                    <span>Google</span>
+                    <span>Technology</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 04 -->
+
+        <article class="certificate-card reveal">
+
+            <div class="certificate-image">
+
+                <span class="certificate-badge">
+                    Networking
+                </span>
+
+                <img
+                    src="./ccna-introduction.png"
+                    alt="CCNA Introduction to Networks Certificate">
+
+            </div>
+
+
+            <div class="certificate-content">
+
+                <span class="provider">
+                    Cisco Networking Academy
+                </span>
+
+                <h2>
+                    CCNA: Introduction to Networks
+                </h2>
+
+                <p>
+                    Completed Cisco Networking Academy
+                    training covering networking fundamentals,
+                    network devices, protocols, IP addressing
+                    and basic network configuration.
+                </p>
+
+                <div class="certificate-tags">
+
+                    <span>CCNA</span>
+                    <span>Networking</span>
+                    <span>IP Addressing</span>
+                    <span>Cisco</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 05 -->
+
+        <article class="certificate-card reveal">
+
+            <div class="certificate-image">
+
+                <span class="certificate-badge">
+                    Networking
+                </span>
+
+                <img
+                    src="./ccna-switching-routing.png"
+                    alt="CCNA Switching Routing and Wireless Essentials Certificate">
+
+            </div>
+
+
+            <div class="certificate-content">
+
+                <span class="provider">
+                    Cisco Networking Academy
+                </span>
+
+                <h2>
+                    CCNA: Switching, Routing &amp; Wireless Essentials
+                </h2>
+
+                <p>
+                    Cisco Networking Academy training covering
+                    switching concepts, routing, VLANs, wireless
+                    networks and network configuration.
+                </p>
+
+                <div class="certificate-tags">
+
+                    <span>CCNA</span>
+                    <span>Switching</span>
+                    <span>Routing</span>
+                    <span>Wireless</span>
+                    <span>VLAN</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 06 -->
+
+        <article class="certificate-card reveal">
+
+            <div class="certificate-image">
+
+                <span class="certificate-badge">
+                    Networking
+                </span>
+
+                <img
+                    src="./ccna-enterprise.png"
+                    alt="CCNA Enterprise Networking Security and Automation Certificate">
+
+            </div>
+
+
+            <div class="certificate-content">
+
+                <span class="provider">
+                    Cisco Networking Academy
+                </span>
+
+                <h2>
+                    CCNA: Enterprise Networking, Security &amp; Automation
+                </h2>
+
+                <p>
+                    Cisco Networking Academy training covering
+                    enterprise networking, network security,
+                    WAN concepts, automation and network management.
+                </p>
+
+                <div class="certificate-tags">
+
+                    <span>CCNA</span>
+                    <span>Enterprise Networking</span>
+                    <span>Security</span>
+                    <span>Automation</span>
+                    <span>WAN</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 07 -->
+
+        <article class="certificate-card reveal">
+
+            <div class="certificate-image">
+
+                <span class="certificate-badge">
+                    Networking
+                </span>
+
+                <img
+                    src="./networking-basics.png"
+                    alt="Networking Basics Certificate">
+
+            </div>
+
+
+            <div class="certificate-content">
+
+                <span class="provider">
+                    Cisco Networking Academy
+                </span>
+
+                <h2>
+                    Networking Basics
+                </h2>
+
+                <p>
+                    Foundational networking course covering
+                    computer networks, network devices,
+                    communication concepts, IP addressing
+                    and essential networking fundamentals.
+                </p>
+
+                <div class="certificate-tags">
+
+                    <span>Networking</span>
+                    <span>Network Basics</span>
+                    <span>IP Addressing</span>
+                    <span>Cisco</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 08 -->
+
+        <article class="certificate-card reveal">
+
+            <div class="certificate-image">
+
+                <span class="certificate-badge">
+                    Data
+                </span>
+
+                <img
+                    src="./novitech-data-mastery.png"
+                    alt="NoviTech Data Mastery Certificate">
+
+            </div>
+
+
+            <div class="certificate-content">
+
+                <span class="provider">
+                    NoviTech R&amp;D Private Limited
+                </span>
+
+                <h2>
+                    Building Careers with Data: Bootcamp on Data Mastery
+                </h2>
+
+                <p>
+                    Completed the skill camp in Building Careers
+                    with Data: Bootcamp on Data Mastery, focusing
+                    on data concepts, technology and
+                    career-oriented learning.
+                </p>
+
+                <div class="certificate-tags">
+
+                    <span>Data</span>
+                    <span>Data Mastery</span>
+                    <span>Technology</span>
+                    <span>Bootcamp</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         AWARDS HEADER
+    ================================================== -->
+
+    <section class="awards-header reveal">
+
+
+        <div class="cert-eyebrow">
+
+            Recognition &amp; Achievements
+
+        </div>
+
+
+        <h2>
+
+            Awards &amp;
+
+            <em>
+                Recognition
+            </em>
+
+        </h2>
+
 
         <p>
-          Professional certification covering Oracle Cloud
-          Infrastructure and DevOps concepts, practices and services.
+
+            Recognition received for active contribution,
+            teamwork, involvement and dedication.
+
         </p>
 
-        <div class="skill-tags">
-          <span>OCI</span>
-          <span>DevOps</span>
-          <span>Cloud</span>
-        </div>
 
-      </div>
-
-    </article>
+    </section>
 
 
-    <article class="certificate-card">
 
-      <div class="certificate-image">
-        <span class="badge certificate-badge">Artificial Intelligence</span>
-        <img src="google-ai-certificate.png" alt="Google AI Certificate">
-      </div>
+    <!-- =================================================
+         AWARDS
+    ================================================== -->
 
-      <div class="certificate-content">
+    <section class="certificate-list">
 
-        <span class="provider">Google / Coursera</span>
 
-        <h2>Introduction to AI</h2>
+        <!-- 09 -->
 
-        <p>
-          Introduction to Artificial Intelligence covering
-          foundational AI concepts and applications.
-        </p>
+        <article class="certificate-card award-card reveal">
 
-        <div class="skill-tags">
-          <span>Artificial Intelligence</span>
-          <span>AI</span>
-          <span>Google</span>
-          <span>Technology</span>
-        </div>
+            <div class="certificate-image">
 
-      </div>
+                <span class="certificate-badge">
+                    Best Contributor
+                </span>
 
-    </article>
+                <img
+                    src="./best-contributor-award.png"
+                    alt="Best Contributor Award">
 
-  </section>
+            </div>
+
+
+            <div class="certificate-content">
+
+                <span class="provider">
+                    Recognition Award
+                </span>
+
+                <h2>
+                    Best Contributor Award
+                </h2>
+
+                <p>
+                    Recognized with the Best Contributor Award
+                    for outstanding involvement, dedication
+                    and valuable contribution towards the
+                    successful execution of activities
+                    and events.
+                </p>
+
+                <div class="certificate-tags">
+
+                    <span>Leadership</span>
+                    <span>Contribution</span>
+                    <span>Teamwork</span>
+                    <span>Event Management</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 10 -->
+
+        <article class="certificate-card award-card reveal">
+
+            <div class="certificate-image">
+
+                <span class="certificate-badge">
+                    Contribution
+                </span>
+
+                <img
+                    src="./contribution-award.png"
+                    alt="Contribution Award">
+
+            </div>
+
+
+            <div class="certificate-content">
+
+                <span class="provider">
+                    Achievement Recognition
+                </span>
+
+                <h2>
+                    Contribution Award
+                </h2>
+
+                <p>
+                    Received the Contribution Award in
+                    recognition of active participation,
+                    teamwork and dedicated efforts towards
+                    the successful organization and
+                    coordination of activities.
+                </p>
+
+                <div class="certificate-tags">
+
+                    <span>Contribution</span>
+                    <span>Coordination</span>
+                    <span>Teamwork</span>
+                    <span>Achievement</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
 
 </main>
 
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+
+        /* MENU */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const sideMenu =
+            document.getElementById("sideMenu");
+
+        const closeMenu =
+            document.getElementById("closeMenu");
+
+        const menuOverlay =
+            document.getElementById("menuOverlay");
+
+
+        function openMenu() {
+
+            if(sideMenu)
+                sideMenu.classList.add("open");
+
+            if(menuOverlay)
+                menuOverlay.classList.add("show");
+
+            document.body.classList.add(
+                "menu-open"
+            );
+
+        }
+
+
+        function hideMenu() {
+
+            if(sideMenu)
+                sideMenu.classList.remove("open");
+
+            if(menuOverlay)
+                menuOverlay.classList.remove("show");
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+        }
+
+
+        if(menuBtn) {
+
+            menuBtn.addEventListener(
+                "click",
+                openMenu
+            );
+
+        }
+
+
+        if(closeMenu) {
+
+            closeMenu.addEventListener(
+                "click",
+                hideMenu
+            );
+
+        }
+
+
+        if(menuOverlay) {
+
+            menuOverlay.addEventListener(
+                "click",
+                hideMenu
+            );
+
+        }
+
+
+        document
+        .querySelectorAll(
+            ".side-menu-links a"
+        )
+        .forEach(
+            function(link) {
+
+                link.addEventListener(
+                    "click",
+                    hideMenu
+                );
+
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if(event.key === "Escape") {
+
+                    hideMenu();
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           SCROLL REVEAL
+        ================================================= */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        if(
+            "IntersectionObserver"
+            in window
+        ) {
+
+            const observer =
+                new IntersectionObserver(
+                    function(entries) {
+
+                        entries.forEach(
+                            function(entry) {
+
+                                if(
+                                    entry.isIntersecting
+                                ) {
+
+                                    entry.target
+                                        .classList
+                                        .add("show");
+
+                                }
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold:0.12,
+
+                        rootMargin:
+                            "0px 0px -60px 0px"
+                    }
+                );
+
+
+            revealElements.forEach(
+                function(element) {
+
+                    observer.observe(element);
+
+                }
+            );
+
+        }
+
+        else {
+
+            revealElements.forEach(
+                function(element) {
+
+                    element.classList.add(
+                        "show"
+                    );
+
+                }
+            );
+
+        }
+
+    }
+
+);
+
+</script>
+
+
 </body>
+
 </html>

@@ -1,186 +1,1321 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Resume | Ezhilarasan P</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Resume | Ezhilarasan P</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+/* =====================================================
+   RESUME PAGE
+===================================================== */
+
+.resume-page {
+    width:100%;
+    min-height:calc(100vh - 88px);
+    padding:70px 5% 100px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.resume-hero {
+    width:100%;
+    max-width:1250px;
+    margin:0 auto 70px;
+
+    display:grid;
+    grid-template-columns:minmax(0,1.1fr) minmax(320px,.7fr);
+
+    gap:70px;
+    align-items:center;
+}
+
+
+.resume-text {
+    min-width:0;
+}
+
+
+.resume-label {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    margin-bottom:15px;
+
+    color:#f5b82e;
+
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+
+.resume-label::before {
+    content:"";
+
+    width:28px;
+    height:2px;
+
+    background:#f5b82e;
+}
+
+
+.resume-text h1 {
+    margin-bottom:25px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(55px,7vw,88px);
+    line-height:.92;
+
+    font-weight:600;
+    letter-spacing:-1px;
+
+    color:#173b26;
+}
+
+
+.resume-text h1 span {
+    color:#f5b82e;
+}
+
+
+.resume-intro {
+    max-width:720px;
+
+    color:#526458;
+
+    font-size:15px;
+    line-height:1.8;
+
+    margin-bottom:12px;
+}
+
+
+/* =====================================================
+   DOWNLOAD
+===================================================== */
+
+.resume-download {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-top:22px;
+
+    padding:15px 25px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #f5b82e,
+        #ffc94d
+    );
+
+    color:#102d1b;
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:.3s ease;
+
+    text-decoration:none;
+}
+
+
+.resume-download:hover {
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(245,184,46,.22);
+}
+
+
+/* =====================================================
+   PHOTO
+===================================================== */
+
+.resume-photo {
+    width:100%;
+    max-width:430px;
+    height:500px;
+
+    margin:0 auto;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    border:
+        2px solid
+        rgba(245,184,46,.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7f3ea,
+            #ffffff
+        );
+
+    box-shadow:
+        0 25px 65px
+        rgba(0,0,0,.12);
+
+    position:relative;
+}
+
+
+.resume-photo::before {
+    content:"";
+
+    position:absolute;
+
+    top:-90px;
+    right:-90px;
+
+    width:240px;
+    height:240px;
+
+    border-radius:50%;
+
+    background:
+        rgba(245,184,46,.12);
+
+    pointer-events:none;
+}
+
+
+.resume-photo img {
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+    object-position:center;
+
+    position:relative;
+    z-index:2;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.resume-section-heading {
+    width:100%;
+    max-width:1250px;
+
+    margin:0 auto 30px;
+}
+
+
+.resume-section-heading h2 {
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:48px;
+    line-height:1;
+
+    color:#173b26;
+
+    margin-bottom:8px;
+}
+
+
+.resume-section-heading p {
+    color:#6b7c70;
+
+    font-size:13px;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.resume-grid {
+    width:100%;
+    max-width:1250px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:20px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.resume-card {
+    min-width:0;
+
+    padding:28px;
+
+    border-radius:20px;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        rgba(245,184,46,.35);
+
+    box-shadow:
+        0 10px 35px
+        rgba(20,50,30,.06);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.resume-card:hover {
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(245,184,46,.75);
+
+    box-shadow:
+        0 18px 45px
+        rgba(20,50,30,.10);
+}
+
+
+.resume-card.featured {
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf7,
+            #ffffff
+        );
+}
+
+
+.resume-card h2 {
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:20px;
+
+    color:#173b26;
+
+    font-size:20px;
+    font-weight:700;
+}
+
+
+.resume-card h2 i {
+    color:#f5b82e;
+    font-size:18px;
+}
+
+
+.resume-card h3 {
+    margin-bottom:8px;
+
+    color:#e49f00;
+
+    font-size:16px;
+}
+
+
+.resume-card p {
+    margin-bottom:7px;
+
+    color:#64746a;
+
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+.resume-card strong {
+    color:#30483a;
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skill-tags {
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+}
+
+
+.skill-tags span {
+    display:inline-flex;
+    align-items:center;
+
+    padding:8px 12px;
+
+    border-radius:20px;
+
+    border:
+        1px solid
+        rgba(245,184,46,.45);
+
+    background:
+        rgba(245,184,46,.08);
+
+    color:#d79600;
+
+    font-size:11px;
+    font-weight:600;
+}
+
+
+/* =====================================================
+   LIST
+===================================================== */
+
+.resume-card ul {
+    padding-left:18px;
+    margin-bottom:18px;
+}
+
+
+.resume-card li {
+    margin-bottom:9px;
+
+    color:#64746a;
+
+    font-size:13px;
+    line-height:1.6;
+}
+
+
+.resume-card li::marker {
+    color:#f5b82e;
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+.small-link {
+    display:inline-flex;
+
+    margin-top:5px;
+
+    color:#d79600;
+
+    font-size:12px;
+    font-weight:700;
+
+    transition:.25s ease;
+
+    text-decoration:none;
+}
+
+
+.small-link:hover {
+    transform:translateX(5px);
+    color:#f5b82e;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:1000px) {
+
+    .resume-page {
+        padding:60px 4% 80px;
+    }
+
+    .resume-hero {
+        grid-template-columns:1fr;
+        gap:40px;
+        max-width:800px;
+    }
+
+    .resume-photo {
+        order:-1;
+        width:100%;
+        max-width:450px;
+        height:520px;
+    }
+
+    .resume-grid {
+        max-width:800px;
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:700px) {
+
+    .resume-page {
+        padding:45px 18px 70px;
+    }
+
+    .resume-hero {
+        margin-bottom:55px;
+        gap:35px;
+    }
+
+    .resume-photo {
+        height:430px;
+        border-radius:22px;
+    }
+
+    .resume-text h1 {
+        font-size:55px;
+        line-height:.94;
+    }
+
+    .resume-intro {
+        font-size:13px;
+        line-height:1.75;
+    }
+
+    .resume-section-heading h2 {
+        font-size:40px;
+    }
+
+    .resume-card {
+        padding:22px;
+    }
+
+}
+
+
+@media(max-width:430px) {
+
+    .resume-page {
+        padding-left:14px;
+        padding-right:14px;
+    }
+
+    .resume-photo {
+        height:390px;
+    }
+
+    .resume-text h1 {
+        font-size:48px;
+    }
+
+    .resume-card {
+        padding:19px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body class="resume-body">
 
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
 <header class="navbar">
-  <a href="index.html" class="logo">PORTFOLIO</a>
 
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="certificates.html">Certifications</a></li>
-      <li><a href="linkedin.html">LinkedIn</a></li>
-    </ul>
-  </nav>
+    <div class="navbar-brand">
 
-  <a href="contact.html" class="contact-btn">Contact Me</a>
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            type="button"
+            aria-label="Open navigation menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <a href="./index.html" class="logo">
+            PORTFOLIO
+        </a>
+
+    </div>
+
+
+    <nav class="main-navigation">
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="./index.html">
+                    Home
+                </a>
+            </li>
+
+
+            <li>
+                <a
+                    href="./about.html"
+                    class="active">
+
+                    Resume
+
+                </a>
+            </li>
+
+
+            <li>
+                <a href="./projects.html">
+                    Projects
+                </a>
+            </li>
+
+
+            <!-- VYNTRA AI -->
+
+            <li>
+                <a href="./vyntra-ai.html">
+                    Vyntra AI
+                </a>
+            </li>
+
+
+            <li>
+                <a href="./certificates.html">
+                    Certifications &amp; Awards
+                </a>
+            </li>
+
+
+            <li>
+                <a href="./linkedin.html">
+                    LinkedIn
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <a
+        href="./contact.html"
+        class="contact-btn">
+
+        Contact Me
+
+    </a>
+
 </header>
 
 
+
+<!-- =====================================================
+     MENU OVERLAY
+===================================================== -->
+
+<div
+    class="menu-overlay"
+    id="menuOverlay">
+</div>
+
+
+
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
+
+<aside
+    class="side-menu"
+    id="sideMenu">
+
+
+    <button
+        class="close-menu"
+        id="closeMenu"
+        type="button"
+        aria-label="Close navigation menu">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+
+    <div class="side-menu-title">
+
+        <span>
+            EZHILARASAN'S
+        </span>
+
+        <h2>
+            PORTFOLIO
+        </h2>
+
+    </div>
+
+
+
+    <div class="side-menu-links">
+
+
+        <!-- HOME -->
+
+        <a href="./index.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+
+
+        <!-- RESUME -->
+
+        <a
+            href="./about.html"
+            class="active">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>
+                Resume
+            </span>
+
+        </a>
+
+
+
+        <!-- PROJECTS -->
+
+        <a href="./projects.html">
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+            <span>
+                Projects
+            </span>
+
+        </a>
+
+
+
+        <!-- VYNTRA AI -->
+
+        <a href="./vyntra-ai.html">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <span>
+                Vyntra AI
+            </span>
+
+        </a>
+
+
+
+        <!-- CERTIFICATIONS -->
+
+        <a href="./certificates.html">
+
+            <i class="fa-solid fa-certificate"></i>
+
+            <span>
+                Certifications &amp; Awards
+            </span>
+
+        </a>
+
+
+
+        <!-- LINKEDIN -->
+
+        <a href="./linkedin.html">
+
+            <i class="fa-brands fa-linkedin-in"></i>
+
+            <span>
+                LinkedIn
+            </span>
+
+        </a>
+
+
+
+        <!-- CONTACT -->
+
+        <a href="./contact.html">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>
+                Contact Me
+            </span>
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     RESUME PAGE
+===================================================== -->
+
 <main class="resume-page">
 
-  <section class="resume-hero">
 
-    <div class="resume-text">
+    <!-- HERO -->
 
-      <h1>
-        About<br>
-        Ezhilarasan P
-      </h1>
+    <section class="resume-hero">
 
-      <p>
-        I am a final-year B.E. Electronics and Communication Engineering
-        student with a strong interest in IT Infrastructure, Networking,
-        Cloud Computing and emerging technologies.
-      </p>
 
-      <p>
-        I am continuously developing my technical knowledge through
-        certifications, practical projects and hands-on learning in
-        networking, cloud platforms and infrastructure technologies.
-      </p>
+        <div class="resume-text">
 
-      <a href="resume.docx" class="btn primary" download>
-        <i class="fa-solid fa-download"></i>
-        Download Resume
-      </a>
+
+            <div class="resume-label">
+                Resume / Profile
+            </div>
+
+
+            <h1>
+
+                About
+
+                <br>
+
+                <span>
+                    Ezhilarasan P
+                </span>
+
+            </h1>
+
+
+            <p class="resume-intro">
+
+                I am a final-year B.E. Electronics and
+                Communication Engineering student with a
+                strong interest in IT Infrastructure,
+                Networking, Cloud Computing and emerging
+                technologies.
+
+            </p>
+
+
+            <p class="resume-intro">
+
+                I am continuously developing my technical
+                knowledge through certifications, practical
+                projects and hands-on learning in networking,
+                cloud platforms and infrastructure technologies.
+
+            </p>
+
+
+            <a
+                href="./resume.docx"
+                class="resume-download"
+                download>
+
+                <i class="fa-solid fa-download"></i>
+
+                Download Resume
+
+            </a>
+
+        </div>
+
+
+
+        <!-- PHOTO -->
+
+        <div class="resume-photo">
+
+            <img
+                src="./ezhil.jpg"
+                alt="Ezhilarasan P">
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- SECTION HEADING -->
+
+    <div class="resume-section-heading">
+
+        <h2>
+            Professional Profile
+        </h2>
+
+        <p>
+            Education, skills, certifications and career focus
+        </p>
 
     </div>
 
 
-    <div class="resume-photo">
-      <img src="ezhil.jpg" alt="Ezhilarasan P">
-    </div>
 
-  </section>
+    <!-- RESUME CARDS -->
 
-
-  <section class="resume-grid">
-
-    <article class="resume-card">
-      <h2>
-        <i class="fa-solid fa-graduation-cap"></i>
-        Education
-      </h2>
-
-      <h3>2023 – 2027</h3>
-
-      <p>
-        <strong>B.E. Electronics and Communication Engineering</strong>
-      </p>
-
-      <p>Karpagam Institute of Technology, Coimbatore</p>
-    </article>
+    <section class="resume-grid">
 
 
-    <article class="resume-card">
-      <h2>
-        <i class="fa-solid fa-bullseye"></i>
-        Career Focus
-      </h2>
+        <!-- EDUCATION -->
 
-      <h3>IT Infrastructure</h3>
+        <article class="resume-card">
 
-      <p>
-        Interested in Networking, Cloud Computing,
-        System Administration and IT Infrastructure.
-      </p>
-    </article>
+            <h2>
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                Education
+
+            </h2>
 
 
-    <article class="resume-card">
-      <h2>
-        <i class="fa-solid fa-laptop-code"></i>
-        Technical Skills
-      </h2>
-
-      <div class="skill-tags">
-        <span>Networking</span>
-        <span>CCNA</span>
-        <span>Azure</span>
-        <span>Oracle Cloud</span>
-        <span>Linux</span>
-        <span>Python</span>
-        <span>Java</span>
-        <span>Arduino</span>
-        <span>IoT</span>
-        <span>OpenCV</span>
-      </div>
-    </article>
+            <h3>
+                2023 – 2027
+            </h3>
 
 
-    <article class="resume-card">
-      <h2>
-        <i class="fa-solid fa-certificate"></i>
-        Certifications
-      </h2>
+            <p>
 
-      <ul>
-        <li>Microsoft Azure Fundamentals (AZ-900)</li>
-        <li>Oracle Cloud Infrastructure DevOps Professional</li>
-        <li>Google Introduction to AI</li>
-        <li>AWS Academy</li>
-        <li>CCNA Networking Courses</li>
-      </ul>
+                <strong>
+                    B.E. Electronics and Communication Engineering
+                </strong>
 
-      <a href="certificates.html" class="small-link">
-        View Certifications →
-      </a>
-    </article>
+            </p>
 
 
-    <article class="resume-card">
-      <h2>
-        <i class="fa-solid fa-diagram-project"></i>
-        Projects
-      </h2>
+            <p>
+                Karpagam Institute of Technology,
+                Coimbatore
+            </p>
 
-      <ul>
-        <li>Smart Glove with Integrated Sensors</li>
-        <li>Gesture Recognition System</li>
-        <li>IoT & Embedded Systems Projects</li>
-      </ul>
-
-      <a href="projects.html" class="small-link">
-        View Projects →
-      </a>
-    </article>
+        </article>
 
 
-    <article class="resume-card">
-      <h2>
-        <i class="fa-solid fa-book-open"></i>
-        Currently Learning
-      </h2>
 
-      <div class="skill-tags">
-        <span>CCNA</span>
-        <span>Networking</span>
-        <span>Linux</span>
-        <span>Cloud</span>
-        <span>IT Infrastructure</span>
-      </div>
-    </article>
+        <!-- CAREER -->
 
-  </section>
+        <article class="resume-card featured">
+
+            <h2>
+
+                <i class="fa-solid fa-bullseye"></i>
+
+                Career Focus
+
+            </h2>
+
+
+            <h3>
+                IT Infrastructure
+            </h3>
+
+
+            <p>
+
+                Interested in Networking, Cloud Computing,
+                System Administration and IT Infrastructure.
+
+            </p>
+
+        </article>
+
+
+
+        <!-- TECHNICAL SKILLS -->
+
+        <article class="resume-card">
+
+            <h2>
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+                Technical Skills
+
+            </h2>
+
+
+            <div class="skill-tags">
+
+                <span>Networking</span>
+                <span>CCNA</span>
+                <span>Azure</span>
+                <span>Oracle Cloud</span>
+                <span>Linux</span>
+                <span>Python</span>
+                <span>Java</span>
+                <span>Arduino</span>
+                <span>IoT</span>
+                <span>OpenCV</span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- CERTIFICATIONS -->
+
+        <article class="resume-card">
+
+            <h2>
+
+                <i class="fa-solid fa-certificate"></i>
+
+                Certifications
+
+            </h2>
+
+
+            <ul>
+
+                <li>
+                    Microsoft Azure Fundamentals (AZ-900)
+                </li>
+
+                <li>
+                    Oracle Cloud Infrastructure DevOps Professional
+                </li>
+
+                <li>
+                    Google Introduction to AI
+                </li>
+
+                <li>
+                    CCNA Networking Courses
+                </li>
+
+            </ul>
+
+
+            <a
+                href="./certificates.html"
+                class="small-link">
+
+                View Certifications →
+
+            </a>
+
+        </article>
+
+
+
+        <!-- PROJECTS -->
+
+        <article class="resume-card">
+
+            <h2>
+
+                <i class="fa-solid fa-diagram-project"></i>
+
+                Projects
+
+            </h2>
+
+
+            <ul>
+
+                <li>
+                    Smart Glove with Integrated Sensors
+                </li>
+
+                <li>
+                    Gesture Recognition System
+                </li>
+
+                <li>
+                    IoT &amp; Embedded Systems Projects
+                </li>
+
+            </ul>
+
+
+            <a
+                href="./projects.html"
+                class="small-link">
+
+                View Projects →
+
+            </a>
+
+        </article>
+
+
+
+        <!-- CURRENTLY LEARNING -->
+
+        <article class="resume-card featured">
+
+            <h2>
+
+                <i class="fa-solid fa-book-open"></i>
+
+                Currently Learning
+
+            </h2>
+
+
+            <div class="skill-tags">
+
+                <span>CCNA</span>
+                <span>Networking</span>
+                <span>Linux</span>
+                <span>Cloud</span>
+                <span>IT Infrastructure</span>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
 
 </main>
 
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =================================================
+           MENU
+        ================================================= */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const sideMenu =
+            document.getElementById("sideMenu");
+
+        const closeMenu =
+            document.getElementById("closeMenu");
+
+        const menuOverlay =
+            document.getElementById("menuOverlay");
+
+
+        function openMenu() {
+
+            if (sideMenu) {
+                sideMenu.classList.add("open");
+            }
+
+            if (menuOverlay) {
+                menuOverlay.classList.add("show");
+            }
+
+            document.body.classList.add("menu-open");
+
+        }
+
+
+        function hideMenu() {
+
+            if (sideMenu) {
+                sideMenu.classList.remove("open");
+            }
+
+            if (menuOverlay) {
+                menuOverlay.classList.remove("show");
+            }
+
+            document.body.classList.remove("menu-open");
+
+        }
+
+
+        if (menuBtn) {
+
+            menuBtn.addEventListener(
+                "click",
+                openMenu
+            );
+
+        }
+
+
+        if (closeMenu) {
+
+            closeMenu.addEventListener(
+                "click",
+                hideMenu
+            );
+
+        }
+
+
+        if (menuOverlay) {
+
+            menuOverlay.addEventListener(
+                "click",
+                hideMenu
+            );
+
+        }
+
+
+        /* SIDE MENU LINKS */
+
+        document
+            .querySelectorAll(".side-menu-links a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        hideMenu
+                    );
+
+                }
+            );
+
+
+        /* ESC KEY */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    hideMenu();
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           SCROLL REVEAL
+        ================================================= */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".resume-hero, .resume-text, .resume-photo, .resume-section-heading, .resume-card"
+            );
+
+
+        revealElements.forEach(
+            function (element) {
+
+                element.classList.add("reveal");
+
+            }
+        );
+
+
+        if ("IntersectionObserver" in window) {
+
+            const observer =
+                new IntersectionObserver(
+                    function (entries) {
+
+                        entries.forEach(
+                            function (entry) {
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+                                    entry.target.classList.add(
+                                        "show"
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold:0.12,
+                        rootMargin:
+                            "0px 0px -60px 0px"
+                    }
+                );
+
+
+            revealElements.forEach(
+                function (element) {
+
+                    observer.observe(element);
+
+                }
+            );
+
+        } else {
+
+            revealElements.forEach(
+                function (element) {
+
+                    element.classList.add("show");
+
+                }
+            );
+
+        }
+
+    }
+
+);
+
+</script>
+
+
 </body>
+
 </html>

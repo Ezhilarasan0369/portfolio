@@ -3,43 +3,665 @@
 
 <head>
 
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <title>Ezhilarasan P | Portfolio</title>
 
-    <title>Ezhilarasan P | Portfolio</title>
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Google Fonts -->
+  <!-- FONT AWESOME -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+  <!-- YOUR MAIN CSS -->
+  <link rel="stylesheet" href="style.css">
 
 
-    <!-- Font Awesome -->
+  <!-- =====================================================
+       VYNTRA AI STYLE
+  ====================================================== -->
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+
+    /* =====================================================
+       VYNTRA FLOATING BUTTON
+    ====================================================== */
+
+    #vyntraLauncher {
+
+      position: fixed !important;
+
+      right: 28px !important;
+      bottom: 28px !important;
+
+      width: 78px !important;
+      height: 78px !important;
+
+      padding: 0 !important;
+      margin: 0 !important;
+
+      border-radius: 50% !important;
+
+      border: 2px solid #f5b82e !important;
+
+      background: #0d3d25 !important;
+
+      display: flex !important;
+
+      align-items: center !important;
+      justify-content: center !important;
+
+      cursor: pointer !important;
+
+      z-index: 999998 !important;
+
+      box-shadow:
+        0 10px 35px rgba(0,0,0,0.35) !important;
+
+      transition: 0.3s ease !important;
+    }
 
 
-    <!-- Main CSS -->
+    #vyntraLauncher:hover {
 
-    <link
-        rel="stylesheet"
-        href="style.css">
+      transform:
+        translateY(-5px)
+        scale(1.05) !important;
+
+      box-shadow:
+        0 15px 40px rgba(245,184,46,0.25) !important;
+    }
+
+
+    #vyntraLauncher img {
+
+      width: 68px !important;
+      height: 68px !important;
+
+      border-radius: 50% !important;
+
+      object-fit: cover !important;
+
+      display: block !important;
+    }
+
+
+
+    /* =====================================================
+       VYNTRA CHAT WINDOW
+    ====================================================== */
+
+    #vyntraChat {
+
+      position: fixed !important;
+
+      right: 28px !important;
+      bottom: 120px !important;
+
+      width: 390px !important;
+
+      height: 590px !important;
+
+      max-width:
+        calc(100vw - 30px) !important;
+
+      max-height:
+        calc(100vh - 145px) !important;
+
+      background:
+        #082f1c !important;
+
+      border:
+        1px solid #8d7620 !important;
+
+      border-radius:
+        24px !important;
+
+      overflow:
+        hidden !important;
+
+      display:
+        none !important;
+
+      flex-direction:
+        column !important;
+
+      visibility:
+        hidden !important;
+
+      opacity:
+        0 !important;
+
+      z-index:
+        999999 !important;
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,0.50) !important;
+    }
+
+
+    /* =====================================================
+       OPEN CHAT
+    ====================================================== */
+
+    #vyntraChat.vyntra-open {
+
+      display:
+        flex !important;
+
+      visibility:
+        visible !important;
+
+      opacity:
+        1 !important;
+    }
+
+
+
+    /* =====================================================
+       CHAT HEADER
+    ====================================================== */
+
+    .vyntra-header {
+
+      height: 92px !important;
+
+      min-height: 92px !important;
+
+      flex-shrink: 0 !important;
+
+      padding: 12px 16px !important;
+
+      display: flex !important;
+
+      align-items: center !important;
+
+      background:
+        #0d4227 !important;
+
+      border-bottom:
+        1px solid rgba(245,184,46,0.15) !important;
+    }
+
+
+    .vyntra-avatar {
+
+      width: 64px !important;
+      height: 64px !important;
+
+      min-width: 64px !important;
+      min-height: 64px !important;
+
+      border-radius: 50% !important;
+
+      overflow: hidden !important;
+
+      border: 2px solid #f5b82e !important;
+    }
+
+
+    .vyntra-avatar img {
+
+      width: 100% !important;
+      height: 100% !important;
+
+      object-fit: cover !important;
+
+      display: block !important;
+    }
+
+
+    .vyntra-header-info {
+
+      flex: 1 !important;
+
+      margin-left: 12px !important;
+    }
+
+
+    .vyntra-header-info h3 {
+
+      margin: 0 !important;
+
+      color: #ffffff !important;
+
+      font-family:
+        Inter,
+        sans-serif !important;
+
+      font-size: 20px !important;
+
+      font-weight: 700 !important;
+    }
+
+
+    .vyntra-status {
+
+      margin-top: 4px !important;
+
+      display: flex !important;
+
+      align-items: center !important;
+
+      gap: 7px !important;
+
+      color: #a9b8ad !important;
+
+      font-family:
+        Inter,
+        sans-serif !important;
+
+      font-size: 13px !important;
+    }
+
+
+    .vyntra-status-dot {
+
+      width: 9px !important;
+      height: 9px !important;
+
+      border-radius: 50% !important;
+
+      background:
+        #32e86b !important;
+
+      display: inline-block !important;
+    }
+
+
+    #vyntraClose {
+
+      width: 50px !important;
+      height: 50px !important;
+
+      border: none !important;
+
+      border-radius: 50% !important;
+
+      background:
+        rgba(255,255,255,0.08) !important;
+
+      color: #ffffff !important;
+
+      font-size: 22px !important;
+
+      cursor: pointer !important;
+
+      flex-shrink: 0 !important;
+    }
+
+
+    #vyntraClose:hover {
+
+      background:
+        rgba(245,184,46,0.18) !important;
+
+      color:
+        #f5b82e !important;
+    }
+
+
+
+    /* =====================================================
+       MESSAGE AREA
+    ====================================================== */
+
+    .vyntra-messages {
+
+      flex: 1 !important;
+
+      min-height: 0 !important;
+
+      overflow-y: auto !important;
+
+      padding: 18px !important;
+
+      font-family:
+        Inter,
+        sans-serif !important;
+    }
+
+
+    .vyntra-messages::-webkit-scrollbar {
+
+      width: 7px;
+    }
+
+
+    .vyntra-messages::-webkit-scrollbar-track {
+
+      background:
+        #072718;
+    }
+
+
+    .vyntra-messages::-webkit-scrollbar-thumb {
+
+      background:
+        #8d7620;
+
+      border-radius:
+        10px;
+    }
+
+
+
+    /* =====================================================
+       CHAT MESSAGES
+    ====================================================== */
+
+    .vyntra-message {
+
+      max-width:
+        88% !important;
+
+      margin-bottom:
+        12px !important;
+
+      padding:
+        14px 16px !important;
+
+      border-radius:
+        16px !important;
+
+      font-family:
+        Inter,
+        sans-serif !important;
+
+      font-size:
+        14px !important;
+
+      line-height:
+        1.6 !important;
+    }
+
+
+    .vyntra-message.bot {
+
+      margin-right:
+        auto !important;
+
+      background:
+        #185436 !important;
+
+      color:
+        #f5f5ef !important;
+
+      border-bottom-left-radius:
+        5px !important;
+    }
+
+
+    .vyntra-message.user {
+
+      margin-left:
+        auto !important;
+
+      background:
+        #f5b82e !important;
+
+      color:
+        #092f1c !important;
+
+      border-bottom-right-radius:
+        5px !important;
+
+      font-weight:
+        600 !important;
+    }
+
+
+    .vyntra-message.bot strong {
+
+      color:
+        #f5b82e !important;
+    }
+
+
+
+    /* =====================================================
+       QUICK QUESTIONS
+    ====================================================== */
+
+    .vyntra-quick {
+
+      display:
+        flex !important;
+
+      flex-direction:
+        column !important;
+
+      gap:
+        8px !important;
+
+      margin-top:
+        8px !important;
+    }
+
+
+    .vyntra-quick button {
+
+      width:
+        100% !important;
+
+      padding:
+        11px 13px !important;
+
+      border-radius:
+        12px !important;
+
+      border:
+        1px solid #806d1e !important;
+
+      background:
+        #103c24 !important;
+
+      color:
+        #f5b82e !important;
+
+      text-align:
+        left !important;
+
+      font-family:
+        Inter,
+        sans-serif !important;
+
+      font-size:
+        13px !important;
+
+      cursor:
+        pointer !important;
+    }
+
+
+    .vyntra-quick button:hover {
+
+      background:
+        #174d2e !important;
+
+      border-color:
+        #f5b82e !important;
+    }
+
+
+
+    /* =====================================================
+       INPUT AREA
+    ====================================================== */
+
+    .vyntra-input-area {
+
+      flex-shrink:
+        0 !important;
+
+      display:
+        flex !important;
+
+      gap:
+        9px !important;
+
+      padding:
+        12px !important;
+
+      background:
+        #082f1c !important;
+
+      border-top:
+        1px solid rgba(245,184,46,0.15) !important;
+    }
+
+
+    #vyntraInput {
+
+      flex:
+        1 !important;
+
+      min-width:
+        0 !important;
+
+      height:
+        52px !important;
+
+      padding:
+        0 15px !important;
+
+      border:
+        1px solid #315c43 !important;
+
+      border-radius:
+        13px !important;
+
+      outline:
+        none !important;
+
+      background:
+        #123d27 !important;
+
+      color:
+        #ffffff !important;
+
+      font-family:
+        Inter,
+        sans-serif !important;
+
+      font-size:
+        14px !important;
+    }
+
+
+    #vyntraInput::placeholder {
+
+      color:
+        #91a397 !important;
+    }
+
+
+    #vyntraInput:focus {
+
+      border-color:
+        #f5b82e !important;
+    }
+
+
+    #vyntraSend {
+
+      width:
+        54px !important;
+
+      height:
+        52px !important;
+
+      flex-shrink:
+        0 !important;
+
+      border:
+        none !important;
+
+      border-radius:
+        13px !important;
+
+      background:
+        #f5b82e !important;
+
+      color:
+        #092f1c !important;
+
+      font-size:
+        19px !important;
+
+      cursor:
+        pointer !important;
+    }
+
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 600px) {
+
+      #vyntraLauncher {
+
+        right:
+          18px !important;
+
+        bottom:
+          18px !important;
+
+        width:
+          68px !important;
+
+        height:
+          68px !important;
+      }
+
+
+      #vyntraLauncher img {
+
+        width:
+          59px !important;
+
+        height:
+          59px !important;
+      }
+
+
+      #vyntraChat {
+
+        right:
+          10px !important;
+
+        bottom:
+          95px !important;
+
+        width:
+          calc(100vw - 20px) !important;
+
+        height:
+          calc(100vh - 115px) !important;
+
+        max-width:
+          none !important;
+
+        max-height:
+          none !important;
+
+        border-radius:
+          20px !important;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -53,141 +675,100 @@
 
 <header class="navbar">
 
+  <div class="navbar-brand">
 
-    <div class="navbar-brand">
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Open menu">
 
+      <i class="fa-solid fa-bars"></i>
 
-        <button
-            type="button"
-            class="menu-btn"
-            id="menuBtn"
-            aria-label="Open menu">
+    </button>
 
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
-
-        <a
-            href="index.html"
-            class="logo">
-
-            PORTFOLIO
-
-        </a>
-
-    </div>
-
-
-
-    <!-- NAVIGATION -->
-
-    <nav>
-
-        <ul class="nav-links">
-
-
-            <!-- HOME -->
-
-            <li>
-
-                <a
-                    href="index.html"
-                    class="active">
-
-                    Home
-
-                </a>
-
-            </li>
-
-
-
-            <!-- RESUME -->
-
-            <li>
-
-                <a href="about.html">
-
-                    Resume
-
-                </a>
-
-            </li>
-
-
-
-            <!-- PROJECTS -->
-
-            <li>
-
-                <a href="projects.html">
-
-                    Projects
-
-                </a>
-
-            </li>
-
-
-
-            <!-- VYNTRA AI -->
-
-            <li>
-
-                <a href="vyntra-ai.html">
-
-                    Vyntra AI
-
-                </a>
-
-            </li>
-
-
-
-            <!-- CERTIFICATIONS -->
-
-            <li>
-
-                <a href="certificates.html">
-
-                    Certifications & Awards
-
-                </a>
-
-            </li>
-
-
-
-            <!-- LINKEDIN -->
-
-            <li>
-
-                <a href="linkedin.html">
-
-                    LinkedIn
-
-                </a>
-
-            </li>
-
-
-        </ul>
-
-    </nav>
-
-
-
-    <!-- CONTACT -->
 
     <a
-        href="contact.html"
-        class="contact-btn">
+      href="index.html"
+      class="logo">
 
-        Contact Me
+      PORTFOLIO
 
     </a>
 
+  </div>
+
+
+  <nav>
+
+    <ul class="nav-links">
+
+      <li>
+        <a
+          href="index.html"
+          class="active">
+
+          Home
+
+        </a>
+      </li>
+
+
+      <li>
+        <a href="about.html">
+
+          Resume
+
+        </a>
+      </li>
+
+
+      <li>
+        <a href="projects.html">
+
+          Projects
+
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#vyntra-ai">
+
+          Vyntra AI
+
+        </a>
+      </li>
+
+
+      <li>
+        <a href="certificates.html">
+
+          Certifications & Awards
+
+        </a>
+      </li>
+
+
+      <li>
+        <a href="linkedin.html">
+
+          LinkedIn
+
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <a
+    href="contact.html"
+    class="contact-btn">
+
+    Contact Me
+
+  </a>
 
 </header>
 
@@ -198,8 +779,8 @@
 ===================================================== -->
 
 <div
-    class="menu-overlay"
-    id="menuOverlay">
+  class="menu-overlay"
+  id="menuOverlay">
 </div>
 
 
@@ -209,139 +790,116 @@
 ===================================================== -->
 
 <aside
-    class="side-menu"
-    id="sideMenu">
+  class="side-menu"
+  id="sideMenu">
 
 
-    <button
-        type="button"
-        class="close-menu"
-        id="closeMenu"
-        aria-label="Close menu">
+  <button
+    class="close-menu"
+    id="closeMenu"
+    aria-label="Close menu">
 
-        <i class="fa-solid fa-xmark"></i>
+    <i class="fa-solid fa-xmark"></i>
 
-    </button>
-
+  </button>
 
 
-    <div class="side-menu-title">
+  <div class="side-menu-title">
 
-        <span>
-            EZHILARASAN'S
-        </span>
+    <span>
+      EZHILARASAN'S
+    </span>
 
-        <h2>
-            PORTFOLIO
-        </h2>
+    <h2>
+      PORTFOLIO
+    </h2>
 
-    </div>
-
-
-
-    <div class="side-menu-links">
+  </div>
 
 
-        <!-- HOME -->
-
-        <a
-            href="index.html"
-            class="active">
-
-            <i class="fa-solid fa-house"></i>
-
-            <span>
-                Home
-            </span>
-
-        </a>
+  <div class="side-menu-links">
 
 
+    <a
+      href="index.html"
+      class="active">
 
-        <!-- RESUME -->
+      <i class="fa-solid fa-house"></i>
 
-        <a href="about.html">
+      <span>
+        Home
+      </span>
 
-            <i class="fa-solid fa-user"></i>
-
-            <span>
-                Resume
-            </span>
-
-        </a>
-
+    </a>
 
 
-        <!-- PROJECTS -->
+    <a href="about.html">
 
-        <a href="projects.html">
+      <i class="fa-solid fa-user"></i>
 
-            <i class="fa-solid fa-diagram-project"></i>
+      <span>
+        Resume
+      </span>
 
-            <span>
-                Projects
-            </span>
-
-        </a>
+    </a>
 
 
+    <a href="projects.html">
 
-        <!-- VYNTRA AI -->
+      <i class="fa-solid fa-diagram-project"></i>
 
-        <a href="vyntra-ai.html">
+      <span>
+        Projects
+      </span>
 
-            <i class="fa-solid fa-robot"></i>
-
-            <span>
-                Vyntra AI
-            </span>
-
-        </a>
+    </a>
 
 
+    <a href="vyntra-ai.html">
 
-        <!-- CERTIFICATIONS -->
+      <i class="fa-solid fa-robot"></i>
 
-        <a href="certificates.html">
+      <span>
+        Vyntra AI
+      </span>
 
-            <i class="fa-solid fa-certificate"></i>
-
-            <span>
-                Certifications & Awards
-            </span>
-
-        </a>
+    </a>
 
 
+    <a href="certificates.html">
 
-        <!-- LINKEDIN -->
+      <i class="fa-solid fa-certificate"></i>
 
-        <a href="linkedin.html">
+      <span>
+        Certifications & Awards
+      </span>
 
-            <i class="fa-brands fa-linkedin-in"></i>
-
-            <span>
-                LinkedIn
-            </span>
-
-        </a>
+    </a>
 
 
+    <a href="linkedin.html">
 
-        <!-- CONTACT -->
+      <i class="fa-brands fa-linkedin-in"></i>
 
-        <a href="contact.html">
+      <span>
+        LinkedIn
+      </span>
 
-            <i class="fa-solid fa-envelope"></i>
-
-            <span>
-                Contact Me
-            </span>
-
-        </a>
+    </a>
 
 
-    </div>
+    <a href="contact.html">
+
+      <i class="fa-solid fa-envelope"></i>
+
+      <span>
+        Contact Me
+      </span>
+
+    </a>
+
+
+  </div>
 
 </aside>
 
@@ -353,477 +911,374 @@
 
 <main class="home-page">
 
-
-    <section class="home-hero">
-
-
-        <!-- =================================================
-             LEFT SIDE
-        ================================================= -->
-
-        <div class="home-left">
+  <section class="home-hero">
 
 
-            <div class="cloud-word">
+    <!-- LEFT SIDE -->
 
-                CLOUD
+    <div class="home-left">
 
-            </div>
-
-
-            <div class="spark">
-
-                ✦
-
-            </div>
+      <div class="cloud-word">
+        CLOUD
+      </div>
 
 
-
-            <img
-                src="ezhilarasan.jpg"
-                alt="Ezhilarasan P"
-                class="home-photo">
+      <div class="spark">
+        ✦
+      </div>
 
 
+      <img
+        src="ezhilarasan.jpg"
+        alt="Ezhilarasan P"
+        class="home-photo">
 
-            <p class="home-description">
 
-                Passionate about networking, cloud computing,
-                IT infrastructure and emerging technologies.
-                Building my technical knowledge through
-                projects, certifications and continuous learning.
+      <p class="home-description">
 
-            </p>
+        Passionate about networking, cloud computing,
+        IT infrastructure and emerging technologies.
+        Building my technical knowledge through projects,
+        certifications and continuous learning.
 
+      </p>
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="home-content">
+
+      <p class="hello">
+        Hello, I'm
+      </p>
+
+
+      <h2>
+        Ezhilarasan P
+      </h2>
+
+
+      <h1>
+
+        IT Infrastructure & Networking
+
+        <span>
+          Enthusiast
+        </span>
+
+      </h1>
+
+
+      <div class="home-info">
+
+        <p>
+
+          <strong>
+            Degree:
+          </strong>
+
+          B.E. Electronics and Communication Engineering
+
+        </p>
+
+
+        <p>
+
+          <strong>
+            Focus:
+          </strong>
+
+          Networking · Cloud · IT Infrastructure
+
+        </p>
+
+
+        <p>
+
+          <strong>
+            Learning:
+          </strong>
+
+          CCNA · Azure · Networking · Linux
+
+        </p>
+
+      </div>
+
+
+
+      <!-- SOCIAL ICONS -->
+
+      <div class="social-icons">
+
+
+        <a
+          href="https://www.linkedin.com/in/ezhilarasan-prabakaran-ezhil0369"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn">
+
+          <i class="fa-brands fa-linkedin-in"></i>
+
+        </a>
+
+
+        <a
+          href="https://github.com/Ezhilarasan0369"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub">
+
+          <i class="fa-brands fa-github"></i>
+
+        </a>
+
+
+        <a
+          href="mailto:ezhilarasan0369@gmail.com"
+          aria-label="Email">
+
+          <i class="fa-solid fa-envelope"></i>
+
+        </a>
+
+      </div>
+
+
+
+      <!-- STATS -->
+
+      <div class="stats">
+
+
+        <div class="stat">
+
+          <strong>
+            3+
+          </strong>
+
+          <span>
+            Major Projects
+          </span>
 
         </div>
 
 
-
-        <!-- =================================================
-             RIGHT SIDE
-        ================================================= -->
-
-        <div class="home-content">
-
-
-            <p class="hello">
-
-                Hello, I'm
-
-            </p>
-
-
-
-            <h2>
-
-                Ezhilarasan P
-
-            </h2>
-
-
-
-            <h1>
-
-                IT Infrastructure & Networking
-
-                <span>
-
-                    Enthusiast
-
-                </span>
-
-            </h1>
-
-
-
-            <!-- INFO -->
-
-            <div class="home-info">
-
-
-                <p>
-
-                    <strong>
-                        Degree:
-                    </strong>
-
-                    B.E. Electronics and Communication Engineering
-
-                </p>
-
-
-
-                <p>
-
-                    <strong>
-                        Focus:
-                    </strong>
-
-                    Networking · Cloud · IT Infrastructure
-
-                </p>
-
-
-
-                <p>
-
-                    <strong>
-                        Learning:
-                    </strong>
-
-                    CCNA · Azure · Networking · Linux
-
-                </p>
-
-
-            </div>
-
-
-
-            <!-- =================================================
-                 SOCIAL ICONS
-            ================================================= -->
-
-            <div class="social-icons">
-
-
-                <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn">
-
-                    <i class="fa-brands fa-linkedin-in"></i>
-
-                </a>
-
-
-
-                <a
-                    href="https://github.com/Ezhilarasan0369"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub">
-
-                    <i class="fa-brands fa-github"></i>
-
-                </a>
-
-
-
-                <a
-                    href="mailto:ezhilarasan0369@gmail.com"
-                    aria-label="Email">
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                </a>
-
-
-            </div>
-
-
-
-            <!-- =================================================
-                 STATS
-            ================================================= -->
-
-            <div class="stats">
-
-
-                <div class="stat">
-
-                    <strong>
-                        3+
-                    </strong>
-
-                    <span>
-                        Major Projects
-                    </span>
-
-                </div>
-
-
-
-                <div class="stat">
-
-                    <strong>
-                        8+
-                    </strong>
-
-                    <span>
-                        Certifications
-                    </span>
-
-                </div>
-
-
-
-                <div class="stat">
-
-                    <strong>
-                        4+
-                    </strong>
-
-                    <span>
-                        Cloud & Network Skills
-                    </span>
-
-                </div>
-
-
-            </div>
-
+        <div class="stat">
+
+          <strong>
+            8+
+          </strong>
+
+          <span>
+            Certifications
+          </span>
 
         </div>
 
 
-    </section>
+        <div class="stat">
 
+          <strong>
+            4+
+          </strong>
+
+          <span>
+            Cloud & Network Skills
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
 
 </main>
 
 
 
 <!-- =====================================================
-     VYNTRA AI FLOATING ASSISTANT
+     VYNTRA AI FLOATING BUTTON
 ===================================================== -->
 
-<div class="vyntra-ai">
+<button
+  id="vyntraLauncher"
+  aria-label="Open Vyntra AI">
 
+  <img
+    src="vyntra-ai.png"
+    alt="Vyntra AI">
 
-    <!-- =================================================
-         CHAT WINDOW
-    ================================================= -->
+</button>
 
-    <div
-        class="vyntra-chat"
-        id="vyntraChat">
 
 
-        <!-- HEADER -->
+<!-- =====================================================
+     VYNTRA AI CHAT WINDOW
+===================================================== -->
 
-        <div class="vyntra-chat-header">
+<section
+  id="vyntraChat"
+  aria-label="Vyntra AI Assistant">
 
 
-            <div class="vyntra-ai-profile">
+  <!-- HEADER -->
 
+  <div class="vyntra-header">
 
-                <div class="vyntra-ai-avatar">
 
-                    <img
-                        src="vyntra-ai.png"
-                        alt="Vyntra AI">
+    <div class="vyntra-avatar">
 
-                </div>
-
-
-
-                <div>
-
-
-                    <div class="vyntra-ai-name">
-
-                        Vyntra AI
-
-                    </div>
-
-
-
-                    <div class="vyntra-ai-status">
-
-                        <span></span>
-
-                        AI Portfolio Assistant
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- CLOSE -->
-
-            <button
-                type="button"
-                class="vyntra-close"
-                id="vyntraClose"
-                aria-label="Close Vyntra AI">
-
-                <i class="fa-solid fa-xmark"></i>
-
-            </button>
-
-
-        </div>
-
-
-
-        <!-- =================================================
-             MESSAGES
-        ================================================= -->
-
-        <div
-            class="vyntra-messages"
-            id="vyntraMessages">
-
-
-            <!-- WELCOME -->
-
-            <div class="vyntra-message bot">
-
-                👋 Hi! I'm
-
-                <strong>
-                    Vyntra AI
-                </strong>.
-
-                <br><br>
-
-                I'm Ezhilarasan's AI Portfolio Assistant.
-
-                <br><br>
-
-                I can help you explore his
-
-                <strong>
-                    projects, skills,
-                    certifications and experience.
-                </strong>
-
-            </div>
-
-
-
-            <!-- QUICK QUESTIONS -->
-
-            <div class="vyntra-suggestions">
-
-
-                <button
-                    type="button"
-                    class="vyntra-suggestion"
-                    data-question="Tell me about Ezhilarasan">
-
-                    👤 Tell me about Ezhilarasan
-
-                </button>
-
-
-
-                <button
-                    type="button"
-                    class="vyntra-suggestion"
-                    data-question="Show me his projects">
-
-                    🚀 Show his projects
-
-                </button>
-
-
-
-                <button
-                    type="button"
-                    class="vyntra-suggestion"
-                    data-question="What certifications does he have?">
-
-                    🏆 Certifications
-
-                </button>
-
-
-
-                <button
-                    type="button"
-                    class="vyntra-suggestion"
-                    data-question="What are his technical skills?">
-
-                    💻 Technical Skills
-
-                </button>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =================================================
-             INPUT
-        ================================================= -->
-
-        <div class="vyntra-input-area">
-
-
-            <input
-                type="text"
-                id="vyntraInput"
-                class="vyntra-input"
-                placeholder="Ask about Ezhilarasan..."
-                autocomplete="off">
-
-
-
-            <button
-                type="button"
-                id="vyntraSend"
-                class="vyntra-send"
-                aria-label="Send message">
-
-                <i class="fa-solid fa-paper-plane"></i>
-
-            </button>
-
-
-        </div>
-
+      <img
+        src="vyntra-ai.png"
+        alt="Vyntra AI">
 
     </div>
 
 
+    <div class="vyntra-header-info">
 
-    <!-- =================================================
-         FLOATING AI BUTTON
-    ================================================= -->
-
-    <button
-        type="button"
-        class="vyntra-ai-button"
-        id="vyntraOpen"
-        aria-label="Open Vyntra AI">
+      <h3>
+        Vyntra AI
+      </h3>
 
 
-        <img
-            src="vyntra-ai.png"
-            alt="Vyntra AI">
-
+      <div class="vyntra-status">
 
         <span
-            class="vyntra-online-dot">
+          class="vyntra-status-dot">
         </span>
 
+        AI Portfolio Assistant
+
+      </div>
+
+    </div>
+
+
+    <button
+      id="vyntraClose"
+      aria-label="Close Vyntra AI">
+
+      <i class="fa-solid fa-xmark"></i>
 
     </button>
 
+  </div>
 
 
-    <!-- LABEL -->
 
-    <div class="vyntra-ai-label">
+  <!-- CHAT MESSAGES -->
 
-        Ask Vyntra AI
+  <div
+    class="vyntra-messages"
+    id="vyntraMessages">
+
+
+    <div
+      class="vyntra-message bot">
+
+      👋 Hi! I'm
+      <strong>Vyntra AI</strong>.
+
+      <br><br>
+
+      I'm Ezhilarasan's AI Portfolio Assistant.
+
+      <br><br>
+
+      I can help you explore his
+      <strong>
+        projects, skills, certifications
+        and career focus.
+      </strong>
 
     </div>
 
 
-</div>
+    <!-- QUICK QUESTIONS -->
+
+    <div
+      class="vyntra-quick">
+
+
+      <button
+        data-question="Tell me about Ezhilarasan">
+
+        👤 Tell me about Ezhilarasan
+
+      </button>
+
+
+      <button
+        data-question="What projects has Ezhilarasan done?">
+
+        🚀 Show his projects
+
+      </button>
+
+
+      <button
+        data-question="What certifications does Ezhilarasan have?">
+
+        🏆 Certifications
+
+      </button>
+
+
+      <button
+        data-question="What are Ezhilarasan's technical skills?">
+
+        💻 Technical Skills
+
+      </button>
+
+
+      <button
+        data-question="What is Ezhilarasan's career goal?">
+
+        🎯 Career Goal
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- INPUT -->
+
+  <div
+    class="vyntra-input-area">
+
+
+    <input
+      type="text"
+      id="vyntraInput"
+      placeholder="Ask about Ezhilarasan..."
+      autocomplete="off">
+
+
+    <button
+      id="vyntraSend"
+      aria-label="Send">
+
+      <i
+        class="fa-solid fa-paper-plane">
+      </i>
+
+    </button>
+
+  </div>
+
+</section>
 
 
 
@@ -833,853 +1288,901 @@
 
 <script>
 
-
 /* =====================================================
-   DOM READY
+   HAMBURGER MENU
 ===================================================== */
 
+const menuBtn =
+  document.getElementById("menuBtn");
+
+const sideMenu =
+  document.getElementById("sideMenu");
+
+const closeMenu =
+  document.getElementById("closeMenu");
+
+const menuOverlay =
+  document.getElementById("menuOverlay");
+
+
+function openMenu() {
+
+  sideMenu.classList.add("open");
+
+  menuOverlay.classList.add("show");
+
+  document.body.classList.add("menu-open");
+
+}
+
+
+function hideMenu() {
+
+  sideMenu.classList.remove("open");
+
+  menuOverlay.classList.remove("show");
+
+  document.body.classList.remove("menu-open");
+
+}
+
+
+if (menuBtn) {
+
+  menuBtn.addEventListener(
+    "click",
+    openMenu
+  );
+
+}
+
+
+if (closeMenu) {
+
+  closeMenu.addEventListener(
+    "click",
+    hideMenu
+  );
+
+}
+
+
+if (menuOverlay) {
+
+  menuOverlay.addEventListener(
+    "click",
+    hideMenu
+  );
+
+}
+
+
+document
+  .querySelectorAll(".side-menu a")
+  .forEach(function(link) {
+
+    link.addEventListener(
+      "click",
+      hideMenu
+    );
+
+  });
+
+
 document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+  "keydown",
+  function(event) {
 
+    if (event.key === "Escape") {
 
-
-        /* =================================================
-           SIDE MENU
-        ================================================= */
-
-        const menuBtn =
-            document.getElementById("menuBtn");
-
-        const sideMenu =
-            document.getElementById("sideMenu");
-
-        const closeMenu =
-            document.getElementById("closeMenu");
-
-        const menuOverlay =
-            document.getElementById("menuOverlay");
-
-
-
-        function openMenu() {
-
-            if (!sideMenu || !menuOverlay) {
-                return;
-            }
-
-            sideMenu.classList.add("open");
-
-            menuOverlay.classList.add("show");
-
-            document.body.classList.add("menu-open");
-
-        }
-
-
-
-        function hideMenu() {
-
-            if (!sideMenu || !menuOverlay) {
-                return;
-            }
-
-            sideMenu.classList.remove("open");
-
-            menuOverlay.classList.remove("show");
-
-            document.body.classList.remove("menu-open");
-
-        }
-
-
-
-        if (menuBtn) {
-
-            menuBtn.addEventListener(
-                "click",
-                openMenu
-            );
-
-        }
-
-
-
-        if (closeMenu) {
-
-            closeMenu.addEventListener(
-                "click",
-                hideMenu
-            );
-
-        }
-
-
-
-        if (menuOverlay) {
-
-            menuOverlay.addEventListener(
-                "click",
-                hideMenu
-            );
-
-        }
-
-
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (event.key === "Escape") {
-
-                    hideMenu();
-
-                }
-
-            }
-        );
-
-
-
-        /* =================================================
-           VYNTRA AI
-        ================================================= */
-
-        const openButton =
-            document.getElementById("vyntraOpen");
-
-        const closeButton =
-            document.getElementById("vyntraClose");
-
-        const chat =
-            document.getElementById("vyntraChat");
-
-        const input =
-            document.getElementById("vyntraInput");
-
-        const sendButton =
-            document.getElementById("vyntraSend");
-
-        const messages =
-            document.getElementById("vyntraMessages");
-
-
-
-        /* =================================================
-           OPEN VYNTRA
-        ================================================= */
-
-        if (openButton && chat) {
-
-            openButton.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-                    event.stopPropagation();
-
-                    chat.classList.add("active");
-
-                    openButton.style.display =
-                        "none";
-
-
-                    setTimeout(
-                        function () {
-
-                            if (input) {
-
-                                input.focus();
-
-                            }
-
-                        },
-                        200
-                    );
-
-                }
-            );
-
-        }
-
-
-
-        /* =================================================
-           CLOSE VYNTRA
-        ================================================= */
-
-        if (closeButton && chat) {
-
-            closeButton.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-                    event.stopPropagation();
-
-                    chat.classList.remove("active");
-
-
-                    if (openButton) {
-
-                        openButton.style.display =
-                            "flex";
-
-                    }
-
-                }
-            );
-
-        }
-
-
-
-        /* =================================================
-           ADD MESSAGE
-        ================================================= */
-
-        function addMessage(
-            text,
-            type
-        ) {
-
-            if (!messages) {
-                return;
-            }
-
-
-            const message =
-                document.createElement("div");
-
-
-            message.className =
-                "vyntra-message " + type;
-
-
-            message.innerHTML =
-                text;
-
-
-            messages.appendChild(
-                message
-            );
-
-
-            messages.scrollTop =
-                messages.scrollHeight;
-
-        }
-
-
-
-        /* =================================================
-           TYPING INDICATOR
-        ================================================= */
-
-        function showTyping() {
-
-            if (!messages) {
-                return;
-            }
-
-
-            const typing =
-                document.createElement("div");
-
-
-            typing.className =
-                "vyntra-typing";
-
-
-            typing.id =
-                "vyntraTyping";
-
-
-            typing.innerHTML = `
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            `;
-
-
-            messages.appendChild(
-                typing
-            );
-
-
-            messages.scrollTop =
-                messages.scrollHeight;
-
-        }
-
-
-
-        function hideTyping() {
-
-            const typing =
-                document.getElementById(
-                    "vyntraTyping"
-                );
-
-
-            if (typing) {
-
-                typing.remove();
-
-            }
-
-        }
-
-
-
-        /* =================================================
-           RESPONSE ENGINE
-        ================================================= */
-
-        function getVyntraResponse(
-            question
-        ) {
-
-
-            const q =
-                question.toLowerCase();
-
-
-
-            /* ABOUT */
-
-            if (
-
-                q.includes("about") ||
-                q.includes("who is") ||
-                q.includes("ezhilarasan")
-
-            ) {
-
-                return `
-
-                    <strong>
-                        Ezhilarasan P
-                    </strong>
-
-                    is a B.E. Electronics and
-                    Communication Engineering
-                    student with a strong interest in
-
-                    <strong>
-                        IT Infrastructure,
-                        Networking,
-                        Cloud Computing
-                        and Linux.
-                    </strong>
-
-                    <br><br>
-
-                    He is continuously developing
-                    his technical knowledge through
-                    projects, certifications and
-                    hands-on learning.
-
-                `;
-
-            }
-
-
-
-            /* PROJECTS */
-
-            if (
-
-                q.includes("project") ||
-                q.includes("projects")
-
-            ) {
-
-                return `
-
-                    🚀 Ezhilarasan's project interests
-                    and work include:
-
-                    <br><br>
-
-                    • IT Infrastructure<br>
-                    • Networking<br>
-                    • Cloud Computing<br>
-                    • AI & Automation<br>
-                    • IoT / Embedded Systems
-
-                    <br><br>
-
-                    You can explore the complete
-                    projects in the
-                    <strong>
-                        Projects
-                    </strong>
-                    section.
-
-                `;
-
-            }
-
-
-
-            /* CERTIFICATIONS */
-
-            if (
-
-                q.includes("certification") ||
-                q.includes("certificate")
-
-            ) {
-
-                return `
-
-                    🏆 Ezhilarasan's certifications
-                    and learning areas include:
-
-                    <br><br>
-
-                    • Microsoft Azure Fundamentals<br>
-                    • AWS Academy<br>
-                    • Oracle Cloud / DevOps<br>
-                    • CCNA Networking<br>
-                    • Google AI<br>
-                    • Infosys certifications
-
-                    <br><br>
-
-                    Visit the
-                    <strong>
-                        Certifications & Awards
-                    </strong>
-                    section for more details.
-
-                `;
-
-            }
-
-
-
-            /* SKILLS */
-
-            if (
-
-                q.includes("skill") ||
-                q.includes("technical") ||
-                q.includes("technology") ||
-                q.includes("technologies")
-
-            ) {
-
-                return `
-
-                    💻 Ezhilarasan's main technical
-                    focus areas are:
-
-                    <br><br>
-
-                    <strong>
-                        Networking
-                    </strong>
-
-                    <br>
-
-                    CCNA, TCP/IP,
-                    Routing & Switching
-
-                    <br><br>
-
-                    <strong>
-                        Cloud
-                    </strong>
-
-                    <br>
-
-                    Azure and AWS
-
-                    <br><br>
-
-                    <strong>
-                        Infrastructure
-                    </strong>
-
-                    <br>
-
-                    Linux and IT Infrastructure
-
-                    <br><br>
-
-                    <strong>
-                        Programming
-                    </strong>
-
-                    <br>
-
-                    Python and Java
-
-                `;
-
-            }
-
-
-
-            /* CLOUD */
-
-            if (
-
-                q.includes("cloud") ||
-                q.includes("azure") ||
-                q.includes("aws")
-
-            ) {
-
-                return `
-
-                    ☁️ Ezhilarasan is interested in
-
-                    <strong>
-                        Cloud Infrastructure
-                    </strong>
-
-                    and is learning technologies
-                    such as
-                    <strong>
-                        Microsoft Azure and AWS.
-                    </strong>
-
-                    <br><br>
-
-                    His focus is on understanding
-                    how networking, Linux and cloud
-                    infrastructure work together.
-
-                `;
-
-            }
-
-
-
-            /* LINUX */
-
-            if (
-                q.includes("linux")
-            ) {
-
-                return `
-
-                    🐧 Linux is one of
-                    Ezhilarasan's infrastructure
-                    learning areas.
-
-                    <br><br>
-
-                    His learning focus includes
-                    Linux commands, administration,
-                    networking and server-side
-                    concepts.
-
-                `;
-
-            }
-
-
-
-            /* NETWORKING */
-
-            if (
-
-                q.includes("network") ||
-                q.includes("networking") ||
-                q.includes("ccna")
-
-            ) {
-
-                return `
-
-                    🌐 Networking is one of
-                    Ezhilarasan's primary areas
-                    of interest.
-
-                    <br><br>
-
-                    His learning focus includes:
-
-                    <br><br>
-
-                    • CCNA<br>
-                    • TCP/IP<br>
-                    • Routing & Switching<br>
-                    • Network fundamentals<br>
-                    • IT Infrastructure
-
-                `;
-
-            }
-
-
-
-            /* CONTACT */
-
-            if (
-
-                q.includes("contact") ||
-                q.includes("email") ||
-                q.includes("github") ||
-                q.includes("linkedin")
-
-            ) {
-
-                return `
-
-                    📩 You can connect with
-                    Ezhilarasan through the
-                    social links available
-                    on this portfolio.
-
-                    <br><br>
-
-                    You can also use the
-                    <strong>
-                        Contact Me
-                    </strong>
-                    section to get in touch.
-
-                `;
-
-            }
-
-
-
-            /* RESUME */
-
-            if (
-
-                q.includes("resume") ||
-                q.includes("cv")
-
-            ) {
-
-                return `
-
-                    📄 Ezhilarasan's resume is
-                    available through the
-                    Resume section of this portfolio.
-
-                `;
-
-            }
-
-
-
-            /* DEFAULT */
-
-            return `
-
-                🤖 I can help you explore
-                <strong>
-                    Ezhilarasan's portfolio.
-                </strong>
-
-                <br><br>
-
-                Try asking:
-
-                <br><br>
-
-                • Tell me about Ezhilarasan<br>
-                • Show his projects<br>
-                • What certifications does he have?<br>
-                • What are his technical skills?<br>
-                • What cloud technologies does he know?<br>
-                • Tell me about his Linux skills<br>
-                • What networking skills does he have?
-
-            `;
-
-        }
-
-
-
-        /* =================================================
-           SEND MESSAGE
-        ================================================= */
-
-        function sendMessage() {
-
-            if (!input) {
-                return;
-            }
-
-
-            const question =
-                input.value.trim();
-
-
-            if (!question) {
-                return;
-            }
-
-
-            addMessage(
-                question,
-                "user"
-            );
-
-
-            input.value =
-                "";
-
-
-            showTyping();
-
-
-            setTimeout(
-                function () {
-
-                    hideTyping();
-
-
-                    const response =
-                        getVyntraResponse(
-                            question
-                        );
-
-
-                    addMessage(
-                        response,
-                        "bot"
-                    );
-
-                },
-                650
-            );
-
-        }
-
-
-
-        /* SEND BUTTON */
-
-        if (sendButton) {
-
-            sendButton.addEventListener(
-                "click",
-                function () {
-
-                    sendMessage();
-
-                }
-            );
-
-        }
-
-
-
-        /* ENTER */
-
-        if (input) {
-
-            input.addEventListener(
-                "keydown",
-                function (event) {
-
-                    if (
-                        event.key === "Enter"
-                    ) {
-
-                        event.preventDefault();
-
-                        sendMessage();
-
-                    }
-
-                }
-            );
-
-        }
-
-
-
-        /* =================================================
-           QUICK QUESTIONS
-        ================================================= */
-
-        const quickQuestions =
-            document.querySelectorAll(
-                ".vyntra-suggestion"
-            );
-
-
-        quickQuestions.forEach(
-            function (button) {
-
-
-                button.addEventListener(
-                    "click",
-                    function () {
-
-
-                        const question =
-                            button.getAttribute(
-                                "data-question"
-                            );
-
-
-                        if (!question) {
-                            return;
-                        }
-
-
-                        addMessage(
-                            question,
-                            "user"
-                        );
-
-
-                        showTyping();
-
-
-                        setTimeout(
-                            function () {
-
-
-                                hideTyping();
-
-
-                                const response =
-                                    getVyntraResponse(
-                                        question
-                                    );
-
-
-                                addMessage(
-                                    response,
-                                    "bot"
-                                );
-
-
-                            },
-                            650
-                        );
-
-                    }
-                );
-
-            }
-        );
-
+      hideMenu();
 
     }
 
+  }
 );
 
-</script>
 
+
+/* =====================================================
+   VYNTRA AI VARIABLES
+===================================================== */
+
+const vyntraLauncher =
+  document.getElementById(
+    "vyntraLauncher"
+  );
+
+const vyntraNav =
+  document.getElementById(
+    "vyntraNav"
+  );
+
+const vyntraSideNav =
+  document.getElementById(
+    "vyntraSideNav"
+  );
+
+const vyntraChat =
+  document.getElementById(
+    "vyntraChat"
+  );
+
+const vyntraClose =
+  document.getElementById(
+    "vyntraClose"
+  );
+
+const vyntraMessages =
+  document.getElementById(
+    "vyntraMessages"
+  );
+
+const vyntraInput =
+  document.getElementById(
+    "vyntraInput"
+  );
+
+const vyntraSend =
+  document.getElementById(
+    "vyntraSend"
+  );
+
+
+
+/* =====================================================
+   OPEN VYNTRA
+===================================================== */
+
+vyntraLauncher.addEventListener(
+  "click",
+  function() {
+
+    console.log(
+      "Vyntra AI opened"
+    );
+
+    vyntraChat.classList.add(
+      "vyntra-open"
+    );
+
+    vyntraChat.style.display =
+      "flex";
+
+    vyntraChat.style.visibility =
+      "visible";
+
+    vyntraChat.style.opacity =
+      "1";
+
+    vyntraLauncher.style.display =
+      "none";
+
+    setTimeout(
+      function() {
+
+        vyntraInput.focus();
+
+      },
+      150
+    );
+
+  }
+);
+
+
+
+/* =====================================================
+   CLOSE VYNTRA
+===================================================== */
+
+vyntraClose.addEventListener(
+  "click",
+  function() {
+
+    console.log(
+      "Vyntra AI closed"
+    );
+
+    vyntraChat.classList.remove(
+      "vyntra-open"
+    );
+
+    vyntraChat.style.display =
+      "none";
+
+    vyntraChat.style.visibility =
+      "hidden";
+
+    vyntraChat.style.opacity =
+      "0";
+
+    vyntraLauncher.style.display =
+      "flex";
+
+  }
+);
+
+
+
+/* =====================================================
+   ADD MESSAGE
+===================================================== */
+
+function addVyntraMessage(
+  text,
+  type
+) {
+
+  const message =
+    document.createElement(
+      "div"
+    );
+
+  message.className =
+    "vyntra-message " + type;
+
+  message.innerHTML =
+    text;
+
+  vyntraMessages.appendChild(
+    message
+  );
+
+  vyntraMessages.scrollTop =
+    vyntraMessages.scrollHeight;
+
+}
+
+
+
+/* =====================================================
+   ANSWER ENGINE
+===================================================== */
+
+function getVyntraAnswer(
+  question
+) {
+
+  const q =
+    question.toLowerCase().trim();
+
+
+
+  /* ABOUT */
+
+  if (
+    q.includes("about") ||
+    q.includes("who is") ||
+    q.includes("profile") ||
+    q.includes("introduce")
+  ) {
+
+    return `
+
+      <strong>Ezhilarasan P</strong> is a
+      B.E. Electronics and Communication
+      Engineering student.
+
+      <br><br>
+
+      He has a strong interest in
+      <strong>
+        IT Infrastructure, Networking,
+        Cloud Computing and Linux.
+      </strong>
+
+      <br><br>
+
+      He is continuously building his
+      technical knowledge through projects,
+      certifications and hands-on learning.
+
+    `;
+
+  }
+
+
+
+  /* PROJECTS */
+
+  if (
+    q.includes("project") ||
+    q.includes("projects") ||
+    q.includes("built")
+  ) {
+
+    return `
+
+      Ezhilarasan has worked on several
+      technical projects:
+
+      <br><br>
+
+      🚀 <strong>
+      Smart Glove with Integrated Sensors
+      </strong>
+
+      <br><br>
+
+      👁️ <strong>
+      Gesture Recognition System
+      </strong>
+
+      <br><br>
+
+      🔧 <strong>
+      IoT & Embedded Systems Projects
+      </strong>
+
+      <br><br>
+
+      These projects combine electronics,
+      IoT, computer vision and intelligent
+      systems.
+
+    `;
+
+  }
+
+
+
+  /* CERTIFICATIONS */
+
+  if (
+    q.includes("certification") ||
+    q.includes("certifications") ||
+    q.includes("certificate")
+  ) {
+
+    return `
+
+      Some of Ezhilarasan's certifications
+      include:
+
+      <br><br>
+
+      🏆 <strong>
+      Microsoft Azure Fundamentals
+      (AZ-900)
+      </strong>
+
+      <br><br>
+
+      ☁️ <strong>
+      Oracle Cloud Infrastructure
+      DevOps Professional
+      </strong>
+
+      <br><br>
+
+      🤖 <strong>
+      Google Introduction to AI
+      </strong>
+
+      <br><br>
+
+      🌐 <strong>
+      CCNA Networking Courses
+      </strong>
+
+    `;
+
+  }
+
+
+
+  /* SKILLS */
+
+  if (
+    q.includes("skill") ||
+    q.includes("skills") ||
+    q.includes("technical") ||
+    q.includes("technology") ||
+    q.includes("technologies")
+  ) {
+
+    return `
+
+      Ezhilarasan's technical areas include:
+
+      <br><br>
+
+      🌐 <strong>Networking & CCNA</strong>
+
+      <br>
+
+      ☁️ <strong>Microsoft Azure</strong>
+
+      <br>
+
+      🖥️ <strong>Linux & IT Infrastructure</strong>
+
+      <br>
+
+      ☁️ <strong>Oracle Cloud</strong>
+
+      <br>
+
+      🐍 <strong>Python</strong>
+
+      <br>
+
+      ☕ <strong>Java</strong>
+
+      <br>
+
+      🤖 <strong>IoT & Embedded Systems</strong>
+
+      <br>
+
+      👁️ <strong>OpenCV</strong>
+
+    `;
+
+  }
+
+
+
+  /* CAREER */
+
+  if (
+    q.includes("career") ||
+    q.includes("goal") ||
+    q.includes("future") ||
+    q.includes("job") ||
+    q.includes("focus")
+  ) {
+
+    return `
+
+      Ezhilarasan's career focus is toward
+
+      <strong>
+        IT Infrastructure,
+        Networking and Cloud Computing.
+      </strong>
+
+      <br><br>
+
+      He is currently developing skills in
+
+      <strong>
+        CCNA, Azure, Linux and
+        infrastructure technologies.
+      </strong>
+
+    `;
+
+  }
+
+
+
+  /* EDUCATION */
+
+  if (
+    q.includes("degree") ||
+    q.includes("education") ||
+    q.includes("college") ||
+    q.includes("study")
+  ) {
+
+    return `
+
+      Ezhilarasan is pursuing
+
+      <strong>
+        B.E. Electronics and Communication
+        Engineering.
+      </strong>
+
+      <br><br>
+
+      He is developing his technical
+      knowledge alongside his engineering
+      studies, with a focus on networking,
+      cloud and IT infrastructure.
+
+    `;
+
+  }
+
+
+
+  /* AZURE */
+
+  if (
+    q.includes("azure") ||
+    q.includes("az-900") ||
+    q.includes("microsoft")
+  ) {
+
+    return `
+
+      Ezhilarasan has completed
+
+      <strong>
+        Microsoft Azure Fundamentals
+        (AZ-900).
+      </strong>
+
+      <br><br>
+
+      This strengthened his foundation
+      in cloud concepts and Microsoft
+      Azure services.
+
+    `;
+
+  }
+
+
+
+  /* LINUX */
+
+  if (
+    q.includes("linux") ||
+    q.includes("server") ||
+    q.includes("system administration")
+  ) {
+
+    return `
+
+      <strong>Linux</strong> is one of the
+      areas Ezhilarasan is currently
+      learning as part of his
+      IT Infrastructure journey.
+
+      <br><br>
+
+      His broader focus includes networking,
+      system administration, cloud and
+      infrastructure technologies.
+
+    `;
+
+  }
+
+
+
+  /* CONTACT */
+
+  if (
+    q.includes("contact") ||
+    q.includes("email") ||
+    q.includes("github") ||
+    q.includes("linkedin")
+  ) {
+
+    return `
+
+      You can connect with Ezhilarasan
+      through:
+
+      <br><br>
+
+      📧 <strong>
+      Email:
+      </strong>
+      ezhilarasan0369@gmail.com
+
+      <br><br>
+
+      💼 <strong>
+      LinkedIn:
+      </strong>
+      Ezhilarasan P
+
+      <br><br>
+
+      💻 <strong>
+      GitHub:
+      </strong>
+      Ezhilarasan0369
+
+    `;
+
+  }
+
+
+
+  /* DEFAULT */
+
+  return `
+
+    I can help you explore:
+
+    <br><br>
+
+    👤 <strong>About Ezhilarasan</strong>
+
+    <br>
+
+    🚀 <strong>Projects</strong>
+
+    <br>
+
+    🏆 <strong>Certifications</strong>
+
+    <br>
+
+    💻 <strong>Technical Skills</strong>
+
+    <br>
+
+    🎯 <strong>Career Goal</strong>
+
+    <br>
+
+    🎓 <strong>Education</strong>
+
+    <br>
+
+    ☁️ <strong>Azure & Cloud</strong>
+
+    <br>
+
+    🐧 <strong>Linux</strong>
+
+    <br>
+
+    📧 <strong>Contact</strong>
+
+    <br><br>
+
+    Try asking:
+    <strong>
+      "What projects has he done?"
+    </strong>
+
+  `;
+
+}
+
+
+
+/* =====================================================
+   SEND MESSAGE
+===================================================== */
+
+function sendVyntraMessage() {
+
+  const question =
+    vyntraInput.value.trim();
+
+
+  if (!question) {
+
+    return;
+
+  }
+
+
+  addVyntraMessage(
+    question,
+    "user"
+  );
+
+
+  vyntraInput.value = "";
+
+
+  setTimeout(
+    function() {
+
+      const answer =
+        getVyntraAnswer(
+          question
+        );
+
+      addVyntraMessage(
+        answer,
+        "bot"
+      );
+
+    },
+    300
+  );
+
+}
+
+
+
+/* SEND BUTTON */
+
+vyntraSend.addEventListener(
+  "click",
+  sendVyntraMessage
+);
+
+
+
+/* ENTER */
+
+vyntraInput.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key === "Enter"
+    ) {
+
+      event.preventDefault();
+
+      sendVyntraMessage();
+
+    }
+
+  }
+);
+
+
+
+/* =====================================================
+   QUICK QUESTIONS
+===================================================== */
+
+document
+  .querySelectorAll(
+    ".vyntra-quick button"
+  )
+  .forEach(
+    function(button) {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          const question =
+            this.getAttribute(
+              "data-question"
+            );
+
+
+          addVyntraMessage(
+            question,
+            "user"
+          );
+
+
+          setTimeout(
+            function() {
+
+              const answer =
+                getVyntraAnswer(
+                  question
+                );
+
+              addVyntraMessage(
+                answer,
+                "bot"
+              );
+
+            },
+            300
+          );
+
+        }
+      );
+
+    }
+  );
+
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const revealElements = document.querySelectorAll(`
+    main > section,
+    main > article,
+    .home-left,
+    .home-content,
+    .home-photo,
+    .home-description,
+    .stats,
+    .stat,
+    .resume-hero,
+    .resume-text,
+    .resume-photo,
+    .resume-grid,
+    .resume-card,
+    .project-card,
+    .projects-grid,
+    .linkedin-card,
+    .linkedin-grid,
+    .contact-info,
+    .contact-form-box,
+    .contact-card,
+    .contact-cards,
+    .page-heading,
+    .vyntra-hero,
+    .vyntra-preview,
+    .vyntra-section,
+    .vyntra-card,
+    .tech-card,
+    .feature-card,
+    .timeline-item
+  `);
+
+  revealElements.forEach(function (element) {
+    element.classList.add("reveal");
+  });
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+
+      entries.forEach(function (entry) {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -60px 0px"
+    }
+  );
+
+  revealElements.forEach(function (element) {
+    observer.observe(element);
+  });
+
+});
+
+
+/* =====================================================
+   NAVBAR VYNTRA AI
+   OPEN SAME-PAGE CHAT
+===================================================== */
+
+function openVyntraFromNavigation(event) {
+
+  event.preventDefault();
+
+  if (typeof hideMenu === "function") {
+    hideMenu();
+  }
+
+  vyntraChat.classList.add("vyntra-open");
+
+  vyntraChat.style.display = "flex";
+
+  vyntraChat.style.visibility = "visible";
+
+  vyntraChat.style.opacity = "1";
+
+  vyntraLauncher.style.display = "none";
+
+  setTimeout(function () {
+
+    if (vyntraInput) {
+      vyntraInput.focus();
+    }
+
+  }, 150);
+
+}
+
+if (vyntraNav) {
+  vyntraNav.addEventListener(
+    "click",
+    openVyntraFromNavigation
+  );
+}
+
+if (vyntraSideNav) {
+  vyntraSideNav.addEventListener(
+    "click",
+    openVyntraFromNavigation
+  );
+}
+
+</script>
 
 </body>
 

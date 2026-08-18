@@ -1,109 +1,1373 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LinkedIn | Ezhilarasan P</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>LinkedIn | Ezhilarasan P</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+/* =====================================================
+   LINKEDIN PAGE
+===================================================== */
+
+.linkedin-page {
+
+    width:100%;
+
+    min-height:
+        calc(100vh - 88px);
+
+    padding:
+        70px 5%
+        110px;
+
+    background:#ffffff;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.linkedin-header {
+
+    width:100%;
+
+    max-width:1250px;
+
+    margin:
+        0 auto 60px;
+
+}
+
+
+.linkedin-eyebrow {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+    color:#d99b00;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+
+.linkedin-eyebrow::before {
+
+    content:"";
+
+    width:34px;
+
+    height:2px;
+
+    background:#f5b82e;
+
+}
+
+
+.linkedin-header h1 {
+
+    margin:
+        0 0 16px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(55px,7vw,88px);
+
+    line-height:.92;
+
+    font-weight:600;
+
+    letter-spacing:-1px;
+
+    color:#173b26;
+
+}
+
+
+.linkedin-header h1 span {
+
+    color:#f5b82e;
+
+}
+
+
+.linkedin-header > p {
+
+    max-width:760px;
+
+    margin:
+        0 0 27px;
+
+    color:#5f7065;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+   PROFILE BUTTON
+===================================================== */
+
+.linkedin-profile-btn {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:
+        14px 22px;
+
+    border-radius:30px;
+
+    background:#f5b82e;
+
+    color:#173b26;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.linkedin-profile-btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(245,184,46,.25);
+
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.linkedin-post-heading {
+
+    width:100%;
+
+    max-width:1250px;
+
+    margin:
+        0 auto 30px;
+
+}
+
+
+.linkedin-post-heading h2 {
+
+    margin:
+        0 0 8px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(45px,5vw,62px);
+
+    line-height:1;
+
+    font-weight:600;
+
+    color:#173b26;
+
+}
+
+
+.linkedin-post-heading p {
+
+    margin:0;
+
+    color:#68766e;
+
+    font-size:13px;
+
+}
+
+
+/* =====================================================
+   POSTS GRID
+===================================================== */
+
+.linkedin-grid {
+
+    width:100%;
+
+    max-width:1250px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:25px;
+
+}
+
+
+/* =====================================================
+   POST CARD
+===================================================== */
+
+.linkedin-card {
+
+    min-width:0;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        rgba(245,184,46,.35);
+
+    box-shadow:
+        0 12px 40px
+        rgba(23,59,38,.07);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.linkedin-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(245,184,46,.75);
+
+    box-shadow:
+        0 25px 60px
+        rgba(23,59,38,.13);
+
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.linkedin-image {
+
+    width:100%;
+
+    height:300px;
+
+    padding:16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #173b26,
+            #0d2c1c
+        );
+
+    overflow:hidden;
+
+}
+
+
+.linkedin-image img {
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    border-radius:15px;
+
+    background:#f7f7f7;
+
+    border:
+        1px solid
+        rgba(245,184,46,.30);
+
+    transition:
+        transform .5s ease;
+
+}
+
+
+.linkedin-card:hover
+.linkedin-image img {
+
+    transform:
+        scale(1.035);
+
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.linkedin-content {
+
+    padding:
+        24px 24px 28px;
+
+}
+
+
+.linkedin-platform {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:10px;
+
+    color:#d99b00;
+
+    font-size:11px;
+
+    font-weight:700;
+
+}
+
+
+.linkedin-content h2 {
+
+    margin:
+        0 0 13px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:30px;
+
+    line-height:1.05;
+
+    font-weight:700;
+
+    color:#173b26;
+
+}
+
+
+.linkedin-content p {
+
+    margin:0;
+
+    color:#64746a;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+   LINKEDIN ICON
+===================================================== */
+
+.linkedin-platform i {
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   NAVBAR WHITE THEME
+===================================================== */
+
+.navbar {
+
+    background:#ffffff !important;
+
+    border-bottom:
+        1px solid
+        rgba(23,59,38,.08);
+
+}
+
+
+.navbar .logo {
+
+    color:#173b26 !important;
+
+}
+
+
+.nav-links a {
+
+    color:#173b26 !important;
+
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+
+    color:#d99b00 !important;
+
+}
+
+
+.contact-btn {
+
+    background:#f5b82e !important;
+
+    color:#173b26 !important;
+
+}
+
+
+.menu-btn {
+
+    color:#d99b00 !important;
+
+    border-color:
+        rgba(245,184,46,.40) !important;
+
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal {
+
+    opacity:0;
+
+    transform:
+        translateY(45px);
+
+    transition:
+        opacity .75s ease,
+        transform .75s ease;
+
+}
+
+
+.reveal.show {
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1100px) {
+
+    .linkedin-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        max-width:900px;
+
+    }
+
+}
+
+
+@media(max-width:1000px) {
+
+    .linkedin-page {
+
+        padding:
+            60px 4%
+            90px;
+
+    }
+
+
+    .linkedin-header {
+
+        max-width:900px;
+
+    }
+
+
+    .linkedin-post-heading {
+
+        max-width:900px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px) {
+
+    .linkedin-page {
+
+        padding:
+            45px 18px
+            75px;
+
+    }
+
+
+    .linkedin-header {
+
+        margin-bottom:45px;
+
+    }
+
+
+    .linkedin-header h1 {
+
+        font-size:55px;
+
+    }
+
+
+    .linkedin-header > p {
+
+        font-size:13px;
+
+    }
+
+
+    .linkedin-grid {
+
+        grid-template-columns:1fr;
+
+        max-width:550px;
+
+    }
+
+
+    .linkedin-image {
+
+        height:310px;
+
+    }
+
+
+    .linkedin-content {
+
+        padding:
+            22px 20px 25px;
+
+    }
+
+
+    .linkedin-content h2 {
+
+        font-size:28px;
+
+    }
+
+
+    .linkedin-post-heading h2 {
+
+        font-size:43px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:430px) {
+
+    .linkedin-page {
+
+        padding-left:14px;
+
+        padding-right:14px;
+
+    }
+
+
+    .linkedin-header h1 {
+
+        font-size:48px;
+
+    }
+
+
+    .linkedin-image {
+
+        height:260px;
+
+    }
+
+
+    .linkedin-content h2 {
+
+        font-size:25px;
+
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
 <header class="navbar">
-  <a href="index.html" class="logo">PORTFOLIO</a>
 
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="certificates.html">Certifications</a></li>
-      <li><a href="linkedin.html" class="active">LinkedIn</a></li>
-    </ul>
-  </nav>
 
-  <a href="contact.html" class="contact-btn">Contact Me</a>
+    <div class="navbar-brand">
+
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            type="button"
+            aria-label="Open navigation menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <a
+            href="./index.html"
+            class="logo">
+
+            PORTFOLIO
+
+        </a>
+
+
+    </div>
+
+
+    <nav>
+
+        <ul class="nav-links">
+
+
+            <li>
+
+                <a href="./index.html">
+                    Home
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="./about.html">
+                    Resume
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="./projects.html">
+                    Projects
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="./vyntra-ai.html">
+                    Vyntra AI
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="./certificates.html">
+                    Certifications &amp; Awards
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="./linkedin.html"
+                    class="active">
+
+                    LinkedIn
+
+                </a>
+
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+    <a
+        href="./contact.html"
+        class="contact-btn">
+
+        Contact Me
+
+    </a>
+
+
 </header>
 
 
-<main class="dark-page">
 
-  <section class="page-heading">
+<!-- =====================================================
+     MENU OVERLAY
+===================================================== -->
 
-    <h1>LinkedIn Posts</h1>
-
-    <p>My recent certifications and professional updates.</p>
-
-    <a href="https://www.linkedin.com/" target="_blank" class="btn primary">
-      <i class="fa-brands fa-linkedin"></i>
-      View LinkedIn Profile
-    </a>
-
-  </section>
+<div
+    class="menu-overlay"
+    id="menuOverlay">
+</div>
 
 
-  <section class="linkedin-grid">
 
-    <article class="linkedin-card">
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
 
-      <img src="azure-certificate.png" alt="Azure Fundamentals">
+<aside
+    class="side-menu"
+    id="sideMenu">
 
-      <div class="linkedin-content">
-        <h2>Microsoft Azure Fundamentals</h2>
+
+    <button
+        class="close-menu"
+        id="closeMenu"
+        type="button"
+        aria-label="Close navigation menu">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <div class="side-menu-title">
+
+        <span>
+            EZHILARASAN'S
+        </span>
+
+        <h2>
+            PORTFOLIO
+        </h2>
+
+    </div>
+
+
+    <div class="side-menu-links">
+
+
+        <a href="./index.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+
+        <a href="./about.html">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>
+                Resume
+            </span>
+
+        </a>
+
+
+        <a href="./projects.html">
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+            <span>
+                Projects
+            </span>
+
+        </a>
+
+
+        <a href="./vyntra-ai.html">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <span>
+                Vyntra AI
+            </span>
+
+        </a>
+
+
+        <a href="./certificates.html">
+
+            <i class="fa-solid fa-certificate"></i>
+
+            <span>
+                Certifications &amp; Awards
+            </span>
+
+        </a>
+
+
+        <a
+            href="./linkedin.html"
+            class="active">
+
+            <i class="fa-brands fa-linkedin-in"></i>
+
+            <span>
+                LinkedIn
+            </span>
+
+        </a>
+
+
+        <a href="./contact.html">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>
+                Contact Me
+            </span>
+
+        </a>
+
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     LINKEDIN PAGE
+===================================================== -->
+
+<main class="linkedin-page">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <section class="linkedin-header reveal">
+
+
+        <div class="linkedin-eyebrow">
+
+            Professional Updates
+
+        </div>
+
+
+        <h1>
+
+            LinkedIn
+
+            <span>
+                Posts
+            </span>
+
+        </h1>
+
 
         <p>
-          Achieved Microsoft Certified: Azure Fundamentals,
-          strengthening my foundation in cloud computing
-          and Microsoft Azure.
+
+            My recent certifications, professional updates
+            and technical learning achievements shared through
+            LinkedIn.
+
         </p>
-      </div>
-
-    </article>
 
 
-    <article class="linkedin-card">
+        <a
+            href="https://www.linkedin.com/in/ezhilarasan-prabakaran-ezhil0369"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="linkedin-profile-btn">
 
-      <img src="oracle-certificate.png" alt="Oracle Cloud">
+            <i class="fa-brands fa-linkedin"></i>
 
-      <div class="linkedin-content">
-        <h2>Oracle Cloud DevOps Professional</h2>
+            View LinkedIn Profile
+
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECTION TITLE
+    ================================================== -->
+
+    <div class="linkedin-post-heading reveal">
+
+        <h2>
+            Recent Updates
+        </h2>
 
         <p>
-          Earned the Oracle Cloud Infrastructure DevOps
-          Professional certification and expanded my
-          cloud and DevOps knowledge.
+            Certifications and technical learning milestones.
         </p>
-      </div>
 
-    </article>
+    </div>
 
 
-    <article class="linkedin-card">
 
-      <img src="google-ai-certificate.png" alt="Google Introduction to AI">
+    <!-- =================================================
+         POSTS
+    ================================================== -->
 
-      <div class="linkedin-content">
-        <h2>Google Introduction to AI</h2>
+    <section class="linkedin-grid">
 
-        <p>
-          Completed Google's Introduction to AI course
-          and strengthened my understanding of
-          Artificial Intelligence fundamentals.
-        </p>
-      </div>
 
-    </article>
+        <!-- =================================================
+             POST 01
+        ================================================== -->
 
-  </section>
+        <article class="linkedin-card reveal">
+
+
+            <div class="linkedin-image">
+
+                <img
+                    src="./azure-certificate.png"
+                    alt="Microsoft Azure Fundamentals">
+
+            </div>
+
+
+            <div class="linkedin-content">
+
+
+                <div class="linkedin-platform">
+
+                    <i class="fa-brands fa-linkedin"></i>
+
+                    Certification Update
+
+                </div>
+
+
+                <h2>
+                    Microsoft Azure Fundamentals
+                </h2>
+
+
+                <p>
+
+                    Achieved Microsoft Certified:
+                    Azure Fundamentals, strengthening
+                    my foundation in cloud computing
+                    and Microsoft Azure.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- =================================================
+             POST 02
+        ================================================== -->
+
+        <article class="linkedin-card reveal">
+
+
+            <div class="linkedin-image">
+
+                <img
+                    src="./oracle-certificate.png"
+                    alt="Oracle Cloud Infrastructure DevOps Professional">
+
+            </div>
+
+
+            <div class="linkedin-content">
+
+
+                <div class="linkedin-platform">
+
+                    <i class="fa-brands fa-linkedin"></i>
+
+                    Certification Update
+
+                </div>
+
+
+                <h2>
+                    Oracle Cloud DevOps Professional
+                </h2>
+
+
+                <p>
+
+                    Earned the Oracle Cloud Infrastructure
+                    DevOps Professional certification and
+                    expanded my cloud and DevOps knowledge.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- =================================================
+             POST 03
+        ================================================== -->
+
+        <article class="linkedin-card reveal">
+
+
+            <div class="linkedin-image">
+
+                <img
+                    src="./google-ai-certificate.png"
+                    alt="Google Introduction to AI">
+
+            </div>
+
+
+            <div class="linkedin-content">
+
+
+                <div class="linkedin-platform">
+
+                    <i class="fa-brands fa-linkedin"></i>
+
+                    Learning Update
+
+                </div>
+
+
+                <h2>
+                    Google Introduction to AI
+                </h2>
+
+
+                <p>
+
+                    Completed Google's Introduction to AI
+                    course and strengthened my understanding
+                    of Artificial Intelligence fundamentals.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+    </section>
+
 
 </main>
 
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+
+        /* =================================================
+           MENU
+        ================================================= */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const sideMenu =
+            document.getElementById("sideMenu");
+
+        const closeMenu =
+            document.getElementById("closeMenu");
+
+        const menuOverlay =
+            document.getElementById("menuOverlay");
+
+
+        function openMenu() {
+
+            if(sideMenu)
+                sideMenu.classList.add("open");
+
+            if(menuOverlay)
+                menuOverlay.classList.add("show");
+
+            document.body.classList.add(
+                "menu-open"
+            );
+
+        }
+
+
+        function hideMenu() {
+
+            if(sideMenu)
+                sideMenu.classList.remove("open");
+
+            if(menuOverlay)
+                menuOverlay.classList.remove("show");
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+        }
+
+
+        if(menuBtn) {
+
+            menuBtn.addEventListener(
+                "click",
+                openMenu
+            );
+
+        }
+
+
+        if(closeMenu) {
+
+            closeMenu.addEventListener(
+                "click",
+                hideMenu
+            );
+
+        }
+
+
+        if(menuOverlay) {
+
+            menuOverlay.addEventListener(
+                "click",
+                hideMenu
+            );
+
+        }
+
+
+        document
+            .querySelectorAll(
+                ".side-menu-links a"
+            )
+            .forEach(
+                function(link) {
+
+                    link.addEventListener(
+                        "click",
+                        hideMenu
+                    );
+
+                }
+            );
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if(event.key === "Escape") {
+
+                    hideMenu();
+
+                }
+
+            }
+        );
+
+
+
+        /* =================================================
+           SCROLL REVEAL
+        ================================================= */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        if(
+            "IntersectionObserver"
+            in window
+        ) {
+
+
+            const observer =
+                new IntersectionObserver(
+                    function(entries) {
+
+                        entries.forEach(
+                            function(entry) {
+
+                                if(
+                                    entry.isIntersecting
+                                ) {
+
+                                    entry.target
+                                        .classList
+                                        .add("show");
+
+                                }
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold:0.12,
+
+                        rootMargin:
+                            "0px 0px -60px 0px"
+                    }
+                );
+
+
+            revealElements.forEach(
+                function(element) {
+
+                    observer.observe(element);
+
+                }
+            );
+
+
+        } else {
+
+
+            revealElements.forEach(
+                function(element) {
+
+                    element.classList.add(
+                        "show"
+                    );
+
+                }
+            );
+
+        }
+
+    }
+
+);
+
+</script>
+
+
 </body>
+
 </html>

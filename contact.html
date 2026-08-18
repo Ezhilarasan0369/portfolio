@@ -1,204 +1,1720 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact | Ezhilarasan P</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Contact | Ezhilarasan P</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+/* =====================================================
+   CONTACT PAGE
+===================================================== */
+
+.contact-page-new {
+
+    width:100%;
+
+    min-height:
+        calc(100vh - 88px);
+
+    padding:
+        70px 5%
+        80px;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(380px,.75fr);
+
+    gap:65px;
+
+    align-items:start;
+
+    background:#ffffff;
+
+}
+
+
+/* =====================================================
+   CONTACT INFO
+===================================================== */
+
+.contact-info-new {
+
+    width:100%;
+
+    max-width:720px;
+
+    justify-self:center;
+
+}
+
+
+.contact-eyebrow {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:16px;
+
+    color:#d99b00;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+
+.contact-eyebrow::before {
+
+    content:"";
+
+    width:34px;
+
+    height:2px;
+
+    background:#f5b82e;
+
+}
+
+
+.contact-info-new h1 {
+
+    margin:
+        0 0 23px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(55px,7vw,86px);
+
+    line-height:.92;
+
+    font-weight:600;
+
+    letter-spacing:-1px;
+
+    color:#173b26;
+
+}
+
+
+.contact-info-new h1 span {
+
+    display:block;
+
+    color:#f5b82e;
+
+}
+
+
+.contact-intro-new {
+
+    max-width:650px;
+
+    margin:
+        0 0 34px;
+
+    color:#5f7065;
+
+    font-size:14px;
+
+    line-height:1.85;
+
+}
+
+
+/* =====================================================
+   CONTACT CARDS
+===================================================== */
+
+.contact-cards-new {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:13px;
+
+    max-width:700px;
+
+}
+
+
+.contact-card-new {
+
+    min-width:0;
+
+    min-height:82px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        rgba(23,59,38,.10);
+
+    box-shadow:
+        0 8px 28px
+        rgba(23,59,38,.055);
+
+    text-decoration:none;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.contact-card-new:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(245,184,46,.65);
+
+    box-shadow:
+        0 15px 35px
+        rgba(23,59,38,.10);
+
+}
+
+
+.contact-icon-new {
+
+    width:47px;
+
+    height:47px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:
+        rgba(245,184,46,.12);
+
+    border:
+        1px solid
+        rgba(245,184,46,.25);
+
+    color:#d99b00;
+
+    font-size:17px;
+
+}
+
+
+.contact-card-text {
+
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+}
+
+
+.contact-card-text span {
+
+    color:#718077;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+.contact-card-text strong {
+
+    color:#173b26;
+
+    font-size:12px;
+
+    line-height:1.4;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+}
+
+
+/* =====================================================
+   FORM BOX
+===================================================== */
+
+.contact-form-box-new {
+
+    width:100%;
+
+    max-width:480px;
+
+    justify-self:center;
+
+    padding:32px;
+
+    border-radius:25px;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        rgba(23,59,38,.10);
+
+    box-shadow:
+        0 18px 55px
+        rgba(23,59,38,.09);
+
+}
+
+
+.form-title {
+
+    margin:
+        0 0 8px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    color:#173b26;
+
+    font-size:36px;
+
+    line-height:1;
+
+}
+
+
+.form-subtitle {
+
+    margin:
+        0 0 26px;
+
+    color:#718077;
+
+    font-size:12px;
+
+    line-height:1.7;
+
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.contact-form-new {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:17px;
+
+}
+
+
+.form-group-new {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+
+}
+
+
+.form-group-new label {
+
+    color:#314d3b;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+.form-group-new input,
+.form-group-new textarea {
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    border:
+        1px solid
+        rgba(23,59,38,.12);
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#f8faf8;
+
+    color:#173b26;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:12px;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+
+}
+
+
+.form-group-new input {
+
+    height:48px;
+
+    padding:
+        0 14px;
+
+}
+
+
+.form-group-new textarea {
+
+    min-height:125px;
+
+    padding:
+        13px 14px;
+
+    resize:vertical;
+
+}
+
+
+.form-group-new input::placeholder,
+.form-group-new textarea::placeholder {
+
+    color:#9aa69f;
+
+}
+
+
+.form-group-new input:focus,
+.form-group-new textarea:focus {
+
+    border-color:
+        rgba(245,184,46,.75);
+
+    background:#ffffff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(245,184,46,.10);
+
+}
+
+
+/* =====================================================
+   SEND BUTTON
+===================================================== */
+
+.send-btn-new {
+
+    width:100%;
+
+    height:51px;
+
+    margin-top:3px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    border:none;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5b82e,
+            #ffc94d
+        );
+
+    color:#173b26;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.send-btn-new:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 14px 30px
+        rgba(245,184,46,.25);
+
+}
+
+
+/* =====================================================
+   NAVBAR WHITE THEME
+===================================================== */
+
+.navbar {
+
+    background:#ffffff !important;
+
+    border-bottom:
+        1px solid
+        rgba(23,59,38,.08);
+
+}
+
+
+.navbar .logo {
+
+    color:#173b26 !important;
+
+}
+
+
+.nav-links a {
+
+    color:#173b26 !important;
+
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+
+    color:#d99b00 !important;
+
+}
+
+
+.contact-btn {
+
+    background:#f5b82e !important;
+
+    color:#173b26 !important;
+
+}
+
+
+.menu-btn {
+
+    color:#d99b00 !important;
+
+    border-color:
+        rgba(245,184,46,.40) !important;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer {
+
+    width:100%;
+
+    background:#061b10;
+
+    color:#eee9df;
+
+    margin-top:0;
+
+    padding:
+        0 28px;
+
+    box-sizing:border-box;
+
+}
+
+
+.footer-top-line {
+
+    width:100%;
+
+    height:1px;
+
+    background:
+        rgba(245,184,46,.35);
+
+}
+
+
+.footer-content {
+
+    min-height:90px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    max-width:1500px;
+
+    margin:0 auto;
+
+}
+
+
+.footer-links {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.footer-links a {
+
+    color:#bdbdbd;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    transition:
+        color .25s ease;
+
+}
+
+
+.footer-links a:hover {
+
+    color:#f5b82e;
+
+}
+
+
+.footer-copy {
+
+    color:#9d9d9d;
+
+    font-size:13px;
+
+    text-align:center;
+
+    white-space:nowrap;
+
+}
+
+
+.footer-location {
+
+    color:#eee9df;
+
+    font-size:13px;
+
+    white-space:nowrap;
+
+    border-bottom:
+        1px solid
+        #f5b82e;
+
+    padding-bottom:4px;
+
+}
+
+
+.footer-location i {
+
+    color:#f5b82e;
+
+    margin-right:6px;
+
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal {
+
+    opacity:0;
+
+    transform:
+        translateY(45px);
+
+    transition:
+        opacity .75s ease,
+        transform .75s ease;
+
+}
+
+
+.reveal.show {
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1000px) {
+
+    .contact-page-new {
+
+        grid-template-columns:1fr;
+
+        gap:45px;
+
+        max-width:850px;
+
+        margin:0 auto;
+
+    }
+
+
+    .contact-info-new,
+    .contact-form-box-new {
+
+        max-width:800px;
+
+        width:100%;
+
+    }
+
+
+    .contact-cards-new {
+
+        max-width:800px;
+
+    }
+
+
+    .footer-content {
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        padding:30px 0;
+
+        text-align:center;
+
+    }
+
+
+    .footer-links {
+
+        justify-content:center;
+
+        gap:16px 24px;
+
+    }
+
+
+    .footer-copy {
+
+        white-space:normal;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px) {
+
+    .contact-page-new {
+
+        padding:
+            48px 18px
+            70px;
+
+        gap:36px;
+
+    }
+
+
+    .contact-info-new h1 {
+
+        font-size:55px;
+
+    }
+
+
+    .contact-intro-new {
+
+        font-size:13px;
+
+    }
+
+
+    .contact-cards-new {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .contact-form-box-new {
+
+        padding:24px;
+
+        border-radius:21px;
+
+    }
+
+
+    .form-title {
+
+        font-size:32px;
+
+    }
+
+
+    .footer-links {
+
+        gap:13px 18px;
+
+    }
+
+
+    .footer-links a,
+    .footer-copy,
+    .footer-location {
+
+        font-size:12px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:430px) {
+
+    .contact-page-new {
+
+        padding-left:14px;
+
+        padding-right:14px;
+
+    }
+
+
+    .contact-info-new h1 {
+
+        font-size:48px;
+
+    }
+
+
+    .contact-card-new {
+
+        min-height:76px;
+
+    }
+
+
+    .contact-form-box-new {
+
+        padding:20px;
+
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
 <header class="navbar">
 
-  <a href="index.html" class="logo">PORTFOLIO</a>
 
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="certificates.html">Certifications</a></li>
-      <li><a href="linkedin.html">LinkedIn</a></li>
-    </ul>
-  </nav>
+    <div class="navbar-brand">
 
-  <a href="contact.html" class="contact-btn active-contact">
-    Contact Me
-  </a>
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            type="button"
+            aria-label="Open navigation menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <a
+            href="./index.html"
+            class="logo">
+
+            PORTFOLIO
+
+        </a>
+
+
+    </div>
+
+
+    <nav>
+
+        <ul class="nav-links">
+
+
+            <li>
+                <a href="./index.html">
+                    Home
+                </a>
+            </li>
+
+
+            <li>
+                <a href="./about.html">
+                    Resume
+                </a>
+            </li>
+
+
+            <li>
+                <a href="./projects.html">
+                    Projects
+                </a>
+            </li>
+
+
+            <li>
+                <a href="./vyntra-ai.html">
+                    Vyntra AI
+                </a>
+            </li>
+
+
+            <li>
+                <a href="./certificates.html">
+                    Certifications &amp; Awards
+                </a>
+            </li>
+
+
+            <li>
+                <a href="./linkedin.html">
+                    LinkedIn
+                </a>
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+    <a
+        href="./contact.html"
+        class="contact-btn active-contact">
+
+        Contact Me
+
+    </a>
+
 
 </header>
 
 
-<main class="contact-page">
 
-  <section class="contact-info">
+<!-- =====================================================
+     MENU OVERLAY
+===================================================== -->
 
-    <span class="eyebrow light-eyebrow">GET IN TOUCH</span>
-
-    <h1>
-      Let's Build
-      <span>Something Together</span>
-    </h1>
-
-    <p class="contact-intro">
-      I'm interested in opportunities related to IT Infrastructure,
-      networking, cloud computing and emerging technologies.
-      Feel free to connect with me through any of the platforms below.
-    </p>
+<div
+    class="menu-overlay"
+    id="menuOverlay">
+</div>
 
 
-    <div class="contact-cards">
 
-      <a href="mailto:ezhilarasan0369@gmail.com" class="contact-card">
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
 
-        <div class="contact-icon">
-          <i class="fa-solid fa-envelope"></i>
-        </div>
-
-        <div>
-          <span>Email</span>
-          <strong>ezhilarasan0369@gmail.com</strong>
-        </div>
-
-      </a>
+<aside
+    class="side-menu"
+    id="sideMenu">
 
 
-      <a href="https://www.linkedin.com/"
-         target="_blank"
-         class="contact-card">
+    <button
+        class="close-menu"
+        id="closeMenu"
+        type="button"
+        aria-label="Close navigation menu">
 
-        <div class="contact-icon">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </div>
+        <i class="fa-solid fa-xmark"></i>
 
-        <div>
-          <span>LinkedIn</span>
-          <strong>Ezhilarasan P</strong>
-        </div>
-
-      </a>
+    </button>
 
 
-      <a href="https://github.com/Ezhilarasan0369"
-         target="_blank"
-         class="contact-card">
+    <div class="side-menu-title">
 
-        <div class="contact-icon">
-          <i class="fa-brands fa-github"></i>
-        </div>
+        <span>
+            EZHILARASAN'S
+        </span>
 
-        <div>
-          <span>GitHub</span>
-          <strong>Ezhilarasan0369</strong>
-        </div>
-
-      </a>
-
-
-      <a href="https://www.instagram.com/mr_criminal__rb"
-         target="_blank"
-         class="contact-card">
-
-        <div class="contact-icon">
-          <i class="fa-brands fa-instagram"></i>
-        </div>
-
-        <div>
-          <span>Instagram</span>
-          <strong>@mr_criminal__rb</strong>
-        </div>
-
-      </a>
-
-
-      <a href="https://x.com/Ezhilarasan0369"
-         target="_blank"
-         class="contact-card">
-
-        <div class="contact-icon">
-          <i class="fa-brands fa-x-twitter"></i>
-        </div>
-
-        <div>
-          <span>X</span>
-          <strong>@Ezhilarasan0369</strong>
-        </div>
-
-      </a>
+        <h2>
+            PORTFOLIO
+        </h2>
 
     </div>
 
-  </section>
+
+    <div class="side-menu-links">
 
 
-  <section class="contact-form-box">
+        <a href="./index.html">
 
-    <form action="mailto:ezhilarasan0369@gmail.com"
-          method="post"
-          enctype="text/plain">
+            <i class="fa-solid fa-house"></i>
 
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          name="Name"
-          placeholder="Your name"
-          required>
-      </div>
+            <span>
+                Home
+            </span>
+
+        </a>
 
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="Email"
-          placeholder="Your email"
-          required>
-      </div>
+        <a href="./about.html">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>
+                Resume
+            </span>
+
+        </a>
 
 
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input
-          id="subject"
-          type="text"
-          name="Subject"
-          placeholder="Subject"
-          required>
-      </div>
+        <a href="./projects.html">
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+            <span>
+                Projects
+            </span>
+
+        </a>
 
 
-      <div class="form-group">
-        <label for="message">Message</label>
+        <a href="./vyntra-ai.html">
 
-        <textarea
-          id="message"
-          name="Message"
-          placeholder="Write your message..."
-          required></textarea>
-      </div>
+            <i class="fa-solid fa-robot"></i>
+
+            <span>
+                Vyntra AI
+            </span>
+
+        </a>
 
 
-      <button type="submit" class="send-btn">
-        <i class="fa-solid fa-paper-plane"></i>
-        Send Message
-      </button>
+        <a href="./certificates.html">
 
-    </form>
+            <i class="fa-solid fa-certificate"></i>
 
-  </section>
+            <span>
+                Certifications &amp; Awards
+            </span>
+
+        </a>
+
+
+        <a href="./linkedin.html">
+
+            <i class="fa-brands fa-linkedin-in"></i>
+
+            <span>
+                LinkedIn
+            </span>
+
+        </a>
+
+
+        <a
+            href="./contact.html"
+            class="active">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>
+                Contact Me
+            </span>
+
+        </a>
+
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     CONTACT PAGE
+===================================================== -->
+
+<main class="contact-page-new">
+
+
+    <!-- =================================================
+         CONTACT INFORMATION
+    ================================================== -->
+
+    <section class="contact-info-new reveal">
+
+
+        <div class="contact-eyebrow">
+
+            Get In Touch
+
+        </div>
+
+
+        <h1>
+
+            Let's Build
+
+            <span>
+                Something Together
+            </span>
+
+        </h1>
+
+
+        <p class="contact-intro-new">
+
+            I'm interested in opportunities related to
+            IT Infrastructure, networking, cloud computing
+            and emerging technologies. Feel free to connect
+            with me through any of the platforms below.
+
+        </p>
+
+
+
+        <!-- CONTACT CARDS -->
+
+        <div class="contact-cards-new">
+
+
+            <!-- EMAIL -->
+
+            <a
+                href="mailto:ezhilarasan0369@gmail.com"
+                class="contact-card-new">
+
+                <div class="contact-icon-new">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+
+                <div class="contact-card-text">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong>
+                        ezhilarasan0369@gmail.com
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- LINKEDIN -->
+
+            <a
+                href="https://www.linkedin.com/in/ezhilarasan-prabakaran-ezhil0369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card-new">
+
+                <div class="contact-icon-new">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </div>
+
+
+                <div class="contact-card-text">
+
+                    <span>
+                        LinkedIn
+                    </span>
+
+                    <strong>
+                        Ezhilarasan P
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- GITHUB -->
+
+            <a
+                href="https://github.com/Ezhilarasan0369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card-new">
+
+                <div class="contact-icon-new">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </div>
+
+
+                <div class="contact-card-text">
+
+                    <span>
+                        GitHub
+                    </span>
+
+                    <strong>
+                        Ezhilarasan0369
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                href="https://www.instagram.com/mr_criminal__rb"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card-new">
+
+                <div class="contact-icon-new">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </div>
+
+
+                <div class="contact-card-text">
+
+                    <span>
+                        Instagram
+                    </span>
+
+                    <strong>
+                        @mr_criminal__rb
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- X -->
+
+            <a
+                href="https://x.com/Ezhilarasan0369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card-new">
+
+                <div class="contact-icon-new">
+
+                    <i class="fa-brands fa-x-twitter"></i>
+
+                </div>
+
+
+                <div class="contact-card-text">
+
+                    <span>
+                        X
+                    </span>
+
+                    <strong>
+                        @Ezhilarasan0369
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         CONTACT FORM
+    ================================================== -->
+
+    <section class="contact-form-box-new reveal">
+
+
+        <h2 class="form-title">
+            Send a Message
+        </h2>
+
+
+        <p class="form-subtitle">
+
+            Have an opportunity, project idea or question?
+            Send me a message directly.
+
+        </p>
+
+
+        <form
+            class="contact-form-new"
+            action="mailto:ezhilarasan0369@gmail.com"
+            method="post"
+            enctype="text/plain">
+
+
+            <div class="form-group-new">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    id="name"
+                    type="text"
+                    name="Name"
+                    placeholder="Your name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group-new">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    id="email"
+                    type="email"
+                    name="Email"
+                    placeholder="Your email"
+                    required>
+
+            </div>
+
+
+            <div class="form-group-new">
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <input
+                    id="subject"
+                    type="text"
+                    name="Subject"
+                    placeholder="What is this about?"
+                    required>
+
+            </div>
+
+
+            <div class="form-group-new">
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="Message"
+                    placeholder="Write your message..."
+                    required></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="send-btn-new">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Send Message
+
+            </button>
+
+
+        </form>
+
+
+    </section>
+
 
 </main>
 
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-top-line"></div>
+
+
+    <div class="footer-content">
+
+
+        <div class="footer-links">
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Terms of Use
+            </a>
+
+            <a href="#">
+                Cookies
+            </a>
+
+            <a href="#">
+                Legal &amp; Compliance
+            </a>
+
+        </div>
+
+
+        <div class="footer-copy">
+
+            © 2026 Portfolio. All rights reserved.
+
+        </div>
+
+
+        <div class="footer-location">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            India (English)
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+
+        /* MENU */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const sideMenu =
+            document.getElementById("sideMenu");
+
+        const closeMenu =
+            document.getElementById("closeMenu");
+
+        const menuOverlay =
+            document.getElementById("menuOverlay");
+
+
+        function openMenu() {
+
+            if(sideMenu)
+                sideMenu.classList.add("open");
+
+            if(menuOverlay)
+                menuOverlay.classList.add("show");
+
+            document.body.classList.add(
+                "menu-open"
+            );
+
+        }
+
+
+        function hideMenu() {
+
+            if(sideMenu)
+                sideMenu.classList.remove("open");
+
+            if(menuOverlay)
+                menuOverlay.classList.remove("show");
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+        }
+
+
+        if(menuBtn) {
+
+            menuBtn.addEventListener(
+                "click",
+                openMenu
+            );
+
+        }
+
+
+        if(closeMenu) {
+
+            closeMenu.addEventListener(
+                "click",
+                hideMenu
+            );
+
+        }
+
+
+        if(menuOverlay) {
+
+            menuOverlay.addEventListener(
+                "click",
+                hideMenu
+            );
+
+        }
+
+
+        document
+            .querySelectorAll(
+                ".side-menu-links a"
+            )
+            .forEach(
+                function(link) {
+
+                    link.addEventListener(
+                        "click",
+                        hideMenu
+                    );
+
+                }
+            );
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if(event.key === "Escape") {
+
+                    hideMenu();
+
+                }
+
+            }
+        );
+
+
+        /* SCROLL REVEAL */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        if(
+            "IntersectionObserver"
+            in window
+        ) {
+
+            const observer =
+                new IntersectionObserver(
+                    function(entries) {
+
+                        entries.forEach(
+                            function(entry) {
+
+                                if(
+                                    entry.isIntersecting
+                                ) {
+
+                                    entry.target
+                                        .classList
+                                        .add("show");
+
+                                }
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold:0.12,
+
+                        rootMargin:
+                            "0px 0px -60px 0px"
+                    }
+                );
+
+
+            revealElements.forEach(
+                function(element) {
+
+                    observer.observe(element);
+
+                }
+            );
+
+
+        } else {
+
+            revealElements.forEach(
+                function(element) {
+
+                    element.classList.add("show");
+
+                }
+            );
+
+        }
+
+    }
+
+);
+
+</script>
+
+
 </body>
+
 </html>
