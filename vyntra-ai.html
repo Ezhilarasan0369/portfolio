@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Vyntra AI | Ezhilarasan P</title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* =================================================
+           RESET
+        ================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        :root {
+
+            --green: #143820;
+
+            --green-dark: #0d2818;
+
+            --green-light: #1d4930;
+
+            --gold: #f4b942;
+
+            --gold-light: #ffd36a;
+
+            --cream: #f5f0e6;
+
+            --muted: #cfc4b0;
+
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                'Inter',
+                sans-serif;
+
+            color: var(--cream);
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(244,185,66,.07),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 10% 90%,
+                    rgba(36,74,48,.35),
+                    transparent 30%
+                ),
+
+                var(--green);
+
+            overflow-x: hidden;
+        }
+
+
+        /* =================================================
+           BACKGROUND GRID
+        ================================================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -1;
+
+            pointer-events: none;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.015) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    rgba(255,255,255,.015) 1px,
+                    transparent 1px
+                );
+
+            background-size: 80px 80px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 90%
+                );
+        }
+
+
+        /* =================================================
+           NAVBAR
+        ================================================= */
+
+        .ai-navbar {
+
+            height: 100px;
+
+            padding:
+                0 5%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(20,56,32,.92);
+
+            backdrop-filter:
+                blur(16px);
+
+            border-bottom:
+                1px solid
+                rgba(244,185,66,.10);
+        }
+
+
+        .ai-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            text-decoration: none;
+        }
+
+
+        .ai-logo-image {
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            border:
+                2px solid
+                var(--gold);
+
+            box-shadow:
+                0 0 18px
+                rgba(244,185,66,.20);
+        }
+
+
+        .ai-logo-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            transform: scale(1.08);
+        }
+
+
+        .ai-logo-text {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 1.9rem;
+
+            font-weight: 700;
+
+            color: var(--gold);
+        }
+
+
+        .back-home {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                12px 20px;
+
+            border:
+                1px solid
+                rgba(244,185,66,.30);
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            color: var(--cream);
+
+            font-size: .9rem;
+
+            font-weight: 600;
+
+            transition: .3s ease;
+        }
+
+
+        .back-home:hover {
+
+            background:
+                var(--gold);
+
+            color:
+                var(--green-dark);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =================================================
+           HERO
+        ================================================= */
+
+        .ai-page {
+
+            width: 100%;
+
+            padding:
+                75px 5% 100px;
+        }
+
+
+        .ai-hero {
+
+            max-width: 950px;
+
+            margin:
+                0 auto 45px;
+
+            text-align: center;
+        }
+
+
+        .ai-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                8px 15px;
+
+            border-radius: 30px;
+
+            border:
+                1px solid
+                rgba(244,185,66,.28);
+
+            background:
+                rgba(244,185,66,.07);
+
+            color:
+                var(--gold);
+
+            font-size:
+                .75rem;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                2px;
+
+            margin-bottom:
+                18px;
+        }
+
+
+        .ai-badge span {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                #39d353;
+
+            box-shadow:
+                0 0 8px
+                rgba(57,211,83,.8);
+        }
+
+
+        .ai-hero h1 {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(3.5rem,7vw,6.5rem);
+
+            line-height:
+                .9;
+
+            margin-bottom:
+                20px;
+        }
+
+
+        .ai-hero h1 span {
+
+            color:
+                var(--gold);
+        }
+
+
+        .ai-hero p {
+
+            max-width:
+                680px;
+
+            margin:
+                auto;
+
+            color:
+                var(--muted);
+
+            font-size:
+                1rem;
+
+            line-height:
+                1.8;
+        }
+
+
+        /* =================================================
+           AI CARD
+        ================================================= */
+
+        .ai-card {
+
+            max-width:
+                1200px;
+
+            margin:
+                0 auto;
+
+            padding:
+                10px;
+
+            border-radius:
+                28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(244,185,66,.20),
+                    rgba(255,255,255,.04)
+                );
+
+            box-shadow:
+                0 35px 90px
+                rgba(0,0,0,.35);
+        }
+
+
+        .ai-frame-container {
+
+            width: 100%;
+
+            height: 720px;
+
+            overflow: hidden;
+
+            border-radius:
+                21px;
+
+            background:
+                #0d2818;
+
+            position: relative;
+        }
+
+
+        .ai-frame {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            border: none;
+
+            background:
+                #0d2818;
+        }
+
+
+        /* =================================================
+           FALLBACK
+        ================================================= */
+
+        .frame-note {
+
+            max-width:
+                1200px;
+
+            margin:
+                20px auto 0;
+
+            text-align:
+                center;
+
+            color:
+                rgba(207,196,176,.65);
+
+            font-size:
+                .75rem;
+        }
+
+
+        .frame-note a {
+
+            color:
+                var(--gold);
+
+            text-decoration:
+                none;
+        }
+
+
+        /* =================================================
+           FOOTER
+        ================================================= */
+
+        .ai-footer {
+
+            text-align:
+                center;
+
+            padding:
+                35px 20px 20px;
+
+            color:
+                rgba(207,196,176,.65);
+
+            font-size:
+                .8rem;
+        }
+
+
+        .ai-footer strong {
+
+            color:
+                var(--gold);
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================= */
+
+        @media (max-width: 700px) {
+
+            .ai-navbar {
+
+                height:
+                    78px;
+
+                padding:
+                    0 20px;
+            }
+
+
+            .ai-logo-text {
+
+                font-size:
+                    1.5rem;
+            }
+
+
+            .ai-logo-image {
+
+                width:
+                    39px;
+
+                height:
+                    39px;
+            }
+
+
+            .back-home {
+
+                padding:
+                    10px 14px;
+
+                font-size:
+                    .78rem;
+            }
+
+
+            .ai-page {
+
+                padding:
+                    55px 15px 70px;
+            }
+
+
+            .ai-hero h1 {
+
+                font-size:
+                    3.7rem;
+            }
+
+
+            .ai-hero p {
+
+                font-size:
+                    .9rem;
+            }
+
+
+            .ai-card {
+
+                padding:
+                    5px;
+
+                border-radius:
+                    20px;
+            }
+
+
+            .ai-frame-container {
+
+                height:
+                    700px;
+
+                border-radius:
+                    16px;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .ai-logo-text {
+
+                display:
+                    none;
+            }
+
+
+            .back-home span {
+
+                display:
+                    none;
+            }
+
+
+            .ai-frame-container {
+
+                height:
+                    650px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="ai-navbar">
+
+
+    <a
+        href="index.html"
+        class="ai-logo">
+
+
+        <div class="ai-logo-image">
+
+            <img
+                src="vyntra-ai.png"
+                alt="Vyntra AI">
+
+        </div>
+
+
+        <div class="ai-logo-text">
+
+            Vyntra AI
+
+        </div>
+
+
+    </a>
+
+
+
+    <a
+        href="index.html"
+        class="back-home">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        <span>
+            Back to Portfolio
+        </span>
+
+    </a>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="ai-page">
+
+
+    <!-- HERO -->
+
+    <section class="ai-hero">
+
+
+        <div class="ai-badge">
+
+            <span></span>
+
+            AI PORTFOLIO ASSISTANT
+
+        </div>
+
+
+
+        <h1>
+
+            Meet
+
+            <span>
+                Vyntra AI
+            </span>
+
+        </h1>
+
+
+
+        <p>
+
+            Your AI-powered guide to Ezhilarasan's
+            projects, technical skills, certifications,
+            experience and professional journey.
+
+            <br>
+
+            Ask questions and explore the portfolio
+            through Vyntra AI.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         VYNTRA AI EMBED
+    ================================================= -->
+
+    <section class="ai-card">
+
+
+        <div class="ai-frame-container">
+
+
+            <iframe
+                src="https://bit.ly/vyntra_ai"
+                title="Vyntra AI - Ezhilarasan Portfolio Assistant"
+                class="ai-frame"
+                loading="lazy"
+                allow="clipboard-write">
+
+            </iframe>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- FALLBACK LINK -->
+
+    <p class="frame-note">
+
+        If Vyntra AI doesn't load inside the page,
+
+        <a
+            href="https://bit.ly/vyntra_ai"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            open Vyntra AI directly
+
+        </a>.
+
+    </p>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="ai-footer">
+
+    Built as part of
+
+    <strong>
+        Ezhilarasan P's Portfolio
+    </strong>
+
+    · Powered by Vyntra AI
+
+</footer>
+
+
+</body>
+
+</html>
