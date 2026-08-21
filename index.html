@@ -30,638 +30,113 @@
   ====================================================== -->
 
   <style>
-
-    /* =====================================================
-       VYNTRA FLOATING BUTTON
-    ====================================================== */
-
-    #vyntraLauncher {
-
-      position: fixed !important;
-
-      right: 28px !important;
-      bottom: 28px !important;
-
-      width: 78px !important;
-      height: 78px !important;
-
-      padding: 0 !important;
-      margin: 0 !important;
-
-      border-radius: 50% !important;
-
-      border: 2px solid #f5b82e !important;
-
-      background: #0d3d25 !important;
-
-      display: flex !important;
-
-      align-items: center !important;
-      justify-content: center !important;
-
-      cursor: pointer !important;
-
-      z-index: 999998 !important;
-
-      box-shadow:
-        0 10px 35px rgba(0,0,0,0.35) !important;
-
-      transition: 0.3s ease !important;
-    }
-
-
-    #vyntraLauncher:hover {
-
-      transform:
-        translateY(-5px)
-        scale(1.05) !important;
-
-      box-shadow:
-        0 15px 40px rgba(245,184,46,0.25) !important;
-    }
-
-
-    #vyntraLauncher img {
-
-      width: 68px !important;
-      height: 68px !important;
-
-      border-radius: 50% !important;
-
-      object-fit: cover !important;
-
-      display: block !important;
-    }
-
-
-
-    /* =====================================================
-       VYNTRA CHAT WINDOW
-    ====================================================== */
-
-    #vyntraChat {
-
-      position: fixed !important;
-
-      right: 28px !important;
-      bottom: 120px !important;
-
-      width: 390px !important;
-
-      height: 590px !important;
-
-      max-width:
-        calc(100vw - 30px) !important;
-
-      max-height:
-        calc(100vh - 145px) !important;
-
-      background:
-        #082f1c !important;
-
-      border:
-        1px solid #8d7620 !important;
-
-      border-radius:
-        24px !important;
-
-      overflow:
-        hidden !important;
-
-      display:
-        none !important;
-
-      flex-direction:
-        column !important;
-
-      visibility:
-        hidden !important;
-
-      opacity:
-        0 !important;
-
-      z-index:
-        999999 !important;
-
-      box-shadow:
-        0 25px 70px rgba(0,0,0,0.50) !important;
-    }
-
-
-    /* =====================================================
-       OPEN CHAT
-    ====================================================== */
-
-    #vyntraChat.vyntra-open {
-
-      display:
-        flex !important;
-
-      visibility:
-        visible !important;
-
-      opacity:
-        1 !important;
-    }
-
-
-
-    /* =====================================================
-       CHAT HEADER
-    ====================================================== */
-
-    .vyntra-header {
-
-      height: 92px !important;
-
-      min-height: 92px !important;
-
-      flex-shrink: 0 !important;
-
-      padding: 12px 16px !important;
-
-      display: flex !important;
-
-      align-items: center !important;
-
-      background:
-        #0d4227 !important;
-
-      border-bottom:
-        1px solid rgba(245,184,46,0.15) !important;
-    }
-
-
-    .vyntra-avatar {
-
-      width: 64px !important;
-      height: 64px !important;
-
-      min-width: 64px !important;
-      min-height: 64px !important;
-
-      border-radius: 50% !important;
-
-      overflow: hidden !important;
-
-      border: 2px solid #f5b82e !important;
-    }
-
-
-    .vyntra-avatar img {
-
-      width: 100% !important;
-      height: 100% !important;
-
-      object-fit: cover !important;
-
-      display: block !important;
-    }
-
-
-    .vyntra-header-info {
-
-      flex: 1 !important;
-
-      margin-left: 12px !important;
-    }
-
-
-    .vyntra-header-info h3 {
-
-      margin: 0 !important;
-
-      color: #ffffff !important;
-
-      font-family:
-        Inter,
-        sans-serif !important;
-
-      font-size: 20px !important;
-
-      font-weight: 700 !important;
-    }
-
-
-    .vyntra-status {
-
-      margin-top: 4px !important;
-
-      display: flex !important;
-
-      align-items: center !important;
-
-      gap: 7px !important;
-
-      color: #a9b8ad !important;
-
-      font-family:
-        Inter,
-        sans-serif !important;
-
-      font-size: 13px !important;
-    }
-
-
-    .vyntra-status-dot {
-
-      width: 9px !important;
-      height: 9px !important;
-
-      border-radius: 50% !important;
-
-      background:
-        #32e86b !important;
-
-      display: inline-block !important;
-    }
-
-
-    #vyntraClose {
-
-      width: 50px !important;
-      height: 50px !important;
-
-      border: none !important;
-
-      border-radius: 50% !important;
-
-      background:
-        rgba(255,255,255,0.08) !important;
-
-      color: #ffffff !important;
-
-      font-size: 22px !important;
-
-      cursor: pointer !important;
-
-      flex-shrink: 0 !important;
-    }
-
-
-    #vyntraClose:hover {
-
-      background:
-        rgba(245,184,46,0.18) !important;
-
-      color:
-        #f5b82e !important;
-    }
-
-
-
-    /* =====================================================
-       MESSAGE AREA
-    ====================================================== */
-
-    .vyntra-messages {
-
-      flex: 1 !important;
-
-      min-height: 0 !important;
-
-      overflow-y: auto !important;
-
-      padding: 18px !important;
-
-      font-family:
-        Inter,
-        sans-serif !important;
-    }
-
-
-    .vyntra-messages::-webkit-scrollbar {
-
-      width: 7px;
-    }
-
-
-    .vyntra-messages::-webkit-scrollbar-track {
-
-      background:
-        #072718;
-    }
-
-
-    .vyntra-messages::-webkit-scrollbar-thumb {
-
-      background:
-        #8d7620;
-
-      border-radius:
-        10px;
-    }
-
-
-
-    /* =====================================================
-       CHAT MESSAGES
-    ====================================================== */
-
-    .vyntra-message {
-
-      max-width:
-        88% !important;
-
-      margin-bottom:
-        12px !important;
-
-      padding:
-        14px 16px !important;
-
-      border-radius:
-        16px !important;
-
-      font-family:
-        Inter,
-        sans-serif !important;
-
-      font-size:
-        14px !important;
-
-      line-height:
-        1.6 !important;
-    }
-
-
-    .vyntra-message.bot {
-
-      margin-right:
-        auto !important;
-
-      background:
-        #185436 !important;
-
-      color:
-        #f5f5ef !important;
-
-      border-bottom-left-radius:
-        5px !important;
-    }
-
-
-    .vyntra-message.user {
-
-      margin-left:
-        auto !important;
-
-      background:
-        #f5b82e !important;
-
-      color:
-        #092f1c !important;
-
-      border-bottom-right-radius:
-        5px !important;
-
-      font-weight:
-        600 !important;
-    }
-
-
-    .vyntra-message.bot strong {
-
-      color:
-        #f5b82e !important;
-    }
-
-
-
-    /* =====================================================
-       QUICK QUESTIONS
-    ====================================================== */
-
-    .vyntra-quick {
-
-      display:
-        flex !important;
-
-      flex-direction:
-        column !important;
-
-      gap:
-        8px !important;
-
-      margin-top:
-        8px !important;
-    }
-
-
-    .vyntra-quick button {
-
-      width:
-        100% !important;
-
-      padding:
-        11px 13px !important;
-
-      border-radius:
-        12px !important;
-
-      border:
-        1px solid #806d1e !important;
-
-      background:
-        #103c24 !important;
-
-      color:
-        #f5b82e !important;
-
-      text-align:
-        left !important;
-
-      font-family:
-        Inter,
-        sans-serif !important;
-
-      font-size:
-        13px !important;
-
-      cursor:
-        pointer !important;
-    }
-
-
-    .vyntra-quick button:hover {
-
-      background:
-        #174d2e !important;
-
-      border-color:
-        #f5b82e !important;
-    }
-
-
-
-    /* =====================================================
-       INPUT AREA
-    ====================================================== */
-
-    .vyntra-input-area {
-
-      flex-shrink:
-        0 !important;
-
-      display:
-        flex !important;
-
-      gap:
-        9px !important;
-
-      padding:
-        12px !important;
-
-      background:
-        #082f1c !important;
-
-      border-top:
-        1px solid rgba(245,184,46,0.15) !important;
-    }
-
-
-    #vyntraInput {
-
-      flex:
-        1 !important;
-
-      min-width:
-        0 !important;
-
-      height:
-        52px !important;
-
-      padding:
-        0 15px !important;
-
-      border:
-        1px solid #315c43 !important;
-
-      border-radius:
-        13px !important;
-
-      outline:
-        none !important;
-
-      background:
-        #123d27 !important;
-
-      color:
-        #ffffff !important;
-
-      font-family:
-        Inter,
-        sans-serif !important;
-
-      font-size:
-        14px !important;
-    }
-
-
-    #vyntraInput::placeholder {
-
-      color:
-        #91a397 !important;
-    }
-
-
-    #vyntraInput:focus {
-
-      border-color:
-        #f5b82e !important;
-    }
-
-
-    #vyntraSend {
-
-      width:
-        54px !important;
-
-      height:
-        52px !important;
-
-      flex-shrink:
-        0 !important;
-
-      border:
-        none !important;
-
-      border-radius:
-        13px !important;
-
-      background:
-        #f5b82e !important;
-
-      color:
-        #092f1c !important;
-
-      font-size:
-        19px !important;
-
-      cursor:
-        pointer !important;
-    }
-
-
-
-    /* =====================================================
-       MOBILE
-    ====================================================== */
-
-    @media (max-width: 600px) {
-
-      #vyntraLauncher {
-
-        right:
-          18px !important;
-
-        bottom:
-          18px !important;
-
-        width:
-          68px !important;
-
-        height:
-          68px !important;
-      }
-
-
-      #vyntraLauncher img {
-
-        width:
-          59px !important;
-
-        height:
-          59px !important;
-      }
-
-
-      #vyntraChat {
-
-        right:
-          10px !important;
-
-        bottom:
-          95px !important;
-
-        width:
-          calc(100vw - 20px) !important;
-
-        height:
-          calc(100vh - 115px) !important;
-
-        max-width:
-          none !important;
-
-        max-height:
-          none !important;
-
-        border-radius:
-          20px !important;
-      }
-
-    }
-
-  </style>
+/* =========================================================
+   VYNTRA AI — FUTURISTIC PURPLE / BLUE ASSISTANT
+   Existing assistant functionality is preserved.
+========================================================= */
+
+#vyntraLauncher{
+  position:fixed!important;
+  right:24px!important;
+  bottom:24px!important;
+  width:68px!important;
+  height:68px!important;
+  padding:0!important;
+  border:1px solid rgba(130,105,255,.9)!important;
+  border-radius:50%!important;
+  background:linear-gradient(145deg,#17112f,#0d1022)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  cursor:pointer!important;
+  z-index:999998!important;
+  box-shadow:0 12px 35px rgba(0,0,0,.38),0 0 28px rgba(112,82,255,.28)!important;
+  transition:transform .25s ease,box-shadow .25s ease!important;
+  animation:vyntraFloat 4s ease-in-out infinite;
+}
+#vyntraLauncher:hover{transform:translateY(-5px) scale(1.06)!important;box-shadow:0 18px 45px rgba(0,0,0,.48),0 0 38px rgba(112,82,255,.42)!important}
+#vyntraLauncher::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(93,215,255,.24);animation:vyntraPulse 2.6s ease-out infinite;pointer-events:none}
+#vyntraLauncher::after{content:"";position:absolute;right:4px;top:4px;width:10px;height:10px;border-radius:50%;background:#38e88b;border:2px solid #11152a;box-shadow:0 0 12px #38e88b}
+#vyntraLauncher img{width:58px!important;height:58px!important;border-radius:50%;object-fit:cover!important;border:1px solid rgba(255,255,255,.14)!important}
+@keyframes vyntraFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes vyntraPulse{0%{transform:scale(.9);opacity:.7}70%{transform:scale(1.18);opacity:0}100%{opacity:0}}
+
+#vyntraChat{
+  position:fixed!important;
+  right:24px!important;
+  bottom:108px!important;
+  width:420px!important;
+  height:650px!important;
+  overflow:hidden!important;
+  display:none;
+  flex-direction:column!important;
+  z-index:999999!important;
+  border:1px solid rgba(130,105,255,.38)!important;
+  border-radius:26px!important;
+  background:rgba(10,12,27,.94)!important;
+  backdrop-filter:blur(24px) saturate(145%)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(145%)!important;
+  box-shadow:0 30px 90px rgba(0,0,0,.58),0 0 55px rgba(101,77,255,.13),inset 0 1px rgba(255,255,255,.05)!important;
+  animation:vyntraChatIn .28s ease both;
+}
+#vyntraChat.vyntra-open{display:flex!important}
+@keyframes vyntraChatIn{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+
+.vyntra-header{
+  height:86px!important;
+  min-height:86px!important;
+  padding:12px 14px!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+  background:linear-gradient(135deg,#17133b 0%,#111a36 55%,#0c1528 100%)!important;
+  border-bottom:1px solid rgba(130,105,255,.18)!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.vyntra-header::before{content:"";position:absolute;left:80px;top:-80px;width:220px;height:150px;background:radial-gradient(circle,rgba(122,89,255,.22),transparent 68%);pointer-events:none}
+.vyntra-header::after{content:"";position:absolute;right:-70px;bottom:-100px;width:220px;height:180px;background:radial-gradient(circle,rgba(73,203,255,.12),transparent 68%);pointer-events:none}
+.vyntra-avatar{width:58px!important;height:58px!important;min-width:58px!important;min-height:58px!important;border-radius:18px!important;overflow:hidden!important;border:1px solid rgba(154,129,255,.55)!important;background:linear-gradient(145deg,#694cff,#a84cff)!important;box-shadow:0 8px 28px rgba(100,70,255,.25)!important;position:relative!important;z-index:1}
+.vyntra-avatar img{width:100%!important;height:100%!important;object-fit:cover!important}
+.vyntra-header-info{position:relative;z-index:1}
+.vyntra-header-info h3{margin:0!important;color:#f7f7ff!important;font-size:21px!important;font-weight:750!important;letter-spacing:-.4px!important}
+.vyntra-status{margin-top:4px!important;color:#9da4bd!important;font-size:12px!important;display:flex!important;align-items:center!important;gap:7px!important}
+.vyntra-status-dot{width:8px!important;height:8px!important;border-radius:50%!important;background:#3ce992!important;box-shadow:0 0 12px rgba(60,233,146,.7)!important}
+#vyntraClose{margin-left:auto!important;width:44px!important;height:44px!important;border-radius:14px!important;border:1px solid rgba(255,255,255,.08)!important;background:rgba(255,255,255,.055)!important;color:#eef0ff!important;font-size:20px!important;cursor:pointer!important;position:relative;z-index:2!important;transition:.2s ease!important}
+#vyntraClose:hover{background:rgba(255,255,255,.1)!important;transform:rotate(90deg)!important}
+
+.vyntra-messages{flex:1!important;min-height:0!important;overflow-y:auto!important;padding:20px!important;background:radial-gradient(circle at 70% 0%,rgba(107,79,255,.10),transparent 35%),radial-gradient(circle at 10% 85%,rgba(49,192,255,.055),transparent 30%)!important;scroll-behavior:smooth!important}
+.vyntra-messages::-webkit-scrollbar{width:6px}.vyntra-messages::-webkit-scrollbar-track{background:transparent}.vyntra-messages::-webkit-scrollbar-thumb{background:rgba(139,124,255,.28);border-radius:10px}
+.vyntra-message{max-width:88%!important;padding:14px 16px!important;margin:0 0 12px!important;border-radius:18px!important;line-height:1.55!important;font-size:14px!important;animation:vyntraMessageIn .24s ease both!important;box-shadow:0 10px 28px rgba(0,0,0,.12)!important}
+.vyntra-message.bot{background:linear-gradient(145deg,rgba(29,34,60,.92),rgba(18,22,42,.92))!important;color:#e9ebf7!important;border:1px solid rgba(133,113,255,.16)!important;border-top-left-radius:7px!important}
+.vyntra-message.user{margin-left:auto!important;background:linear-gradient(135deg,#7357ff,#9b4dff)!important;color:#fff!important;border:1px solid rgba(255,255,255,.1)!important;border-top-right-radius:7px!important}
+.vyntra-message strong{color:#bcaeff!important}
+.vyntra-message.user strong{color:#fff!important}
+@keyframes vyntraMessageIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+.vyntra-quick{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important;margin-top:14px!important}
+.vyntra-quick button{min-height:54px!important;padding:11px 12px!important;border-radius:15px!important;border:1px solid rgba(133,112,255,.22)!important;background:linear-gradient(145deg,rgba(25,29,52,.96),rgba(17,21,39,.96))!important;color:#dfe3f4!important;font-size:12.5px!important;text-align:left!important;cursor:pointer!important;box-shadow:inset 0 1px rgba(255,255,255,.035)!important;transition:.2s ease!important}
+.vyntra-quick button:hover{transform:translateY(-2px)!important;border-color:rgba(121,94,255,.7)!important;background:linear-gradient(145deg,rgba(42,37,83,.98),rgba(22,26,49,.98))!important;color:#fff!important;box-shadow:0 9px 24px rgba(76,54,190,.16)!important}
+
+.vyntra-input-area{padding:12px!important;display:flex!important;align-items:center!important;gap:9px!important;background:rgba(11,14,29,.97)!important;border-top:1px solid rgba(133,112,255,.17)!important}
+#vyntraInput{flex:1!important;height:52px!important;min-width:0!important;padding:0 16px!important;border-radius:16px!important;border:1px solid rgba(133,112,255,.25)!important;background:#15192b!important;color:#f4f5ff!important;outline:none!important;font-size:14px!important;transition:.2s ease!important}
+#vyntraInput::placeholder{color:#737b96!important}
+#vyntraInput:focus{border-color:rgba(122,94,255,.78)!important;box-shadow:0 0 0 4px rgba(111,83,255,.09),0 0 22px rgba(87,161,255,.07)!important}
+#vyntraSend{width:52px!important;height:52px!important;min-width:52px!important;border:0!important;border-radius:16px!important;background:linear-gradient(135deg,#7657ff,#a54dff)!important;color:#fff!important;font-size:17px!important;cursor:pointer!important;box-shadow:0 10px 24px rgba(106,73,255,.25)!important;transition:.2s ease!important}
+#vyntraSend:hover{transform:translateY(-2px)!important;box-shadow:0 14px 30px rgba(106,73,255,.35)!important}
+#vyntraSend:active{transform:scale(.96)!important}
+
+.vyntra-typing{display:flex!important;align-items:center!important;gap:5px!important;width:max-content!important;padding:10px 13px!important;margin:0 0 12px!important;border-radius:14px!important;background:#1b2038!important;border:1px solid rgba(133,112,255,.14)!important}
+.vyntra-typing span{width:6px!important;height:6px!important;border-radius:50%!important;background:#9a83ff!important;animation:vyntraTyping 1s infinite ease-in-out!important}.vyntra-typing span:nth-child(2){animation-delay:.15s}.vyntra-typing span:nth-child(3){animation-delay:.3s}
+@keyframes vyntraTyping{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+
+@media(max-width:600px){
+  #vyntraLauncher{right:16px!important;bottom:16px!important;width:62px!important;height:62px!important}
+  #vyntraLauncher img{width:52px!important;height:52px!important}
+  #vyntraChat{right:8px!important;bottom:88px!important;width:calc(100vw - 16px)!important;height:min(650px,calc(100vh - 105px))!important;border-radius:22px!important}
+  .vyntra-header{height:78px!important;min-height:78px!important}.vyntra-avatar{width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important}.vyntra-quick{grid-template-columns:1fr!important}.vyntra-message{max-width:94%!important}
+}
+</style>
 
 </head>
 
@@ -1522,12 +997,18 @@ function addVyntraMessage(
   message.className =
     "vyntra-message " + type;
 
-  message.innerHTML =
-    text;
+  message.innerHTML = text;
 
-  vyntraMessages.appendChild(
-    message
-  );
+  const time = document.createElement("div");
+  time.style.cssText =
+    "font-size:10px;opacity:.48;margin-top:7px;text-align:right;letter-spacing:.2px;";
+  time.textContent = new Date().toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+  message.appendChild(time);
+
+  vyntraMessages.appendChild(message);
 
   vyntraMessages.scrollTop =
     vyntraMessages.scrollHeight;
@@ -1967,22 +1448,19 @@ function sendVyntraMessage() {
   vyntraInput.value = "";
 
 
-  setTimeout(
-    function() {
+  const typing = document.createElement("div");
+  typing.className = "vyntra-typing";
+  typing.innerHTML = "<span></span><span></span><span></span>";
+  vyntraMessages.appendChild(typing);
+  vyntraMessages.scrollTop = vyntraMessages.scrollHeight;
 
-      const answer =
-        getVyntraAnswer(
-          question
-        );
+  setTimeout(function() {
+    typing.remove();
 
-      addVyntraMessage(
-        answer,
-        "bot"
-      );
+    const answer = getVyntraAnswer(question);
 
-    },
-    300
-  );
+    addVyntraMessage(answer, "bot");
+  }, 650);
 
 }
 
@@ -2045,22 +1523,18 @@ document
           );
 
 
-          setTimeout(
-            function() {
+          const typing = document.createElement("div");
+          typing.className = "vyntra-typing";
+          typing.innerHTML = "<span></span><span></span><span></span>";
+          vyntraMessages.appendChild(typing);
+          vyntraMessages.scrollTop = vyntraMessages.scrollHeight;
 
-              const answer =
-                getVyntraAnswer(
-                  question
-                );
+          setTimeout(function() {
+            typing.remove();
 
-              addVyntraMessage(
-                answer,
-                "bot"
-              );
-
-            },
-            300
-          );
+            const answer = getVyntraAnswer(question);
+            addVyntraMessage(answer, "bot");
+          }, 650);
 
         }
       );
@@ -2183,7 +1657,6 @@ if (vyntraSideNav) {
 }
 
 </script>
-
+    <!-- Your existing page content -->
 </body>
-
 </html>

@@ -3777,3 +3777,807 @@ article {
     }
 
 }
+/* =====================================================
+   FIXED PORTFOLIO NAVBAR
+   ===================================================== */
+
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+    height: 88px;
+
+    z-index: 9999 !important;
+
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(23, 59, 38, 0.08);
+
+    box-shadow: 0 4px 20px rgba(23, 59, 38, 0.04);
+}
+
+/* Content starts below fixed navbar */
+body {
+    padding-top: 88px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 72px;
+    }
+
+    body {
+        padding-top: 72px;
+    }
+}
+/* =========================================
+   PERSONAL PORTFOLIO PROJECT PREVIEW
+   ========================================= */
+
+.portfolio-preview {
+    width: 100%;
+    height: 100%;
+    min-height: 330px;
+    background: #ffffff;
+    border: 1px solid #ead9b0;
+    border-radius: 18px;
+    overflow: hidden;
+    color: #1e293b;
+}
+
+.preview-navbar {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    border-bottom: 1px solid #eee6d7;
+    background: #ffffff;
+}
+
+.preview-logo {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #c58b16;
+}
+
+.preview-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 8px;
+    font-weight: 600;
+    color: #263043;
+}
+
+.preview-nav span:first-child {
+    color: #d0920b;
+}
+
+.preview-contact {
+    background: #f8b82e;
+    color: #151515;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.preview-content {
+    padding: 48px 45px;
+    text-align: left;
+}
+
+.preview-small {
+    color: #c58b16;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.preview-name {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 700;
+    color: #172033;
+    margin-bottom: 4px;
+}
+
+.preview-role {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    line-height: 1.05;
+    font-weight: 700;
+    color: #172033;
+}
+
+.preview-role span {
+    color: #d3950c;
+}
+
+.preview-description {
+    margin-top: 18px;
+    color: #64748b;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .preview-nav {
+        display: none;
+    }
+
+    .preview-contact {
+        display: none;
+    }
+
+    .preview-content {
+        padding: 35px 25px;
+    }
+
+    .preview-name {
+        font-size: 27px;
+    }
+
+    .preview-role {
+        font-size: 20px;
+    }
+
+}
+/* =========================================================
+   MODERN VYNTRA AI FLOATING ASSISTANT
+========================================================= */
+
+#portfolio-ai-assistant {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    z-index: 99999;
+
+    cursor: pointer;
+
+    isolation: isolate;
+}
+
+
+/* ---------------------------------------------------------
+   OUTER GLOW
+--------------------------------------------------------- */
+
+.ai-orb-glow {
+    position: absolute;
+
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #8e5cff,
+            #3b82f6,
+            #22d3ee
+        );
+
+    filter: blur(18px);
+
+    opacity: 0.45;
+
+    animation: vyntraGlow 3s ease-in-out infinite;
+
+    z-index: -2;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN ORB
+--------------------------------------------------------- */
+
+.ai-orb {
+    position: relative;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111827,
+            #17142d 45%,
+            #101827
+        );
+
+    border: 1px solid rgba(255,255,255,0.22);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.28),
+        inset 0 1px 1px rgba(255,255,255,0.14);
+
+    overflow: hidden;
+
+    transition:
+        transform .35s cubic-bezier(.2,.8,.2,1),
+        box-shadow .35s ease;
+}
+
+
+/* ---------------------------------------------------------
+   GRADIENT RING
+--------------------------------------------------------- */
+
+.ai-orb-ring {
+    position: absolute;
+
+    inset: 3px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            #7c3aed,
+            #6366f1,
+            #06b6d4,
+            #8b5cf6,
+            #7c3aed
+        );
+
+    animation: vyntraRotate 5s linear infinite;
+
+    opacity: .95;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    padding: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   CENTER V
+--------------------------------------------------------- */
+
+.ai-orb-core {
+    position: relative;
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d4aff,
+            #9b5cff,
+            #3b82f6
+        );
+
+    color: white;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 20px rgba(99,102,241,.35);
+
+    z-index: 2;
+}
+
+
+/* ---------------------------------------------------------
+   SPARKS
+--------------------------------------------------------- */
+
+.ai-orb-spark {
+    position: absolute;
+
+    color: white;
+
+    font-size: 8px;
+
+    opacity: .8;
+
+    z-index: 3;
+}
+
+.spark-1 {
+    top: 10px;
+    right: 12px;
+
+    animation: sparkFloat 2s ease-in-out infinite;
+}
+
+.spark-2 {
+    bottom: 12px;
+    left: 11px;
+
+    font-size: 6px;
+
+    animation: sparkFloat 2.5s ease-in-out infinite reverse;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER
+--------------------------------------------------------- */
+
+#portfolio-ai-assistant:hover .ai-orb {
+    transform:
+        scale(1.08)
+        rotate(-2deg);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.35),
+        0 0 30px rgba(99,102,241,.25),
+        inset 0 1px 1px rgba(255,255,255,.18);
+}
+
+#portfolio-ai-assistant:hover .ai-orb-glow {
+    opacity: .7;
+
+    transform: scale(1.15);
+}
+
+
+/* ---------------------------------------------------------
+   LABEL
+--------------------------------------------------------- */
+
+.ai-assistant-label {
+    position: absolute;
+
+    right: 82px;
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        translateX(12px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 120px;
+
+    padding: 10px 14px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(17,24,39,.82);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.18);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+.ai-assistant-label strong {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #38bdf8
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.ai-assistant-label small {
+    margin-top: 2px;
+
+    color: #aeb7c8;
+
+    font-size: 10px;
+}
+
+#portfolio-ai-assistant:hover .ai-assistant-label {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(0);
+}
+
+
+/* ---------------------------------------------------------
+   ANIMATIONS
+--------------------------------------------------------- */
+
+@keyframes vyntraGlow {
+
+    0%,
+    100% {
+        transform: scale(.92);
+        opacity: .35;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: .6;
+    }
+}
+
+@keyframes vyntraRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sparkFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: .45;
+    }
+
+    50% {
+        transform: translateY(-4px);
+        opacity: 1;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    #portfolio-ai-assistant {
+        right: 18px;
+        bottom: 18px;
+
+        width: 62px;
+        height: 62px;
+    }
+
+    .ai-orb-glow {
+        width: 62px;
+        height: 62px;
+    }
+
+    .ai-orb {
+        width: 56px;
+        height: 56px;
+    }
+
+    .ai-orb-core {
+        width: 38px;
+        height: 38px;
+
+        font-size: 21px;
+
+        border-radius: 12px;
+    }
+
+    .ai-assistant-label {
+        display: none;
+    }
+}
+/* ================================
+   MODERN VYNTRA AI ASSISTANT
+================================ */
+
+.vyntra-floating-ai {
+    position: fixed !important;
+    right: 28px !important;
+    bottom: 28px !important;
+    width: 68px !important;
+    height: 68px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background: linear-gradient(
+        135deg,
+        #6d4aff,
+        #8b5cf6,
+        #3b82f6,
+        #06b6d4
+    ) !important;
+
+    padding: 3px !important;
+
+    box-shadow:
+        0 10px 35px rgba(80, 70, 220, .35),
+        0 0 30px rgba(99, 102, 241, .25) !important;
+
+    cursor: pointer !important;
+
+    z-index: 999999 !important;
+
+    text-decoration: none !important;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease !important;
+
+    animation: vyntraAIFloat 3s ease-in-out infinite !important;
+}
+
+.vyntra-floating-ai:hover {
+    transform: scale(1.1) !important;
+
+    box-shadow:
+        0 15px 45px rgba(80, 70, 220, .45),
+        0 0 45px rgba(99, 102, 241, .35) !important;
+}
+
+
+/* Inner glass */
+
+.vyntra-ai-inner {
+    width: 100% !important;
+    height: 100% !important;
+
+    border-radius: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            #262044,
+            #11131d 65%
+        ) !important;
+
+    border: 1px solid rgba(255,255,255,.18) !important;
+
+    position: relative !important;
+
+    overflow: hidden !important;
+}
+
+
+/* V */
+
+.vyntra-ai-v {
+    width: 42px !important;
+    height: 42px !important;
+
+    border-radius: 13px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: white !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 24px !important;
+
+    font-weight: 900 !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6847ff,
+            #9b4dff,
+            #367cff
+        ) !important;
+
+    box-shadow:
+        0 5px 20px rgba(120,80,255,.4) !important;
+}
+
+
+/* Small light */
+
+.vyntra-ai-light {
+    position: absolute !important;
+
+    top: 12px !important;
+    right: 13px !important;
+
+    width: 5px !important;
+    height: 5px !important;
+
+    border-radius: 50% !important;
+
+    background: #67e8f9 !important;
+
+    box-shadow:
+        0 0 10px #67e8f9 !important;
+
+    animation: vyntraAIBlink 1.8s infinite !important;
+}
+
+
+/* Label */
+
+.vyntra-ai-label {
+    position: absolute !important;
+
+    right: 82px !important;
+    bottom: 8px !important;
+
+    padding: 9px 14px !important;
+
+    border-radius: 12px !important;
+
+    background: rgba(18, 20, 30, .94) !important;
+
+    border: 1px solid rgba(255,255,255,.12) !important;
+
+    backdrop-filter: blur(12px) !important;
+
+    color: white !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 12px !important;
+
+    white-space: nowrap !important;
+
+    opacity: 0 !important;
+
+    visibility: hidden !important;
+
+    transform: translateX(10px) !important;
+
+    transition: all .25s ease !important;
+}
+
+.vyntra-floating-ai:hover .vyntra-ai-label {
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    transform: translateX(0) !important;
+}
+
+.vyntra-ai-label span {
+    display: block !important;
+
+    font-weight: 700 !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #38bdf8
+        ) !important;
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+
+    color: transparent !important;
+}
+
+.vyntra-ai-label small {
+    color: #9ca3af !important;
+
+    font-size: 10px !important;
+}
+
+
+/* Animations */
+
+@keyframes vyntraAIFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes vyntraAIBlink {
+
+    0%,
+    100% {
+        opacity: .4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .vyntra-floating-ai {
+        width: 58px !important;
+        height: 58px !important;
+
+        right: 18px !important;
+        bottom: 18px !important;
+    }
+
+    .vyntra-ai-v {
+        width: 36px !important;
+        height: 36px !important;
+
+        font-size: 21px !important;
+    }
+
+    .vyntra-ai-label {
+        display: none !important;
+    }
+}

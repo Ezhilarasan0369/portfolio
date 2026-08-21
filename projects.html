@@ -2,721 +2,994 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Ezhilarasan P</title>
 
-<title>Projects | Ezhilarasan P</title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- GOOGLE FONTS -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-<link
-href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<!-- FONT AWESOME -->
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./vyntra-assistant.css">
 
-<!-- MAIN CSS -->
-<link rel="stylesheet" href="./style.css">
+    <style>
 
+        /* =====================================================
+           FIXED NAVBAR
+        ===================================================== */
 
-<style>
+        .navbar {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
 
-/* =====================================================
-   PROJECTS PAGE
-===================================================== */
+            width: 100% !important;
+            z-index: 9999 !important;
+        }
 
-.projects-page {
+        body {
+            padding-top: 88px;
+        }
 
-    width:100%;
-    min-height:calc(100vh - 88px);
 
-    padding:
-        70px 5%
-        100px;
+        /* =====================================================
+           PROJECT PAGE
+        ===================================================== */
 
-    background:#ffffff;
+        .projects-page {
+            width: 100%;
+            min-height: calc(100vh - 88px);
 
-}
+            padding: 70px 5% 100px;
 
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(245,184,46,.055),
+                    transparent 30%
+                );
+        }
 
-/* =====================================================
-   PAGE HEADER
-===================================================== */
 
-.projects-header {
+        /* =====================================================
+           HEADER
+        ===================================================== */
 
-    width:100%;
-    max-width:1250px;
+        .projects-header {
+            width: 100%;
+            max-width: 1250px;
 
-    margin:
-        0 auto 55px;
+            margin: 0 auto 50px;
+        }
 
-}
+        .projects-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
 
+            margin-bottom: 14px;
 
-.projects-label {
+            color: #f5b82e;
 
-    display:inline-flex;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    align-items:center;
+        .projects-label::before {
+            content: "";
 
-    gap:9px;
+            width: 28px;
+            height: 2px;
 
-    margin-bottom:14px;
+            background: #f5b82e;
+        }
 
-    color:#e4a400;
+        .projects-header h1 {
+            margin: 0 0 12px;
 
-    font-size:12px;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-    font-weight:700;
+            font-size: clamp(55px, 7vw, 85px);
 
-    letter-spacing:2px;
+            line-height: .95;
 
-    text-transform:uppercase;
+            font-weight: 600;
 
-}
+            color: #f5f0e6;
+        }
 
+        .projects-header h1 span {
+            color: #f5b82e;
+        }
 
-.projects-label::before {
+        .projects-header p {
+            max-width: 720px;
 
-    content:"";
+            margin: 0;
 
-    width:28px;
+            color: #c9c2b5;
 
-    height:2px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
 
-    background:#f5b82e;
 
-}
+        /* =====================================================
+           PROJECT GRID
+        ===================================================== */
 
+        .projects-grid {
+            width: 100%;
+            max-width: 1250px;
 
-.projects-header h1 {
+            margin: 0 auto;
 
-    margin:
-        0 0 15px;
+            display: grid;
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
 
-    font-size:
-        clamp(55px,7vw,85px);
+            gap: 25px;
+        }
 
-    line-height:.95;
 
-    font-weight:600;
+        /* =====================================================
+           PROJECT CARD
+        ===================================================== */
 
-    letter-spacing:-1px;
+        .project-card {
+            overflow: hidden;
 
-    color:#173b26;
+            border-radius: 24px;
 
-}
+            border:
+                1px solid
+                rgba(245,184,46,.18);
 
+            background:
+                rgba(255,255,255,.045);
 
-.projects-header h1 span {
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
 
-    color:#f5b82e;
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,.10);
+        }
 
-}
+        .project-card:hover {
+            transform: translateY(-7px);
 
+            border-color:
+                rgba(245,184,46,.45);
 
-.projects-header p {
+            box-shadow:
+                0 25px 55px
+                rgba(0,0,0,.20);
+        }
 
-    max-width:760px;
 
-    margin:0;
+        /* =====================================================
+           PROJECT TOP
+        ===================================================== */
 
-    color:#5f7065;
+        .project-top {
+            display: flex;
 
-    font-size:14px;
+            align-items: center;
+            justify-content: space-between;
 
-    line-height:1.8;
+            padding: 20px 22px 14px;
 
-}
+            color: #9eaa9f;
 
+            font-size: 12px;
+            font-weight: 600;
+        }
 
-/* =====================================================
-   PROJECT GRID
-===================================================== */
+        .project-category {
+            display: inline-flex;
 
-.projects-grid {
+            align-items: center;
 
-    width:100%;
+            padding: 7px 12px;
 
-    max-width:1250px;
+            border-radius: 20px;
 
-    margin:0 auto;
+            color: #f5b82e;
 
-    display:grid;
+            border:
+                1px solid
+                rgba(245,184,46,.25);
 
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
+            background:
+                rgba(245,184,46,.07);
 
-    gap:28px;
+            font-size: 11px;
+            font-weight: 700;
+        }
 
-}
+        .project-number {
+            color:
+                rgba(245,184,46,.55);
 
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-/* =====================================================
-   PROJECT CARD
-===================================================== */
+            font-size: 18px;
+        }
 
-.project-card {
 
-    overflow:hidden;
+        /* =====================================================
+           PROJECT IMAGE
+        ===================================================== */
 
-    border-radius:24px;
+        .project-image {
+            width: 100%;
+            height: 360px;
 
-    border:
-        1px solid
-        rgba(245,184,46,.35);
+            padding: 0 20px;
 
-    background:#ffffff;
+            overflow: hidden;
+        }
 
-    box-shadow:
-        0 12px 40px
-        rgba(23,59,38,.07);
+        .project-image img {
+            width: 100%;
+            height: 100%;
 
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
+            display: block;
 
-}
+            object-fit: cover;
 
+            object-position: center;
 
-.project-card:hover {
+            border-radius: 16px;
 
-    transform:
-        translateY(-8px);
+            border:
+                1px solid
+                rgba(255,255,255,.06);
 
-    border-color:
-        rgba(245,184,46,.75);
+            transition:
+                transform .45s ease;
+        }
 
-    box-shadow:
-        0 25px 60px
-        rgba(23,59,38,.12);
+        .project-card:hover
+        .project-image img {
+            transform: scale(1.025);
+        }
 
-}
 
+        /* =====================================================
+           PROJECT CONTENT
+        ===================================================== */
 
-/* =====================================================
-   PROJECT TOP
-===================================================== */
+        .project-content {
+            padding: 25px 25px 28px;
+        }
 
-.project-top {
+        .project-content h2 {
+            margin: 0 0 12px;
 
-    display:flex;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-    align-items:center;
+            font-size: 32px;
 
-    justify-content:space-between;
+            line-height: 1.05;
 
-    padding:
-        22px 24px 15px;
+            font-weight: 600;
 
-}
+            color: #f5f0e6;
+        }
 
+        .project-content p {
+            margin: 0 0 20px;
 
-.project-category {
+            color: #c9c2b5;
 
-    display:inline-flex;
+            font-size: 13px;
 
-    align-items:center;
+            line-height: 1.75;
+        }
 
-    padding:
-        7px 13px;
 
-    border-radius:20px;
+        /* =====================================================
+           TAGS
+        ===================================================== */
 
-    color:#d79500;
+        .project-tags {
+            display: flex;
 
-    border:
-        1px solid
-        rgba(245,184,46,.45);
+            flex-wrap: wrap;
 
-    background:
-        rgba(245,184,46,.08);
+            gap: 8px;
 
-    font-size:11px;
+            margin-bottom: 22px;
+        }
 
-    font-weight:700;
+        .project-tags span {
+            display: inline-flex;
 
-}
+            align-items: center;
 
+            padding: 7px 11px;
 
-.project-number {
+            border-radius: 18px;
 
-    color:
-        rgba(228,164,0,.65);
+            border:
+                1px solid
+                rgba(245,184,46,.20);
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
+            background:
+                rgba(245,184,46,.055);
 
-    font-size:20px;
+            color: #e5bd61;
 
-    font-weight:700;
+            font-size: 10px;
+            font-weight: 600;
+        }
 
-}
 
+        /* =====================================================
+           PROJECT ACTIONS
+        ===================================================== */
 
-/* =====================================================
-   PROJECT IMAGE FRAME
-===================================================== */
+        .project-actions {
+            display: flex;
 
-.project-image {
+            flex-wrap: wrap;
 
-    width:100%;
+            gap: 10px;
+        }
 
-    height:350px;
+        .project-btn {
+            display: inline-flex;
 
-    padding:
-        0 20px;
+            align-items: center;
 
-    overflow:hidden;
+            gap: 8px;
 
-}
+            padding: 10px 15px;
 
+            border-radius: 12px;
 
-.project-image img {
+            text-decoration: none;
 
-    width:100%;
+            font-size: 11px;
 
-    height:100%;
+            font-weight: 700;
 
-    display:block;
+            transition: .25s ease;
+        }
 
-    object-fit:cover;
+        .project-btn.primary {
+            color: #111;
 
-    object-position:center;
+            background: #f5b82e;
+        }
 
-    border-radius:18px;
+        .project-btn.secondary {
+            color: #e9e5dc;
 
-    border:
-        1px solid
-        rgba(245,184,46,.25);
+            background:
+                rgba(255,255,255,.055);
 
-    background:#f7f7f7;
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+        }
 
-    transition:
-        transform .5s ease;
+        .project-btn:hover {
+            transform: translateY(-2px);
+        }
 
-}
+        .project-btn.primary:hover {
+            background: #ffc94d;
+        }
 
+        .project-btn.secondary:hover {
+            border-color:
+                rgba(245,184,46,.45);
 
-.project-card:hover
-.project-image img {
+            color: #f5b82e;
+        }
 
-    transform:
-        scale(1.035);
 
-}
+        /* =====================================================
+           VYNTRA AI PREVIEW
+        ===================================================== */
 
+        .vyntra-preview {
+            width: 100%;
+            height: 100%;
 
-/* =====================================================
-   PROJECT CONTENT
-===================================================== */
+            border-radius: 16px;
 
-.project-content {
+            overflow: hidden;
 
-    padding:
-        26px 25px 30px;
+            background:
+                #080b14;
 
-}
+            border:
+                1px solid
+                rgba(132,96,255,.35);
 
+            box-shadow:
+                inset 0 0 50px
+                rgba(99,68,220,.08);
+        }
 
-.project-content h2 {
+        .vyntra-topbar {
+            height: 58px;
 
-    margin:
-        0 0 12px;
+            display: flex;
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
+            align-items: center;
 
-    font-size:32px;
+            gap: 12px;
 
-    line-height:1.05;
+            padding: 0 18px;
 
-    font-weight:700;
+            background: #10131d;
 
-    color:#173b26;
+            border-bottom:
+                1px solid
+                #25293a;
+        }
 
-}
+        .vyntra-dots {
+            display: flex;
+            gap: 7px;
+        }
 
+        .vyntra-dots span {
+            width: 9px;
+            height: 9px;
 
-.project-content p {
+            border-radius: 50%;
 
-    margin:
-        0 0 20px;
+            background: #744cff;
+        }
 
-    color:#64746a;
+        .vyntra-name {
+            color: #f4f4fa;
 
-    font-size:13px;
+            font-size: 13px;
 
-    line-height:1.8;
+            font-weight: 700;
+        }
 
-}
+        .vyntra-body {
+            height: calc(100% - 58px);
 
+            display: flex;
+        }
 
-/* =====================================================
-   TECHNOLOGY TAGS
-===================================================== */
+        .vyntra-side {
+            width: 25%;
 
-.project-tags {
+            padding: 18px 14px;
 
-    display:flex;
+            background: #10131d;
 
-    flex-wrap:wrap;
+            border-right:
+                1px solid
+                #25293a;
+        }
 
-    gap:8px;
+        .fake-search {
+            height: 28px;
 
-}
+            border-radius: 15px;
 
+            border:
+                1px solid
+                #30354a;
 
-.project-tags span {
+            margin-bottom: 16px;
+        }
 
-    display:inline-flex;
+        .fake-line {
+            height: 7px;
 
-    align-items:center;
+            border-radius: 10px;
 
-    padding:
-        7px 11px;
+            background: #2c3142;
 
-    border-radius:18px;
+            margin: 12px 4px;
+        }
 
-    border:
-        1px solid
-        rgba(245,184,46,.40);
+        .fake-line.short {
+            width: 70%;
+        }
 
-    background:
-        rgba(245,184,46,.07);
+        .vyntra-main {
+            flex: 1;
 
-    color:#d79500;
+            position: relative;
 
-    font-size:10px;
+            padding: 35px;
+        }
 
-    font-weight:600;
+        .vyntra-main::before {
+            content: "";
 
-}
+            position: absolute;
 
+            top: -80px;
+            left: 20%;
 
-/* =====================================================
-   PROJECT FOOTER LINE
-===================================================== */
+            width: 320px;
+            height: 240px;
 
-.project-footer {
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(111,70,255,.45),
+                    transparent 65%
+                );
+        }
 
-    display:flex;
+        .hello-text {
+            position: relative;
 
-    align-items:center;
+            color: white;
 
-    justify-content:space-between;
+            font-size: 25px;
 
-    margin-top:25px;
+            font-weight: 700;
 
-    padding-top:18px;
+            margin-bottom: 8px;
+        }
 
-    border-top:
-        1px solid
-        rgba(23,59,38,.08);
+        .hello-sub {
+            position: relative;
 
-}
+            color: #8d92a8;
 
+            font-size: 12px;
+        }
 
-.project-status {
+        .fake-input {
+            position: absolute;
 
-    display:flex;
+            left: 35px;
+            right: 35px;
+            bottom: 25px;
 
-    align-items:center;
+            height: 45px;
 
-    gap:7px;
+            border-radius: 25px;
 
-    color:#68786d;
+            border:
+                1px solid
+                #363b50;
 
-    font-size:11px;
+            background: #191c25;
 
-    font-weight:600;
+            display: flex;
 
-}
+            align-items: center;
 
+            justify-content: space-between;
 
-.project-status i {
+            padding: 0 13px 0 18px;
 
-    color:#25b46b;
+            color: #777d94;
 
-    font-size:8px;
+            font-size: 11px;
+        }
 
-}
+        .fake-send {
+            width: 29px;
+            height: 29px;
 
+            border-radius: 50%;
 
-.project-type {
+            display: grid;
+            place-items: center;
 
-    color:#d79500;
+            color: white;
 
-    font-size:11px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #604cff,
+                    #b03cff
+                );
+        }
 
-    font-weight:700;
 
-}
+        /* =====================================================
+           PORTFOLIO WEBSITE PREVIEW
+        ===================================================== */
 
+        .portfolio-preview {
+            width: 100%;
+            height: 100%;
 
-/* =====================================================
-   FEATURED PROJECT
-===================================================== */
+            border-radius: 16px;
 
-.project-card.featured {
+            overflow: hidden;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fffdf7,
-            #ffffff
-        );
+            background: #fff;
 
-}
+            border:
+                1px solid
+                rgba(0,0,0,.08);
 
+            color: #182033;
+        }
 
-.project-card.featured
-.project-category {
+        .portfolio-preview-nav {
+            height: 52px;
 
-    background:
-        rgba(245,184,46,.12);
+            display: flex;
 
-}
+            align-items: center;
 
+            justify-content: space-between;
 
-/* =====================================================
-   PROJECT INTRO BOTTOM
-===================================================== */
+            padding: 0 18px;
 
-.projects-note {
+            border-bottom:
+                1px solid #ece8df;
 
-    width:100%;
+            background: #fff;
+        }
 
-    max-width:1250px;
+        .portfolio-logo {
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-    margin:
-        55px auto 0;
+            color: #bd8200;
 
-    padding:
-        25px 28px;
+            font-size: 18px;
 
-    border-radius:20px;
+            font-weight: 700;
+        }
 
-    border:
-        1px solid
-        rgba(245,184,46,.30);
+        .portfolio-links {
+            display: flex;
 
-    background:
-        #fffdf8;
+            gap: 13px;
 
-}
+            color: #343b4b;
 
+            font-size: 8px;
 
-.projects-note h3 {
+            font-weight: 600;
+        }
 
-    margin:
-        0 0 8px;
+        .portfolio-contact {
+            width: 65px;
+            height: 22px;
 
-    color:#173b26;
+            border-radius: 14px;
 
-    font-size:18px;
+            background: #f5b82e;
+        }
 
-}
+        .portfolio-hero {
+            height: calc(100% - 52px);
 
+            display: flex;
 
-.projects-note p {
+            align-items: center;
 
-    margin:0;
+            gap: 20px;
 
-    color:#68786d;
+            padding: 25px;
+        }
 
-    font-size:13px;
+        .portfolio-photo {
+            width: 38%;
+            height: 82%;
 
-    line-height:1.7;
+            border-radius: 12px;
 
-}
+            background:
+                linear-gradient(
+                    145deg,
+                    #123c27,
+                    #07150e
+                );
 
+            position: relative;
 
-/* =====================================================
-   TABLET
-===================================================== */
+            overflow: hidden;
+        }
 
-@media(max-width:1000px) {
+        .portfolio-photo::after {
+            content: "";
 
-    .projects-page {
+            position: absolute;
 
-        padding:
-            60px 4%
-            80px;
+            width: 75px;
+            height: 125px;
 
-    }
+            left: 50%;
+            bottom: -5px;
 
+            transform: translateX(-50%);
 
-    .projects-grid {
+            border-radius: 45px 45px 10px 10px;
 
-        grid-template-columns:1fr;
+            background:
+                linear-gradient(
+                    90deg,
+                    #15191c,
+                    #343a40,
+                    #101316
+                );
+        }
 
-        max-width:800px;
+        .portfolio-info {
+            flex: 1;
+        }
 
-    }
+        .portfolio-small {
+            color: #c08a15;
 
+            font-size: 10px;
 
-    .project-image {
+            font-weight: 700;
 
-        height:400px;
+            margin-bottom: 6px;
+        }
 
-    }
+        .portfolio-title {
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
+            font-size: 27px;
 
-    .projects-note {
+            line-height: .95;
 
-        max-width:800px;
+            font-weight: 700;
 
-    }
+            margin-bottom: 8px;
+        }
 
-}
+        .portfolio-title span {
+            color: #d29408;
+        }
 
+        .portfolio-text {
+            color: #657084;
 
-/* =====================================================
-   MOBILE
-===================================================== */
+            font-size: 8px;
 
-@media(max-width:700px) {
+            line-height: 1.6;
+        }
 
-    .projects-page {
 
-        padding:
-            45px 18px
-            70px;
+        /* =====================================================
+           PORTFOLIO PREVIEW — NO PROFILE PHOTO
+        ===================================================== */
 
-    }
+        .portfolio-info-full {
+            width: 100%;
+            text-align: center;
+        }
 
+        .portfolio-hero {
+            justify-content: center;
+        }
 
-    .projects-header {
+        .portfolio-small {
+            font-size: 11px;
+        }
 
-        margin-bottom:38px;
+        .portfolio-title {
+            font-size: 31px;
+        }
 
-    }
+        .portfolio-text {
+            font-size: 9px;
+        }
 
+        @media (max-width: 700px) {
+            .portfolio-title {
+                font-size: 24px;
+            }
+        }
 
-    .projects-header h1 {
 
-        font-size:55px;
+        /* =====================================================
+           PROJECT NOTE
+        ===================================================== */
 
-    }
+        .projects-note {
+            width: 100%;
+            max-width: 1250px;
 
+            margin: 55px auto 0;
 
-    .projects-header p {
+            padding: 30px;
 
-        font-size:13px;
+            text-align: center;
 
-    }
+            border-radius: 22px;
 
+            border:
+                1px solid
+                rgba(245,184,46,.15);
 
-    .project-card {
+            background:
+                rgba(245,184,46,.035);
+        }
 
-        border-radius:20px;
+        .projects-note h3 {
+            margin: 0 0 8px;
 
-    }
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
+            font-size: 28px;
 
-    .project-top {
+            color: #f5f0e6;
+        }
 
-        padding:
-            17px 18px 12px;
+        .projects-note p {
+            max-width: 700px;
 
-    }
+            margin: auto;
 
+            color: #aaa395;
 
-    .project-image {
+            font-size: 12px;
 
-        height:280px;
+            line-height: 1.7;
+        }
 
-        padding:
-            0 14px;
 
-    }
+        /* =====================================================
+           MOBILE
+        ===================================================== */
 
+        @media (max-width: 1000px) {
 
-    .project-image img {
+            .projects-page {
+                padding: 60px 4% 80px;
+            }
 
-        border-radius:14px;
+            .projects-grid {
+                grid-template-columns: 1fr;
 
-    }
+                max-width: 800px;
+            }
 
+            .project-image {
+                height: 400px;
+            }
+        }
 
-    .project-content {
 
-        padding:
-            22px 20px 25px;
+        @media (max-width: 700px) {
 
-    }
+            body {
+                padding-top: 72px;
+            }
 
+            .projects-page {
+                padding: 45px 18px 70px;
+            }
 
-    .project-content h2 {
+            .projects-header {
+                margin-bottom: 35px;
+            }
 
-        font-size:28px;
+            .projects-header h1 {
+                font-size: 55px;
+            }
 
-    }
+            .projects-header p {
+                font-size: 13px;
+            }
 
+            .project-card {
+                border-radius: 20px;
+            }
 
-    .projects-note {
+            .project-top {
+                padding: 17px 18px 12px;
+            }
 
-        padding:
-            21px;
+            .project-image {
+                height: 280px;
 
-    }
+                padding: 0 14px;
+            }
 
-}
+            .project-image img {
+                border-radius: 13px;
+            }
 
+            .project-content {
+                padding: 22px 20px 24px;
+            }
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
+            .project-content h2 {
+                font-size: 28px;
+            }
 
-@media(max-width:430px) {
+            .portfolio-links {
+                display: none;
+            }
 
-    .projects-page {
+            .vyntra-side {
+                width: 22%;
+            }
 
-        padding-left:14px;
+            .vyntra-main {
+                padding: 25px 18px;
+            }
 
-        padding-right:14px;
+            .hello-text {
+                font-size: 19px;
+            }
 
-    }
+            .fake-input {
+                left: 18px;
+                right: 18px;
+            }
+        }
 
 
-    .projects-header h1 {
+        @media (max-width: 430px) {
 
-        font-size:48px;
+            .projects-page {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
 
-    }
+            .projects-header h1 {
+                font-size: 48px;
+            }
 
+            .project-image {
+                height: 240px;
+            }
 
-    .project-image {
+            .project-content h2 {
+                font-size: 25px;
+            }
 
-        height:240px;
+            .project-actions {
+                flex-direction: column;
+            }
 
-    }
+            .project-btn {
+                justify-content: center;
+            }
+        }
 
-
-    .project-content h2 {
-
-        font-size:25px;
-
-    }
-
-}
-
-</style>
+    </style>
 
 </head>
 
@@ -724,866 +997,963 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <body>
 
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
 
-<header class="navbar">
+    <header class="navbar">
 
+        <div class="navbar-brand">
 
-    <div class="navbar-brand">
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open navigation menu">
 
+                <i class="fa-solid fa-bars"></i>
 
-        <button
-            class="menu-btn"
-            id="menuBtn"
-            type="button"
-            aria-label="Open navigation menu">
+            </button>
 
-            <i class="fa-solid fa-bars"></i>
 
-        </button>
+            <a
+                href="./index.html"
+                class="logo">
 
+                PORTFOLIO
 
-        <a
-            href="./index.html"
-            class="logo">
-
-            PORTFOLIO
-
-        </a>
-
-
-    </div>
-
-
-
-    <nav>
-
-        <ul class="nav-links">
-
-
-            <!-- HOME -->
-
-            <li>
-
-                <a href="./index.html">
-
-                    Home
-
-                </a>
-
-            </li>
-
-
-
-            <!-- RESUME -->
-
-            <li>
-
-                <a href="./about.html">
-
-                    Resume
-
-                </a>
-
-            </li>
-
-
-
-            <!-- PROJECTS -->
-
-            <li>
-
-                <a
-                    href="./projects.html"
-                    class="active">
-
-                    Projects
-
-                </a>
-
-            </li>
-
-
-
-            <!-- VYNTRA AI -->
-
-            <li>
-
-                <a href="./vyntra-ai.html">
-
-                    Vyntra AI
-
-                </a>
-
-            </li>
-
-
-
-            <!-- CERTIFICATIONS -->
-
-            <li>
-
-                <a href="./certificates.html">
-
-                    Certifications &amp; Awards
-
-                </a>
-
-            </li>
-
-
-
-            <!-- LINKEDIN -->
-
-            <li>
-
-                <a href="./linkedin.html">
-
-                    LinkedIn
-
-                </a>
-
-            </li>
-
-
-        </ul>
-
-    </nav>
-
-
-
-    <!-- CONTACT -->
-
-    <a
-        href="./contact.html"
-        class="contact-btn">
-
-        Contact Me
-
-    </a>
-
-
-</header>
-
-
-
-<!-- =====================================================
-     MENU OVERLAY
-===================================================== -->
-
-<div
-    class="menu-overlay"
-    id="menuOverlay">
-</div>
-
-
-
-<!-- =====================================================
-     SIDE MENU
-===================================================== -->
-
-<aside
-    class="side-menu"
-    id="sideMenu">
-
-
-    <!-- CLOSE -->
-
-    <button
-        class="close-menu"
-        id="closeMenu"
-        type="button"
-        aria-label="Close navigation menu">
-
-        <i class="fa-solid fa-xmark"></i>
-
-    </button>
-
-
-
-    <!-- TITLE -->
-
-    <div class="side-menu-title">
-
-        <span>
-            EZHILARASAN'S
-        </span>
-
-        <h2>
-            PORTFOLIO
-        </h2>
-
-    </div>
-
-
-
-    <!-- LINKS -->
-
-    <div class="side-menu-links">
-
-
-        <!-- HOME -->
-
-        <a href="./index.html">
-
-            <i class="fa-solid fa-house"></i>
-
-            <span>
-                Home
-            </span>
-
-        </a>
-
-
-
-        <!-- RESUME -->
-
-        <a href="./about.html">
-
-            <i class="fa-solid fa-user"></i>
-
-            <span>
-                Resume
-            </span>
-
-        </a>
-
-
-
-        <!-- PROJECTS -->
-
-        <a
-            href="./projects.html"
-            class="active">
-
-            <i class="fa-solid fa-diagram-project"></i>
-
-            <span>
-                Projects
-            </span>
-
-        </a>
-
-
-
-        <!-- VYNTRA AI -->
-
-        <a href="./vyntra-ai.html">
-
-            <i class="fa-solid fa-robot"></i>
-
-            <span>
-                Vyntra AI
-            </span>
-
-        </a>
-
-
-
-        <!-- CERTIFICATIONS -->
-
-        <a href="./certificates.html">
-
-            <i class="fa-solid fa-certificate"></i>
-
-            <span>
-                Certifications &amp; Awards
-            </span>
-
-        </a>
-
-
-
-        <!-- LINKEDIN -->
-
-        <a href="./linkedin.html">
-
-            <i class="fa-brands fa-linkedin-in"></i>
-
-            <span>
-                LinkedIn
-            </span>
-
-        </a>
-
-
-
-        <!-- CONTACT -->
-
-        <a href="./contact.html">
-
-            <i class="fa-solid fa-envelope"></i>
-
-            <span>
-                Contact Me
-            </span>
-
-        </a>
-
-
-    </div>
-
-</aside>
-
-
-
-<!-- =====================================================
-     PROJECTS PAGE
-===================================================== -->
-
-<main class="projects-page">
-
-
-    <!-- =================================================
-         HEADER
-    ================================================== -->
-
-    <section class="projects-header">
-
-
-        <div class="projects-label">
-
-            Portfolio / Work
+            </a>
 
         </div>
 
 
-        <h1>
+        <nav>
 
-            My
+            <ul class="nav-links">
+
+                <li>
+                    <a href="./index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./about.html">
+                        Resume
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="./projects.html"
+                        class="active">
+
+                        Projects
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./vyntra-ai.html">
+                        Vyntra AI
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./certificates.html">
+                        Certifications &amp; Awards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./linkedin.html">
+                        LinkedIn
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <a
+            href="./contact.html"
+            class="contact-btn">
+
+            Contact Me
+
+        </a>
+
+    </header>
+
+
+    <!-- =====================================================
+         MENU OVERLAY
+    ===================================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay">
+    </div>
+
+
+    <!-- =====================================================
+         SIDE MENU
+    ===================================================== -->
+
+    <aside
+        class="side-menu"
+        id="sideMenu">
+
+        <button
+            class="close-menu"
+            id="closeMenu"
+            type="button"
+            aria-label="Close navigation menu">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="side-menu-title">
 
             <span>
-                Projects
+                EZHILARASAN'S
             </span>
 
-        </h1>
+            <h2>
+                PORTFOLIO
+            </h2>
+
+        </div>
 
 
-        <p>
+        <div class="side-menu-links">
 
-            Practical projects combining electronics,
-            IoT, computer vision and intelligent systems.
-            Each project reflects hands-on technical
-            learning, implementation and problem solving.
+            <a href="./index.html">
 
-        </p>
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Home
+                </span>
+
+            </a>
 
 
-    </section>
+            <a href="./about.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+                    Resume
+                </span>
+
+            </a>
+
+
+            <a
+                href="./projects.html"
+                class="active">
+
+                <i class="fa-solid fa-diagram-project"></i>
+
+                <span>
+                    Projects
+                </span>
+
+            </a>
+
+
+            <a href="./vyntra-ai.html">
+
+                <i class="fa-solid fa-robot"></i>
+
+                <span>
+                    Vyntra AI
+                </span>
+
+            </a>
+
+
+            <a href="./certificates.html">
+
+                <i class="fa-solid fa-certificate"></i>
+
+                <span>
+                    Certifications &amp; Awards
+                </span>
+
+            </a>
+
+
+            <a href="./linkedin.html">
+
+                <i class="fa-brands fa-linkedin-in"></i>
+
+                <span>
+                    LinkedIn
+                </span>
+
+            </a>
+
+
+            <a href="./contact.html">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <span>
+                    Contact Me
+                </span>
+
+            </a>
+
+        </div>
+
+    </aside>
 
 
 
-    <!-- =================================================
-         PROJECT GRID
-    ================================================== -->
+    <!-- =====================================================
+         PROJECT PAGE
+    ===================================================== -->
 
-    <section class="projects-grid">
+    <main class="projects-page">
+
+
+        <!-- HEADER -->
+
+        <section class="projects-header">
+
+            <div class="projects-label">
+                Portfolio / Work
+            </div>
+
+
+            <h1>
+                My
+                <span>
+                    Projects
+                </span>
+            </h1>
+
+
+            <p>
+                Practical projects combining electronics,
+                IoT, computer vision, artificial intelligence,
+                cloud technologies and modern web development.
+                Each project reflects hands-on technical
+                learning, implementation and problem solving.
+            </p>
+
+        </section>
+
 
 
         <!-- =================================================
-             PROJECT 01
-        ================================================== -->
+             PROJECT GRID
+        ================================================= -->
 
-        <article class="project-card featured">
-
-
-            <div class="project-top">
-
-                <span class="project-category">
-
-                    IoT / Wearable
-
-                </span>
+        <section class="projects-grid">
 
 
-                <span class="project-number">
+            <!-- =================================================
+                 PROJECT 01
+            ================================================= -->
 
-                    01
+            <article class="project-card">
 
-                </span>
+                <div class="project-top">
 
-            </div>
-
-
-
-            <div class="project-image">
-
-                <img
-                    src="./smart-glove.png"
-                    alt="Smart Glove with Integrated Sensors">
-
-            </div>
-
-
-
-            <div class="project-content">
-
-
-                <h2>
-
-                    Smart Glove with
-                    Integrated Sensors
-
-                </h2>
-
-
-                <p>
-
-                    A wearable smart glove system using
-                    flex sensors to detect finger movements
-                    and provide real-time sensor-based
-                    interaction.
-
-                </p>
-
-
-                <div class="project-tags">
-
-                    <span>
-                        ESP32
+                    <span class="project-category">
+                        IoT / Wearable
                     </span>
 
-                    <span>
-                        Flex Sensor
-                    </span>
-
-                    <span>
-                        IoT
-                    </span>
-
-                    <span>
-                        Embedded Systems
+                    <span class="project-number">
+                        01
                     </span>
 
                 </div>
 
 
-                <div class="project-footer">
+                <div class="project-image">
 
-                    <span class="project-status">
+                    <img
+                        src="./smart-glove.png"
+                        alt="Smart Glove with Integrated Sensors">
 
-                        <i class="fa-solid fa-circle"></i>
+                </div>
 
-                        Completed Project
 
+                <div class="project-content">
+
+                    <h2>
+                        Smart Glove with
+                        Integrated Sensors
+                    </h2>
+
+
+                    <p>
+                        A wearable smart glove system using
+                        flex sensors to detect finger movements
+                        and provide real-time sensor-based
+                        interaction.
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span>ESP32</span>
+                        <span>Flex Sensor</span>
+                        <span>IoT</span>
+                        <span>Embedded Systems</span>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            href="#"
+                            class="project-btn secondary">
+
+                            <i class="fa-solid fa-circle-info"></i>
+                            Project
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJECT 02
+            ================================================== -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <span class="project-category">
+                        Computer Vision
                     </span>
 
-
-                    <span class="project-type">
-
-                        Hardware + IoT
-
+                    <span class="project-number">
+                        02
                     </span>
 
                 </div>
 
 
-            </div>
+                <div class="project-image">
 
-        </article>
+                    <img
+                        src="./gesture-recognition.png"
+                        alt="Gesture Recognition System">
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h2>
+                        Gesture Recognition
+                        System
+                    </h2>
+
+
+                    <p>
+                        A computer vision based hand gesture
+                        recognition system that detects hand
+                        movements through a webcam and performs
+                        computer actions.
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span>Python</span>
+                        <span>OpenCV</span>
+                        <span>MediaPipe</span>
+                        <span>PyAutoGUI</span>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            href="#"
+                            class="project-btn secondary">
+
+                            <i class="fa-solid fa-circle-info"></i>
+                            Project
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJECT 03 — VYNTRA AI
+            ================================================== -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <span class="project-category">
+                        AI / Full Stack
+                    </span>
+
+                    <span class="project-number">
+                        03
+                    </span>
+
+                </div>
+
+
+                <div class="project-image">
+
+                    <div class="vyntra-preview">
+
+
+                        <div class="vyntra-topbar">
+
+                            <div class="vyntra-dots">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+
+                            <div class="vyntra-name">
+                                VYNTRA AI
+                            </div>
+
+                        </div>
+
+
+                        <div class="vyntra-body">
+
+
+                            <div class="vyntra-side">
+
+                                <div class="fake-search"></div>
+
+                                <div class="fake-line"></div>
+                                <div class="fake-line short"></div>
+                                <div class="fake-line"></div>
+                                <div class="fake-line short"></div>
+                                <div class="fake-line"></div>
+
+                            </div>
+
+
+                            <div class="vyntra-main">
+
+                                <div class="hello-text">
+                                    Hello, User
+                                </div>
+
+                                <div class="hello-sub">
+                                    How can I help you today?
+                                </div>
+
+
+                                <div class="fake-input">
+
+                                    <span>
+                                        Message VYNTRA AI...
+                                    </span>
+
+                                    <span class="fake-send">
+                                        ↑
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h2>
+                        VYNTRA AI
+                    </h2>
+
+
+                    <p>
+                        A secure AI assistant platform with
+                        Google authentication, user access
+                        management, conversational AI,
+                        persistent chat history and a modern
+                        Gemini-inspired interface.
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span>AI</span>
+                        <span>Gemini API</span>
+                        <span>JavaScript</span>
+                        <span>Cloudflare Workers</span>
+                        <span>Google OAuth</span>
+                        <span>GitHub Pages</span>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            href="https://ezhilarasan0369.github.io/VYNTRA-AI/"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-btn primary">
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            Live Demo
+
+                        </a>
+
+
+                        <a
+                            href="https://github.com/ezhilarasanpofficial-rgb/vyntra-ai"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-btn secondary">
+
+                            <i class="fa-brands fa-github"></i>
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJECT 04 — PORTFOLIO WEBSITE
+            ================================================== -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <span class="project-category">
+                        Web Development
+                    </span>
+
+                    <span class="project-number">
+                        04
+                    </span>
+
+                </div>
+
+
+                <div class="project-image">
+
+                    <div class="portfolio-preview">
+
+
+                        <!-- Portfolio Navbar -->
+
+                        <div class="portfolio-preview-nav">
+
+                            <div class="portfolio-logo">
+                                PORTFOLIO
+                            </div>
+
+
+                            <div class="portfolio-links">
+
+                                <span>Home</span>
+                                <span>Resume</span>
+                                <span>Projects</span>
+                                <span>Vyntra AI</span>
+                                <span>LinkedIn</span>
+
+                            </div>
+
+
+                            <div class="portfolio-contact"></div>
+
+                        </div>
+
+
+
+                        <!-- Portfolio Hero -->
+
+                        <div class="portfolio-hero">
+
+
+                            <div class="portfolio-info portfolio-info-full">
+
+                                <div class="portfolio-small">
+                                    Hello, I'm
+                                </div>
+
+
+                                <div class="portfolio-title">
+
+                                    Ezhilarasan P
+
+                                    <br>
+
+                                    IT Infrastructure &amp;
+
+                                    <br>
+
+                                    <span>
+                                        Networking Enthusiast
+                                    </span>
+
+                                </div>
+
+
+                                <div class="portfolio-text">
+
+                                    B.E. Electronics and
+                                    Communication Engineering
+
+                                    <br>
+
+                                    Networking · Cloud ·
+                                    IT Infrastructure
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h2>
+                        Personal Portfolio
+                        Website
+                    </h2>
+
+
+                    <p>
+                        A responsive personal portfolio website
+                        designed to showcase my technical skills,
+                        projects, certifications, professional
+                        profile and the VYNTRA AI project.
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive Design</span>
+                        <span>GitHub Pages</span>
+                        <span>UI/UX</span>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            href="https://ezhilarasan0369.github.io/portfolio/"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-btn primary">
+
+                            <i class="fa-solid fa-globe"></i>
+                            Live Website
+
+                        </a>
+
+
+                        <a
+                            href="https://github.com/ezhilarasan0369/portfolio"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-btn secondary">
+
+                            <i class="fa-brands fa-github"></i>
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
 
 
 
         <!-- =================================================
-             PROJECT 02
+             PROJECT NOTE
         ================================================== -->
 
-        <article class="project-card">
+        <section class="projects-note">
 
+            <h3>
+                More Projects Coming Soon
+            </h3>
 
-            <div class="project-top">
 
-                <span class="project-category">
+            <p>
+                Currently exploring projects related to
+                IT Infrastructure, Linux, Networking,
+                Cloud Computing, Azure, automation and
+                intelligent systems. New infrastructure,
+                cloud and AI projects will be added as
+                development progresses.
+            </p>
 
-                    Computer Vision
+        </section>
 
-                </span>
 
+    </main>
 
-                <span class="project-number">
 
-                    02
 
-                </span>
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
 
-            </div>
+    <script>
 
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
 
-            <div class="project-image">
+                /* ================================
+                   SIDE MENU
+                ================================= */
 
-                <img
-                    src="./gesture-recognition.png"
-                    alt="Gesture Recognition System">
+                const menuBtn =
+                    document.getElementById("menuBtn");
 
-            </div>
+                const sideMenu =
+                    document.getElementById("sideMenu");
 
+                const closeMenu =
+                    document.getElementById("closeMenu");
 
+                const menuOverlay =
+                    document.getElementById("menuOverlay");
 
-            <div class="project-content">
 
+                function openMenu() {
 
-                <h2>
+                    sideMenu.classList.add("open");
 
-                    Gesture Recognition
-                    System
+                    menuOverlay.classList.add("show");
 
-                </h2>
+                    document.body.classList.add(
+                        "menu-open"
+                    );
 
+                }
 
-                <p>
 
-                    A computer vision based hand gesture
-                    recognition system that detects hand
-                    movements through a webcam and performs
-                    computer actions.
+                function hideMenu() {
 
-                </p>
+                    sideMenu.classList.remove("open");
 
+                    menuOverlay.classList.remove("show");
 
-                <div class="project-tags">
+                    document.body.classList.remove(
+                        "menu-open"
+                    );
 
-                    <span>
-                        Python
-                    </span>
+                }
 
-                    <span>
-                        OpenCV
-                    </span>
 
-                    <span>
-                        MediaPipe
-                    </span>
+                if (menuBtn) {
 
-                    <span>
-                        PyAutoGUI
-                    </span>
+                    menuBtn.addEventListener(
+                        "click",
+                        openMenu
+                    );
 
-                </div>
+                }
 
 
-                <div class="project-footer">
+                if (closeMenu) {
 
-                    <span class="project-status">
-
-                        <i class="fa-solid fa-circle"></i>
-
-                        Completed Project
-
-                    </span>
-
-
-                    <span class="project-type">
-
-                        AI + Computer Vision
-
-                    </span>
-
-                </div>
-
-
-            </div>
-
-        </article>
-
-
-    </section>
-
-
-
-    <!-- =================================================
-         PROJECT NOTE
-    ================================================== -->
-
-    <section class="projects-note">
-
-        <h3>
-
-            More Projects Coming Soon
-
-        </h3>
-
-
-        <p>
-
-            Currently exploring projects related to
-            IT Infrastructure, Linux, Networking,
-            Cloud Computing, Azure and automation.
-            New infrastructure and cloud projects
-            will be added as development progresses.
-
-        </p>
-
-    </section>
-
-
-</main>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-
-        /* =================================================
-           MENU ELEMENTS
-        ================================================= */
-
-        const menuBtn =
-            document.getElementById("menuBtn");
-
-        const sideMenu =
-            document.getElementById("sideMenu");
-
-        const closeMenu =
-            document.getElementById("closeMenu");
-
-        const menuOverlay =
-            document.getElementById("menuOverlay");
-
-
-
-        /* =================================================
-           OPEN MENU
-        ================================================= */
-
-        function openMenu() {
-
-            if (sideMenu) {
-
-                sideMenu.classList.add("open");
-
-            }
-
-
-            if (menuOverlay) {
-
-                menuOverlay.classList.add("show");
-
-            }
-
-
-            document.body.classList.add("menu-open");
-
-        }
-
-
-
-        /* =================================================
-           CLOSE MENU
-        ================================================= */
-
-        function hideMenu() {
-
-            if (sideMenu) {
-
-                sideMenu.classList.remove("open");
-
-            }
-
-
-            if (menuOverlay) {
-
-                menuOverlay.classList.remove("show");
-
-            }
-
-
-            document.body.classList.remove("menu-open");
-
-        }
-
-
-
-        /* =================================================
-           MENU BUTTON
-        ================================================= */
-
-        if (menuBtn) {
-
-            menuBtn.addEventListener(
-                "click",
-                openMenu
-            );
-
-        }
-
-
-
-        /* =================================================
-           CLOSE BUTTON
-        ================================================= */
-
-        if (closeMenu) {
-
-            closeMenu.addEventListener(
-                "click",
-                hideMenu
-            );
-
-        }
-
-
-
-        /* =================================================
-           OVERLAY
-        ================================================= */
-
-        if (menuOverlay) {
-
-            menuOverlay.addEventListener(
-                "click",
-                hideMenu
-            );
-
-        }
-
-
-
-        /* =================================================
-           SIDE MENU LINKS
-        ================================================= */
-
-        document
-            .querySelectorAll(
-                ".side-menu-links a"
-            )
-            .forEach(
-                function (link) {
-
-                    link.addEventListener(
+                    closeMenu.addEventListener(
                         "click",
                         hideMenu
                     );
 
                 }
-            );
 
 
+                if (menuOverlay) {
 
-        /* =================================================
-           ESC KEY
-        ================================================= */
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    hideMenu();
+                    menuOverlay.addEventListener(
+                        "click",
+                        hideMenu
+                    );
 
                 }
 
-            }
-        );
+
+                document
+                    .querySelectorAll(
+                        ".side-menu-links a"
+                    )
+                    .forEach(
+                        function (link) {
+
+                            link.addEventListener(
+                                "click",
+                                hideMenu
+                            );
+
+                        }
+                    );
 
 
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
 
-        /* =================================================
-           SCROLL REVEAL
-        ================================================= */
+                        if (
+                            event.key === "Escape"
+                        ) {
 
-        const revealElements =
-            document.querySelectorAll(
-                ".projects-header, .project-card, .projects-note"
-            );
+                            hideMenu();
 
+                        }
 
-        revealElements.forEach(
-            function (element) {
-
-                element.classList.add(
-                    "reveal"
-                );
-
-            }
-        );
-
-
-
-        /* =================================================
-           INTERSECTION OBSERVER
-        ================================================= */
-
-        if (
-            "IntersectionObserver"
-            in window
-        ) {
-
-
-            const observer =
-                new IntersectionObserver(
-                    function (entries) {
-
-                        entries.forEach(
-                            function (entry) {
-
-                                if (
-                                    entry.isIntersecting
-                                ) {
-
-                                    entry.target.classList.add(
-                                        "show"
-                                    );
-
-                                }
-
-                            }
-                        );
-
-                    },
-                    {
-                        threshold:0.12,
-
-                        rootMargin:
-                            "0px 0px -60px 0px"
                     }
                 );
 
 
-            revealElements.forEach(
-                function (element) {
 
-                    observer.observe(element);
+                /* ================================
+                   SCROLL REVEAL
+                ================================= */
 
-                }
-            );
+                const revealElements =
+                    document.querySelectorAll(`
+
+                        main > section,
+                        main > article,
+
+                        .project-card,
+                        .projects-grid
+
+                    `);
 
 
-        } else {
+                revealElements.forEach(
+                    function (element) {
+
+                        element.classList.add(
+                            "reveal"
+                        );
+
+                    }
+                );
 
 
-            revealElements.forEach(
-                function (element) {
+                if ("IntersectionObserver" in window) {
 
-                    element.classList.add(
-                        "show"
+                    const observer =
+                        new IntersectionObserver(
+
+                            function (entries) {
+
+                                entries.forEach(
+                                    function (entry) {
+
+                                        if (
+                                            entry.isIntersecting
+                                        ) {
+
+                                            entry.target
+                                                .classList
+                                                .add("show");
+
+                                        }
+
+                                    }
+                                );
+
+                            },
+                            {
+                                threshold: 0.12,
+
+                                rootMargin:
+                                    "0px 0px -60px 0px"
+                            }
+
+                        );
+
+
+                    revealElements.forEach(
+                        function (element) {
+
+                            observer.observe(
+                                element
+                            );
+
+                        }
+                    );
+
+                } else {
+
+                    revealElements.forEach(
+                        function (element) {
+
+                            element.classList.add(
+                                "show"
+                            );
+
+                        }
                     );
 
                 }
-            );
 
-        }
+            }
 
-    }
+        );
 
-);
+    </script>
 
-</script>
-
-
+<script src="./vyntra-assistant.js"></script>
 </body>
-
 </html>
